@@ -1,3 +1,10 @@
+# Repo for implementasjonsmodellen til Matrikkelen
+
+Implementasjonsmodellen til Matrikkelen blir laget med Enterprise Architect.
+Når endringer blir gjort i API-et skal implementasjonsmodellen også bli oppdatert, slik at nå-situasjonen til matrikkelen blir gjenspeilet i implementasjonsmodellen.
+
+Det er satt opp en Github Action slik at når en PR merges til dette repoet med endringer til implementasjonsmodellen, vil det automatisk lages en PR til matrikkel-repoet hvor implementasjonsmodellen blir lagt ut.
+
 # Enterprise Architect Oppsettguide for Mac
 
 Denne guiden viser hvordan du setter opp Enterprise Architect på en Mac med Apple Silicon ved hjelp av Wine.
@@ -11,11 +18,11 @@ Kjør disse kommandoene i Terminal:
 # Oppdater Homebrew
 brew update
 
-# Installer Wine (dette vil ta flere minutter)
+# Installer Wine
 brew install --cask wine-stable
 ```
 
-**Merk:** Du vil se advarsler om at Wine ikke passerer macOS Gatekeeper-sjekker. Wine vil bli deaktivert i september 2026, men det vil fungere fint frem til da.
+[//]: # (**Merk:** Du vil se advarsler om at Wine ikke passerer macOS Gatekeeper-sjekker. Wine vil bli deaktivert i september 2026, men det vil fungere fint frem til da.)
 
 ### 2. Installer Rosetta 2
 
@@ -55,7 +62,7 @@ Et Wine-konfigurasjonsvindu vil åpne seg. Du kan lukke det etter at det vises -
 
 ### 7. Last ned Enterprise Architect
 
-TODO: Finn ut hvor installasjons-filen for Enterprise Architect skal leve, og oppdater readme.
+**TODO:** Finn ut hvor installasjons-filen for Enterprise Architect skal leve, og oppdater readme.
 
 
 ### 8. Installer Enterprise Architect
@@ -79,12 +86,20 @@ Etter installasjonen kan du kjøre EA med:
 wine ~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe
 ```
 
+**Merk:** `~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe` er default, hvis du har installert Enterprise Architect i en annen mappe, må du endre pathen til der hvor EA.exe ligger.
+
 **Tips:** Opprett et alias i shell-profilen din for enklere tilgang:
 
 ```bash
+# Zsh
 echo 'alias ea="wine ~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe"' >> ~/.zshrc
 source ~/.zshrc
+
+# Bash
+echo 'alias ea="wine ~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe"' >> ~/.bashrc
+source ~/.bashrc
 ```
+
 
 Nå kan du bare skrive `ea` for å starte Enterprise Architect.
 
@@ -143,21 +158,58 @@ Nå kan du bare skrive `ea` for å starte Enterprise Architect.
 
 [//]: # (- [Installere Enterprise Architect for Mac]&#40;https://sparxsystems.com/enterprise_architect_user_guide/17.1/getting_started/enterprise_architect_macos.html&#41;)
 
-### 10. Aktiver lisens
 
-TODO: Finn ut hvordan man aktiverer lisensen/får en lisens.
+
+# Enterprise Architect Oppsettguide for Windows
+
+**Er dette korrekt?**
+
+Hent Enterprise Architect fra FIRMAPORTAL som er installert på alle Kartverkets Windows-maskiner.
+
+
+# Enterprise Architect lisens
+
+Enterprise Architect krever en lisens for å kjøre. Kartverket har lisensene til EA på en lisensserver, hvor det ligger et visst anntall lisenser.
+
+Første gang du starter opp EA etter installasjon vil det komme opp et vindu for å legge inn lisens.
+
+![Lisens start vindu](images/lisens-start-vinu.png)
+
+Trykk på `Add Key`
+
+Velg Get Shared Key.
+Trykk på knappen `…` som ligger til høyre for Shared keystore.
+
+![Lisens shared key](images/lisens-get-shared-key.png)
+
+Velg Sparx Keystore Server.
+Legg inn `ssks://lisens.statkart.no`
+Trykk på `Test`, for å sjekke at det fungerer.
+Etter det kan man trykke på `OK`, lisensen vil da bli hentet fra keystore, og bli aktivert.
+Når man avslutter Enterprise Architect, vil lisensen bli gitt tilbake slik at andre kan bruke den, men den vil være lagret i din lokale EA-klient slik at man slipper å aktivere lisensen hver gang.
+
+![Lisens keystore](images/lisens-keystore.png)
+
+
+**NB!** Må være på internt kartverket nettverk eller eVPN.
+
+[//]: # (Må åpne port 7770 for å få kontakt med lisensserver til EA, hvis ikke vil man få feilmelding:)
+
+[//]: # ()
+[//]: # (Lisensserver er `nnriap717`)
+
 
 # Oppdatering av implementasjonsmodellen
 
 Dette prosjektet ble tidligere administrert med TortoiseSVN og har blitt migrert til GitHub.
-Filene som blir generert er binær-filer, Github vil ikke klare å resolve merge-conflicts, så det er viktig at endringer i modellen ikke blir jobbet med av 2 samtidig.
+Filene som blir generert er binær-filer. Github vil ikke klare å resolve merge-conflicts, derfor det er viktig at endringer i modellen ikke blir jobbet med av 2 samtidig, og at man alltid jobber ut i fra nyeste implementasjonsmodell.
 
 
 
 
-1. **Hent siste endringer:**
+1. **Hent siste endringer fra main:**
    ```bash
-   git pull origin main
+   git pull
    ```
 
 2. **Opprett en feature branch:**
@@ -167,14 +219,39 @@ Filene som blir generert er binær-filer, Github vil ikke klare å resolve merge
 
 3. **Koordiner med teamet** - Kommuniser i Slack/Teams for å unngå samtidig redigering av EA-modellen
 
+
 4. **Gjør endringer i Enterprise Architect**
-    - TODO: Finn ut hvordan man oppdaterer modellen med Enterprise Architect
+   - Åpne filen `analysemodell_nyttAPI.qea` i Enterprise Architect.
 
-[//]: # (    - Åpne modellen)
+      Når du ser mappestrukturen, så husk å endre pakkenavn til gjeldende versjonsnummer.
 
-[//]: # (    - Gjør endringene dine)
+        ![Implementasjonsmodell versjonsnummer](images/implementasjonsmodell-versjonsnummer.png)
+        
+    - Gjør endringene dine
+    - Lagre filen
 
-[//]: # (    - Lagre filen)
+Etter du har endret på implementasjonsmodellen, må man eksportere filen som HTML.
+
+I oversikt over mappestrukturen (Project Browser menyen), så markerer man mappen `Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon <versjonsnummer>`.
+
+Gå så inn på Publish → HTML → Standard HTML Report
+
+![Enterprise Architect publish knapp](images/ea-publish-knapp.png)
+
+I dialogen som kommer opp:
+
+- Dobbeltsjekk at "Package" er satt til den mappen man markerte. Dersom ingen mappe ble markert, så vil "Package" bli default satt til den øverste mappen i Project Browser menyen. Noe som vil føre til krøll i mappestrukturen når man publisher.
+- Sett `Output to` til `implementasjonsmodellAPI` mappen som ligger i root på dette repoet.
+- Under "Default Diagram", huk av for "None" (Har nok ikke så mye å si)
+
+
+![Enterprise Architect publish as HTML](images/ea_publish_as_HTML.png)
+
+Trykk `Generate`
+
+Endringene vil nå overskrive den gamle implementasjonsmodellen som lå i `implementasjonsmodellAPI` mappen.
+
+
 
 
 5. **Commit endringene dine:**
@@ -188,10 +265,19 @@ Filene som blir generert er binær-filer, Github vil ikke klare å resolve merge
    git push origin feature/din-endringsbeskrivelse
    ```
 
-7. **Opprett en Pull Request** på GitHub for gjennomgang
+7. **Opprett en Pull Request** 
+
+For at endringene skal vises frem på matrikkelforsiden i neste versjon må de legges inn i matrikkel-repoet.
+Det er laget en Github Action som automatisk lager en PR på matrikkel-repoet, når en PR på dette repoet merges med endringer på implementasjonsmodellen.
+
+Det vil si: 
+- Lag et pullrequest med endringene dine i dette repoet
+- Se et PR'en blir merget
+- Følg opp at den genererte PR'en på matrikkel-repoet blir merget
+- Da vil endringene komme ut på neste versjon!
 
 
-### Viktige Git-hensyn for EA-filer
+### NB! Viktige Git-hensyn for EA-filer
 
 **Utfordringer:**
 - EA-filer (`.eap`, `.eapx`, `.qea`) er binære/komplekse XML-filer
@@ -201,45 +287,7 @@ Filene som blir generert er binær-filer, Github vil ikke klare å resolve merge
 **Beste praksis:**
 - **Kommuniser** - Gi beskjed til teammedlemmer når du jobber med modellen
 - **Bruk feature branches** - Isoler endringene dine
-- **Commit ofte** - Små, fokuserte commits reduserer konfliktpotensial
 - **Pull før du starter arbeid** - Jobb alltid på den nyeste versjonen
 - **Koordiner redigering** - Unngå at flere personer redigerer samme EA-fil samtidig
 
-
-## Oppdater matrikkel-repoet med endringene
-### TODO: Oppdater denne
-
-Nå ligger endringene dine ute, slik at andre kan hente dem ned!
-
-Men skal de vises frem på matrikkelforsiden i neste versjon, så må de legges inn i matrikkel-repoet:
-
-Lag en branch for endringene dine i Matrikkel-repoet.
-
-Slett alt som ligger i mappen:
-`eksternapi/api/v1/matrikkelapi-v1-wswar/src/main/webapp/dokumentasjon/implementasjonsmodellAPI`
-
-TODO: sjekk riktig mappenavn.
-
-Åpne filen du har endret med Enterprise Architect.
-
-I oversikt over mappestrukturen (Project Browser menyen), så markerer man mappen "Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon <versjonsnummer>".
-
-Gå så inn på Publish → HTML → Standard HTML Report
-
-I dialogen som kommer opp:
-
-- Dobbeltsjekk at "Package" er satt til den mappen man markerte. Dersom ingen mappe ble markert, så vil "Package" bli default satt til den øverste mappen i Project Browser menyen. Noe som vil føre til krøll i mappestrukturen når man publisher.
-- Dobbeltsjekk at Output to peker på den mappen du nettopp har slettet alt i
-- Under "Default Diagram", huk av for "None" (Har nok ikke så mye å si)
-
-
-![Enterprise Architect publish as HTML](images/ea_publish_as_HTML.png)
-
-Trykk Generate
-
-Nå kan du gå inn i IntelliJ igjen, og mappen som du rensket ut, skal nå være fylt opp igjen.
-
-Høyreklikk på mappen, og velg Git → Add, for å legge til alle de genererte filene.
-
-Lag et pullrequest, få det inn på main, og det vil komme ut på neste versjon!
 
