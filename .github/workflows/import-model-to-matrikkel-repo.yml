@@ -1,0 +1,141 @@
+name: Importer implementasjonsmodell til Matrikkel-repo
+
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - 'implementasjonsmodellAPI/**'  # Only trigger when files in 'something/' change
+  workflow_dispatch:  # Allow manual trigger
+
+env:
+  ORGANIZATION: kartverket
+  SOURCE_REPO: matrikkel-arkitektur
+  SOURCE_DIR: implementasjonsmodellAPI
+  TARGET_REPO: matrikkel
+  TARGET_DIR: server/eksternapi/api/v1/matrikkelapi-v1-endpoints/src/webapp/webapp/dokumentasjon/implementasjonsmodellAPI
+  OCTO_STS_IDENTITY: matrikkel
+
+jobs:
+  copy-and-create-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - name: Sjekk om PR ble merget
+        if: github.event_name == 'pull_request' && github.event.pull_request.merged != true
+        run: |
+          echo "PR ble lukket uten at den ble merget, hopper over workflow"
+          exit 1
+
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.SOURCE_REPO }}
+
+      - name: Hent octo-sts token
+        id: octo-sts
+        uses: octo-sts/action@v1.0.1
+        with:
+          scope: ${{ env.ORGANIZATION }}/${{ env.TARGET_REPO }}
+          identity: ${{ env.OCTO_STS_IDENTITY }}
+
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.ORGANIZATION }}/${{ env.TARGET_REPO }}
+          token: ${{ steps.octo-sts.outputs.token }}
+          path: ${{ env.TARGET_REPO }}
+
+      - name: Hent PR detaljer
+        id: pr
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "BRANCH_NAME=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+            echo "PR_TITLE<<EOF" >> $GITHUB_ENV
+            echo "${{ github.event.pull_request.title }}" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "PR_BODY<<EOF" >> $GITHUB_ENV
+            echo "${{ github.event.pull_request.body }}" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "SOURCE_PR=#${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          else
+            echo "BRANCH_NAME=Manuell-oppdatering-av-implementasjonsmodell-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
+            echo "PR_TITLE<<EOF" >> $GITHUB_ENV
+            echo "Oppdatering av implementasjonsmodell" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "PR_BODY<<EOF" >> $GITHUB_ENV
+            echo "Trigget manuelt av ${{ github.actor }}" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "SOURCE_PR=Manual trigger" >> $GITHUB_ENV
+          fi
+
+      - name: Lag ny branch i target repo
+        run: |
+          cd ${{ env.TARGET_REPO }} 
+          git checkout -B $BRANCH_NAME
+
+      - name: Erstatt target folder innhold
+        run: |
+          # Remove all existing content in target folder
+          rm -rf ${{ env.TARGET_REPO }}/${{ env.TARGET_DIR }}/* || true
+          
+          # Create target directory if it doesn't exist
+          mkdir -p ${{ env.TARGET_REPO }}/${{ env.TARGET_DIR }}
+          
+          # Copy contents from source to target
+          cp -r ${{ env.SOURCE_REPO }}/${{ env.SOURCE_DIR }}/* ${{ env.TARGET_REPO }}/${{ env.TARGET_DIR }}/
+
+      - name: Commit endringer
+        run: |
+          cd ${{ env.TARGET_REPO }}
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ${{ env.TARGET_DIR }}
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "HAS_CHANGES=false" >> $GITHUB_ENV
+          else
+            git commit -m "Sync: $PR_TITLE"
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
+          fi
+
+      - name: Push endringer
+        if: env.HAS_CHANGES == 'true'
+        run: |
+          cd ${{ env.TARGET_REPO }}
+          git push origin $BRANCH_NAME
+
+      - name: Create Pull Request
+        if: env.HAS_CHANGES == 'true'
+        env:
+          GH_TOKEN: ${{ steps.octo-sts.outputs.token }}
+        run: |
+          cd ${{ env.TARGET_REPO }}
+
+          # Avoid creating duplicate PRs
+          if gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number' | grep -q .; then
+            echo "PR already exists for branch $BRANCH_NAME, skipping creation."
+            exit 0
+          fi
+
+          # Use heredoc for safe multi-line PR body with readable YAML indentation
+          gh pr create \
+            --title "$PR_TITLE" \
+            --body-file - \
+            --base main \
+            --head "$BRANCH_NAME" <<-EOF
+          $PR_BODY
+          
+          ---
+          
+          **Source Repository:** ${{ github.repository }}
+          **Source PR:** $SOURCE_PR
+          **Merged Commit:** ${{ github.sha }}
+          **Triggered by:** ${{ github.actor }}
+          **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EOF
