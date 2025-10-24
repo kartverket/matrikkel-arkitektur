@@ -207,7 +207,7 @@ Hvis det trengs en installasjonsnøkkel så bruker man nøkkelen `TWC6` som er n
 
 # Enterprise Architect lisens
 
-Enterprise Architect krever en lisens for å kjøre. Kartverket har lisensene til EA på en lisensserver, hvor det ligger et visst anntall lisenser.
+Enterprise Architect krever en lisens for å kjøre. Kartverket har lisensene til EA på en lisensserver, hvor det ligger et visst antall lisenser.
 
 Første gang du starter opp EA etter installasjon vil det komme opp et vindu for å legge inn lisens.
 
