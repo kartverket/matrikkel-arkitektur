@@ -5,14 +5,16 @@ Når endringer blir gjort i API-et skal implementasjonsmodellen også bli oppdat
 
 Det er satt opp en Github Action slik at når en PR merges til dette repoet med endringer til implementasjonsmodellen, vil det automatisk lages en PR til matrikkel-repoet hvor implementasjonsmodellen blir lagt ut.
 
-# Enterprise Architect Oppsettguide for Mac
+# Enterprise Architect Oppsettguide for Mac og Linux
 
-Denne guiden viser hvordan du setter opp Enterprise Architect på en Mac med Apple Silicon ved hjelp av Wine.
+Denne guiden viser hvordan du setter opp Enterprise Architect på Mac og Linux ved hjelp av Wine.
 
 
 ### 1. Installer Wine
 
 Kjør disse kommandoene i Terminal:
+
+#### Mac
 
 ```bash
 # Oppdater Homebrew
@@ -21,10 +23,20 @@ brew update
 # Installer Wine
 brew install --cask wine-stable
 ```
-
 [//]: # (**Merk:** Du vil se advarsler om at Wine ikke passerer macOS Gatekeeper-sjekker. Wine vil bli deaktivert i september 2026, men det vil fungere fint frem til da.)
 
-### 2. Installer Rosetta 2
+#### Linux
+
+```bash
+# Oppdater apt
+sudo apt update
+
+# Installer Wine
+sudo apt install wine64
+```
+
+
+### 2. Installer Rosetta 2 (kun Mac med apple-silicon)
 
 Wine på Apple Silicon krever Rosetta 2. Installer det med:
 
@@ -32,7 +44,7 @@ Wine på Apple Silicon krever Rosetta 2. Installer det med:
 softwareupdate --install-rosetta --agree-to-license
 ```
 
-### 3. Godkjenn Wine i macOS Sikkerhetsinnstillinger
+### 3. Godkjenn Wine i macOS Sikkerhetsinnstillinger (kun Mac)
 
 Når du først prøver å kjøre Wine, vil macOS blokkere det med en sikkerhetsadvarsel.
 
@@ -60,25 +72,19 @@ WINEPREFIX=~/.wine WINEARCH=win64 winecfg
 
 Et Wine-konfigurasjonsvindu vil åpne seg. Du kan lukke det etter at det vises - dette initialiserer bare miljøet.
 
-### 7. Last ned Enterprise Architect
+### 7. Installer Enterprise Architect
 
-**TODO:** Finn ut hvor installasjons-filen for Enterprise Architect skal leve, og oppdater readme.
-
-
-### 8. Installer Enterprise Architect
-
-Naviger til Nedlastinger-mappen og kjør installasjonsprogrammet:
+Installer EA med installeringsfilen som ligger i Github-repoet.
 
 ```bash
-cd ~/Downloads
-wine EASetup.exe
+wine easetupfull_x64.msi
 ```
 
-Erstatt `EASetup.exe` med det faktiske installasjonsprogrammets filnavn.
+Hvis det trengs en installasjonsnøkkel så bruker man nøkkelen `TWC6` som er nøkkelen for versjon 10 og senere av EA.
 
 Følg installasjonspromptene som du ville gjort på Windows.
 
-### 9. Kjør Enterprise Architect
+### 8. Kjør Enterprise Architect
 
 Etter installasjonen kan du kjøre EA med:
 
@@ -86,7 +92,7 @@ Etter installasjonen kan du kjøre EA med:
 wine ~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe
 ```
 
-**Merk:** `~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe` er default, hvis du har installert Enterprise Architect i en annen mappe, må du endre pathen til der hvor EA.exe ligger.
+**Merk:** `~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe` er default, hvis du har installert Enterprise Architect i en annen mappe i wine, må du endre filstien til der hvor EA.exe ligger.
 
 **Tips:** Opprett et alias i shell-profilen din for enklere tilgang:
 
@@ -99,7 +105,6 @@ source ~/.zshrc
 echo 'alias ea="wine ~/.wine/drive_c/Program\ Files/Sparx\ Systems/EA/EA.exe"' >> ~/.bashrc
 source ~/.bashrc
 ```
-
 
 Nå kan du bare skrive `ea` for å starte Enterprise Architect.
 
@@ -162,9 +167,14 @@ Nå kan du bare skrive `ea` for å starte Enterprise Architect.
 
 # Enterprise Architect Oppsettguide for Windows
 
-**Er dette korrekt?**
+### Kartverket windows maskin
+Hvis man har en kartverket windowsmaskin så kan Enterprise Architect lastes ned fra FIRMAPORTAL.
 
-Hent Enterprise Architect fra FIRMAPORTAL som er installert på alle Kartverkets Windows-maskiner.
+### Annen windows maskin
+
+Hvis man ikke har tilgang til FIRMAPORTAL, så kan man dobbeltklikke på installasjonsfilen `easetupfull_x64.msi` og følge promptene derfra.
+
+Hvis det trengs en installasjonsnøkkel så bruker man nøkkelen `TWC6` som er nøkkelen for versjon 10 og senere av EA.
 
 
 # Enterprise Architect lisens
