@@ -108,6 +108,34 @@ source ~/.bashrc
 
 Nå kan du bare skrive `ea` for å starte Enterprise Architect.
 
+### 9. Aktiver lisens
+
+Følg instruksjoner i [**Enterprise Architect lisens**](#enterprise-architect-lisens)
+
+### 10. Få tilgang til det lokale filsystemet inni Wine
+
+For at Enterprise Architect (eller andre Windows-programmer) skal kunne få tilgang til filer som ligger på vertssystemet (macOS eller Linux), må du lage en "disk" i Wine som peker til en lokal mappe på vertssystemet ditt som du vil gi Wine tilgang til.
+
+
+**Åpne Wine-konfigurasjonen:**
+
+   ```bash
+   winecfg
+   ```
+I vinduet som dukker opp, gå til fanen `Drives`.
+
+Klikk `Add...` for å legge til en ny disk (for eksempel `D:`).
+
+Under `Path:`, velg mappen du vil gjøre tilgjengelig for Enterprise Architect:
+   
+**Linux:**
+`/home/<brukernavn>/Documents/<filsti til matrikkel-arkitektur repoet>`
+
+**Macos:**
+`/Users/<brukernavn>/Documents/<filsti til matrikkel-arkitektur repoet>`
+   
+Klikk `Apply` og deretter `OK`.
+
 [//]: # (## Feilsøking)
 
 [//]: # ()
@@ -231,7 +259,7 @@ Filene som blir generert er binær-filer. Github vil ikke klare å resolve merge
 
 
 4. **Gjør endringer i Enterprise Architect**
-   - Åpne filen `analysemodell_nyttAPI.qea` i Enterprise Architect.
+   - Åpne filen `analysemodell_nyttAPI.qea` som ligger i root på dette repoet i Enterprise Architect.
 
       Når du ser mappestrukturen, så husk å endre pakkenavn til gjeldende versjonsnummer.
 
