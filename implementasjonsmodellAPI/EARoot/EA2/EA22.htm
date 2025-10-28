@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Implementasjonsmodell - Adresse</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Implementasjonsmodell - Adresse </h1>
+			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA24.htm">adresse</a> / <a href="EA22.htm">Implementasjonsmodell - Adresse</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA22.htm">Implementasjonsmodell - Adresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA25.htm">Adresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA26.htm">AdresseBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA27.htm">AdresseId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA28.htm">AdresseIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA29.htm">AdresseIdentList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA30.htm">AdresseIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA31.htm">AdressetilleggsnavnKildeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA32.htm">AdressetilleggsnavnKildeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA33.htm">AdressetilleggsnavnKildeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA34.htm">ArsakEndringStedsnavnKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA35.htm">ArsakEndringStedsnavnKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA36.htm">ArsakEndringStedsnavnKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA37.htm">Atkomst</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA38.htm">AtkomsttypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA39.htm">GenerellKretstypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA40.htm">GenerellKretstypeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA41.htm">GenerellKretstypeKodeIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA42.htm">GenerellKretstypeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA43.htm">Grunnkrets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA44.htm">GrunnkretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA45.htm">GrunnkretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA46.htm">Kirkesogn</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA47.htm">KirkesognId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA48.htm">KirkesognIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA49.htm">KommunalKrets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA50.htm">KommunalKretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA51.htm">KommunalKretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA52.htm">KommunalKretstypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA53.htm">KommunalKretstypeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA54.htm">KommunalKretstypeKodeIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA55.htm">KommuntalKretstypeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA56.htm">Krets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA57.htm">KretsBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA58.htm">Kretsflate</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA59.htm">KretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA60.htm">KretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA61.htm">KretsMedEnKommune</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA62.htm">KretsMedEnKommuneId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA63.htm">KretsMedEnKommuneIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA64.htm">KretsMedFlereKommuner</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA65.htm">KretsMedFlereKommunerId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA66.htm">KretsMedFlereKommunerIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA67.htm">KretstypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA68.htm">KretstypeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA69.htm">KretstypeKodeIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA70.htm">KretstypeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA71.htm">Matrikkeladresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA72.htm">MatrikkeladresseId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA73.htm">MatrikkeladresseIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA74.htm">MatrikkeladresseIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA75.htm">OpphavKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA76.htm">Postnummeromrade</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA77.htm">PostnummeromradeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA78.htm">PostnummeromradeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA79.htm">Tettsted</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA80.htm">TettstedId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA81.htm">TettstedIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA82.htm">Valgkrets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA83.htm">ValgkretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA84.htm">ValgkretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA85.htm">Veg</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA86.htm">Vegadresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA87.htm">VegadresseId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA88.htm">VegadresseIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA89.htm">VegadresseIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA90.htm">VegBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA91.htm">VegId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA92.htm">VegIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA93.htm">VegIdentList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA94.htm">VegIdList</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="PageBody">
+	<div class="diagram_image"> 
+<img src="EA23.png" usemap="#EA23" width="1521" height="1167" border="0" />
+
+<MAP NAME="EA23">
+<area shape="rect" coords="2977,1910,4018,2345" href="EA85.htm" target="_self">
+<area shape="rect" coords="3274,1127,3704,1261" href="../EA1/EA21.htm" target="_self">
+<area shape="rect" coords="43,52,714,189" href="../EA8/EA583.htm" target="_self">
+<area shape="rect" coords="1575,138,1962,310" href="EA38.htm" target="_self">
+<area shape="rect" coords="181,353,568,576" href="EA37.htm" target="_self">
+<area shape="rect" coords="908,43,1295,198" href="EA75.htm" target="_self">
+<area shape="rect" coords="2508,4220,3683,4655" href="EA34.htm" target="_self">
+<area shape="rect" coords="3790,654,4384,955" href="EA58.htm" target="_self">
+<area shape="rect" coords="6586,895,7167,1041" href="EA52.htm" target="_self">
+<area shape="rect" coords="5924,899,6483,1045" href="EA39.htm" target="_self">
+<area shape="rect" coords="959,2383,1932,2504" href="../EA11/EA703.htm" target="_self">
+<area shape="rect" coords="5662,1854,6703,1975" href="../EA11/EA672.htm" target="_self">
+<area shape="rect" coords="6264,1166,6883,1286" href="EA67.htm" target="_self">
+<area shape="rect" coords="95,4814,1282,4943" href="../EA11/EA631.htm" target="_self">
+<area shape="rect" coords="1790,637,2603,787" href="EA31.htm" target="_self">
+<area shape="rect" coords="2456,1471,3239,1592" href="../EA8/EA585.htm" target="_self">
+<area shape="rect" coords="159,1230,1200,1553" href="EA25.htm" target="_self">
+<area shape="rect" coords="2500,959,3282,1080" href="../EA16/EA877.htm" target="_self">
+<area shape="rect" coords="4268,1226,5197,1661" href="EA56.htm" target="_self">
+<area shape="rect" coords="3988,460,4461,581" href="EA49.htm" target="_self">
+<area shape="rect" coords="3820,2852,4483,2973" href="../EA12/EA719.htm" target="_self">
+<area shape="rect" coords="5842,469,6367,589" href="EA76.htm" target="_self">
+<area shape="rect" coords="3988,250,4461,370" href="EA43.htm" target="_self">
+<area shape="rect" coords="4840,120,5365,499" href="EA46.htm" target="_self">
+<area shape="rect" coords="5842,250,6346,370" href="EA79.htm" target="_self">
+<area shape="rect" coords="3988,43,4461,163" href="EA82.htm" target="_self">
+<area shape="rect" coords="1648,1953,2220,2276" href="EA86.htm" target="_self">
+<area shape="rect" coords="5300,714,5872,835" href="EA64.htm" target="_self">
+<area shape="rect" coords="908,1949,1540,2220" href="EA71.htm" target="_self">
+<area shape="rect" coords="2495,3661,3321,3782" href="../EA11/EA666.htm" target="_self">
+<area shape="rect" coords="959,2999,1932,3265" href="../EA11/EA702.htm" target="_self">
+<area shape="rect" coords="2822,3003,3605,3214" href="../EA11/EA707.htm" target="_self">
+<area shape="rect" coords="5692,2586,6733,2852" href="../EA11/EA671.htm" target="_self">
+<area shape="rect" coords="5756,4922,6539,5046" href="EA69.htm" target="_self">
+<area shape="rect" coords="6199,5403,6987,5524" href="EA54.htm" target="_self">
+<area shape="rect" coords="5347,5403,6135,5528" href="EA41.htm" target="_self">
+<area shape="rect" coords="4478,714,4982,835" href="EA61.htm" target="_self">
+<area shape="rect" coords="6272,4388,7004,4711" href="EA88.htm" target="_self">
+<area shape="rect" coords="4418,4108,5150,4384" href="EA92.htm" target="_self">
+<area shape="rect" coords="5489,4392,6221,4771" href="EA73.htm" target="_self">
+<area shape="rect" coords="5881,3829,6612,4040" href="EA28.htm" target="_self">
+<area shape="rect" coords="202,3597,1174,3807" href="../EA11/EA635.htm" target="_self">
+<area shape="rect" coords="4461,3579,5330,3790" href="../EA11/EA676.htm" target="_self">
+<area shape="rect" coords="168,4143,1209,4410" href="../EA11/EA630.htm" target="_self">
+</MAP>
+ </div>
+	<div class="ObjectTitle">Implementasjonsmodell - Adresse : Class diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:13 AM</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">9/3/2021 1:49:19 PM</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue">liehen</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue">3.0</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{7BA415D1-9233-4e63-8172-F09A2D666FC5}</td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">Hovedmodell for adresse og tilhørende klasser.&lt;br/&gt;</div>
+
+</div>
+
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

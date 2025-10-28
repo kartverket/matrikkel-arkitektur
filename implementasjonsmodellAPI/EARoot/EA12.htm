@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>kommunetillegg</title>
+<link href="../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> kommunetillegg </h1>
+			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA11/EA629.htm">kommunetillegg</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA11/EA627.htm">Implementasjonsmodell - Kommunal tillegsdel</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA630.htm">AdresseReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA631.htm">AdresseReferanseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA632.htm">AdresseReferanseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA633.htm">AdresseReferanseKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA634.htm">AdresseReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA635.htm">AdresseTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA636.htm">AnleggsprojeksjonsflateReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA637.htm">AnleggsprojeksjonsflateReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA638.htm">AnleggsprojeksjonsflateTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA639.htm">AnleggsprojeksjonsgrenseReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA640.htm">AnleggsprojeksjonsgrenseReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA641.htm">AnleggsprojeksjonsgrenseTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA642.htm">AnleggsprojeksjonspunktReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA643.htm">AnleggsprojeksjonspunktReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA644.htm">AnleggsprojeksjonspunktTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA645.htm">BrukAvGrunnKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA646.htm">BrukAvGrunnKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA647.htm">BrukAvGrunnKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA648.htm">BygningReferanseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA649.htm">BygningReferanseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA650.htm">BygningReferanseKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA651.htm">BygningsReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA652.htm">BygningsReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA653.htm">BygningTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA654.htm">EtatsKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA655.htm">EtatsKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA656.htm">EtatsKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA657.htm">FundamenteringsKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA658.htm">FundamenteringsKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA659.htm">FundamenteringsKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA660.htm">HorisontalBarekonstrKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA661.htm">HorisontalBarekonstrKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA662.htm">HorisontalBarekonstrKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA663.htm">KildePrivatVannforsyningKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA664.htm">KildePrivatVannforsyningKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA665.htm">KildePrivatVannforsyningKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA666.htm">Kommentar</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA667.htm">KommentarList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA668.htm">KommentartypeKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA669.htm">KommentartypeKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA670.htm">KommentartypeKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA671.htm">KretsReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA672.htm">KretsReferanseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA673.htm">KretsReferanseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA674.htm">KretsReferanseKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA675.htm">KretsReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA676.htm">KretsTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA677.htm">MaterialeIYtterveggKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA678.htm">MaterialeIYtterveggKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA679.htm">MaterialeIYtterveggKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA680.htm">MatrikkelenhetReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA681.htm">MatrikkelenhetReferanseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA682.htm">MatrikkelenhetReferanseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA683.htm">MatrikkelenhetReferanseKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA684.htm">MatrikkelenhetReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA685.htm">MatrikkelenhetTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA686.htm">PrivatKloakkRensingsKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA687.htm">PrivatKloakkRensingsKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA688.htm">PrivatKloakkRensingsKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA689.htm">Referanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA690.htm">RenovasjonsKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA691.htm">RenovasjonsKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA692.htm">RenovasjonsKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA693.htm">TeiggrensepunktReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA694.htm">TeiggrensepunktReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA695.htm">TeiggrensepunktTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA696.htm">TeiggrenseReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA697.htm">TeiggrenseReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA698.htm">TeiggrenseTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA699.htm">TeigReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA700.htm">TeigReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA701.htm">TeigTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA702.htm">VegReferanse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA703.htm">VegReferanseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA704.htm">VegReferanseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA705.htm">VegReferanseKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA706.htm">VegReferanseList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA707.htm">VegTillegg</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA708.htm">VertikalBarekonstrKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA709.htm">VertikalBarekonstrKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA11/EA710.htm">VertikalBarekonstrKodeIdList</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">kommunetillegg  : Public   Package</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:09 AM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">6/18/2015 9:28:33 AM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{BB384E21-DB51-4efc-B5CC-C2518003888D}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">Etter matrikkelforskriften § 3 tredje ledd kan matrikkelen i egen tilleggsdel inneholde tilsvarende opplysninger om matrikkelenhet, adresse og bygning til bruk i kommunal planlegging, saksbehandling og administrasjon, herunder opplyninger om renovasjon, privat vannforsyning, avløpsrensing, septiktank, nedgravd brenselstank og bygningsmaterialer samt referanse til sak eller arkiv.&lt;br/&gt;I kommunal tilleggsdel har kommunen anledning til å legge inn opplysninger iht. retningslinjer fra Statens kartverk. Opplysningene skal være til bruk i kommunal planlegging, saksbehandling og administrasjon.&lt;br/&gt;</div>
+
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

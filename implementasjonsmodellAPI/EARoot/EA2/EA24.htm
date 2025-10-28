@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>adresse</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> adresse </h1>
+			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA24.htm">adresse</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA22.htm">Implementasjonsmodell - Adresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA25.htm">Adresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA26.htm">AdresseBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA27.htm">AdresseId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA28.htm">AdresseIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA29.htm">AdresseIdentList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA30.htm">AdresseIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA31.htm">AdressetilleggsnavnKildeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA32.htm">AdressetilleggsnavnKildeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA33.htm">AdressetilleggsnavnKildeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA34.htm">ArsakEndringStedsnavnKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA35.htm">ArsakEndringStedsnavnKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA36.htm">ArsakEndringStedsnavnKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA37.htm">Atkomst</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA38.htm">AtkomsttypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA39.htm">GenerellKretstypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA40.htm">GenerellKretstypeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA41.htm">GenerellKretstypeKodeIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA42.htm">GenerellKretstypeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA43.htm">Grunnkrets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA44.htm">GrunnkretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA45.htm">GrunnkretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA46.htm">Kirkesogn</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA47.htm">KirkesognId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA48.htm">KirkesognIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA49.htm">KommunalKrets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA50.htm">KommunalKretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA51.htm">KommunalKretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA52.htm">KommunalKretstypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA53.htm">KommunalKretstypeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA54.htm">KommunalKretstypeKodeIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA55.htm">KommuntalKretstypeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA56.htm">Krets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA57.htm">KretsBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA58.htm">Kretsflate</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA59.htm">KretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA60.htm">KretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA61.htm">KretsMedEnKommune</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA62.htm">KretsMedEnKommuneId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA63.htm">KretsMedEnKommuneIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA64.htm">KretsMedFlereKommuner</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA65.htm">KretsMedFlereKommunerId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA66.htm">KretsMedFlereKommunerIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA67.htm">KretstypeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA68.htm">KretstypeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA69.htm">KretstypeKodeIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA70.htm">KretstypeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA71.htm">Matrikkeladresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA72.htm">MatrikkeladresseId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA73.htm">MatrikkeladresseIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA74.htm">MatrikkeladresseIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA75.htm">OpphavKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA76.htm">Postnummeromrade</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA77.htm">PostnummeromradeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA78.htm">PostnummeromradeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA79.htm">Tettsted</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA80.htm">TettstedId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA81.htm">TettstedIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA82.htm">Valgkrets</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA83.htm">ValgkretsId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA84.htm">ValgkretsIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA85.htm">Veg</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA86.htm">Vegadresse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA87.htm">VegadresseId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA88.htm">VegadresseIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA89.htm">VegadresseIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA90.htm">VegBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA91.htm">VegId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA92.htm">VegIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA93.htm">VegIdentList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA94.htm">VegIdList</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">adresse  : Public   Package</span>
+	<table border="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:05 AM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{F08E4B0E-66EA-4884-95ED-D2B4447D2AEF}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">pakke for opplysninger om adressedata i matrikkelen.&#160;&#160;Etter matrikkelforskriften § 49 skal&lt;br/&gt;adresser og skilt sørge for at alle på en lett og forståelig måte kan identifisere og finne fram til&lt;br/&gt;bygninger, atkomst til bygninger, boliger og andre objekter eller steder som det er viktig å finne fram til.&lt;br/&gt;Adressen skal også tjene som stedfestingsobjekt og nøkkel til aktuell informasjon i private og offentlige&lt;br/&gt;registre og arkiv.&lt;br/&gt;</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('Links') : toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+		<div class="ItemBody" id="LinksTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA17/EA927.htm">person</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA5/EA188.htm">bygning</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA16/EA787.htm">matrikkelenhet</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA8/EA549.htm">geometri</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA5/EA188.htm">bygning</a></td>
+					<td width="10%" class="TableRow" valign="top">Package</td>
+					<td width="10%" class="TableRow" valign="top">Dependency</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+ </div>
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+

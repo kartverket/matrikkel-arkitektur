@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Implementasjonsmodell - SEFRAK</title>
+<link href="../../css/ea.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
+<script>
+
+  function switchProjectProperties() {
+			if (document.getElementById("proj00").style.display == "none") {
+				document.getElementById("proj00").style.display = "revert";
+				document.getElementById("proj01").style.display = "revert";
+				document.getElementById("proj02").style.display = "revert";
+				document.getElementById("proj03").style.display = "revert";
+				document.getElementById("proj04").style.display = "revert";
+				document.getElementById("proj05").style.display = "revert";
+			} else {
+				document.getElementById("proj00").style.display = "none";
+				document.getElementById("proj01").style.display = "none";
+				document.getElementById("proj02").style.display = "none";
+				document.getElementById("proj03").style.display = "none";
+				document.getElementById("proj04").style.display = "none";
+				document.getElementById("proj05").style.display = "none";
+			}
+}
+
+		function switchAdvancedProperties(){
+
+			if (document.getElementById("adv00").style.display == "none") {;
+				document.getElementById("adv00").style.display = "revert";
+				document.getElementById("adv01").style.display = "revert";
+			} else {
+				document.getElementById("adv00").style.display = "none";
+				document.getElementById("adv01").style.display = "none";
+			}
+		}
+		function initPage()
+        {			
+			var divs = document.getElementsByClassName("ObjectDetailsNotes");
+			for (var j = 0; j < divs.length; j++) {
+				var tmpStr = divs[j].innerHTML;
+				tmpStr = tmpStr.replace(/#gt;/g, "&gt;");
+				tmpStr = tmpStr.replace(/#lt;/g, "&lt;");
+
+				tmpStr = tmpStr.replace(/&gt;/g, ">");
+				tmpStr = tmpStr.replace(/&lt;/g, "<");
+
+				divs[j].innerHTML = tmpStr;
+			}
+
+            if (document.getElementById('TableGroup') != null)
+            {
+                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+            }
+
+        }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
+</script>
+<style>
+
+</style>
+</head>
+<body onload="initPage();">
+<div class="section group" >
+
+		<div class="col span_2_of_2 header_frame">
+			<h1> Implementasjonsmodell - SEFRAK </h1>
+			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
+			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
+		</div>
+		<div class="col span_2_of_2 breadcrumb_frame">
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA967.htm">sefrak</a> / <a href="EA965.htm">Implementasjonsmodell - SEFRAK</a></p>
+		</div>
+			
+		<table class="contentmaintable">
+			<!-- <tfoot>
+				<tr>
+					<td>foot1</td>
+					<td>foot2</td>
+				</tr>
+			</tfoot> -->
+			<tbody>
+				<tr>
+					<td class="indexcell">
+						<div class="projectBrowserTitle">Project: </div>
+						<ul>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA965.htm">Implementasjonsmodell - SEFRAK</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA968.htm">Ajourforing</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA969.htm">AjourforingList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA970.htm">AntallSkorsteinerRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA971.htm">BygningerRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA972.htm">EndringsgradKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA973.htm">EndringsgradKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA974.htm">EndringsgradKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA975.htm">Endringsvurdering</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA976.htm">EndringsvurderingList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA977.htm">EtasjetallKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA978.htm">EtasjetallKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA979.htm">EtasjetallKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA980.htm">EtasjetallRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA981.htm">FasadeKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA982.htm">FasadeKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA983.htm">FasadeKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA984.htm">FasadeRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA985.htm">ForholdAndreHusKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA986.htm">ForholdAndreHusKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA987.htm">ForholdAndreHusKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA988.htm">ForholdAndreHusRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA989.htm">Fotohenvisning</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA990.htm">FotohenvisningerRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA991.htm">FotohenvisningList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA992.htm">FredningKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA993.htm">FredningKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA994.htm">FredningKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA995.htm">FredningRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA996.htm">FunksjonKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA997.htm">FunksjonKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA998.htm">FunksjonKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA999.htm">FunksjonRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1000.htm">FysiskMiljoKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1001.htm">FysiskMiljoKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1002.htm">FysiskMiljoKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1003.htm">FysiskMiljoRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1004.htm">HovedmalRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1005.htm">KjellerKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1006.htm">KjellerKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1007.htm">KjellerKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1008.htm">KjellerRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1009.htm">MiljoOvervakingRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1010.htm">NavnRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1011.htm">ObjektnummerRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1012.htm">OpprinneligSosialtMiljoKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1013.htm">OpprinneligSosialtMiljoKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1014.htm">OpprinneligSosialtMiljoKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1015.htm">OpprinneligSosialtMiljoRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1016.htm">RegistrertRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1017.htm">SefrakBubble</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1018.htm">SefrakIdent</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1019.htm">SefrakIdentList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1020.htm">SefrakKodelisteRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1021.htm">SefrakKodeRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1022.htm">SefrakMinne</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1023.htm">SefrakMinneId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1024.htm">SefrakMinneIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1025.htm">SefrakReferanse</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1026.htm">SefrakReferanseKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1027.htm">SefrakReferanseKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1028.htm">SefrakReferanseKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1029.htm">SefrakReferanseList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1030.htm">SefrakReferanserRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1031.htm">SefrakRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1032.htm">TakformKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1033.htm">TakformKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1034.htm">TakformKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1035.htm">TakformRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1036.htm">TaktekkingKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1037.htm">TaktekkingKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1038.htm">TaktekkingKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1039.htm">TaktekkingRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1040.htm">TiderRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1041.htm">TidRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1042.htm">TidsKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1043.htm">TidsKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1044.htm">TidsKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1045.htm">UnderbygningKonstrKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1046.htm">UnderbygningKonstrKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1047.htm">UnderbygningKonstrKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1048.htm">UnderbygningKonstrRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1049.htm">VerdivurderingKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1050.htm">VerdivurderingKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1051.htm">VerdivurderingKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1052.htm">VerdivurderingRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1053.htm">VernevedtakKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1054.htm">VernevedtakKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1055.htm">VernevedtakKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1056.htm">VernevedtakRubrikk</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1057.htm">YtterveggKode</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1058.htm">YtterveggKodeId</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1059.htm">YtterveggKodeIdList</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA1060.htm">YtterveggRubrikk</a></li>
+</ul>
+
+					</td>
+					<td class="contentcell"><div class="PageBody">
+	<div class="diagram_image"> 
+<img src="EA966.png" usemap="#EA966" width="1635" height="1084" border="0" />
+
+<MAP NAME="EA966">
+<area shape="rect" coords="4384,2134,4906,2281" href="../EA1/EA21.htm" target="_self">
+<area shape="rect" coords="2244,4739,2923,4885" href="EA985.htm" target="_self">
+<area shape="rect" coords="3251,4739,3711,4885" href="EA992.htm" target="_self">
+<area shape="rect" coords="3998,4739,4332,4885" href="EA1042.htm" target="_self">
+<area shape="rect" coords="4593,4739,5094,4885" href="EA977.htm" target="_self">
+<area shape="rect" coords="5386,4739,5939,4885" href="EA1053.htm" target="_self">
+<area shape="rect" coords="6252,4739,6878,4885" href="EA1049.htm" target="_self">
+<area shape="rect" coords="6456,590,7160,736" href="EA1026.htm" target="_self">
+<area shape="rect" coords="3601,1738,4238,1884" href="EA972.htm" target="_self">
+<area shape="rect" coords="3601,3580,4008,3726" href="../EA5/EA200.htm" target="_self">
+<area shape="rect" coords="3778,3220,4206,3408" href="../EA12/EA719.htm" target="_self">
+<area shape="rect" coords="1795,3580,2432,3726" href="EA971.htm" target="_self">
+<area shape="rect" coords="5203,1206,6977,3768" href="EA1022.htm" target="_self">
+<area shape="rect" coords="1795,3189,2740,3512" href="EA1011.htm" target="_self">
+<area shape="rect" coords="52,94,1106,350" href="EA1020.htm" target="_self">
+<area shape="rect" coords="819,2369,1352,2515" href="EA1040.htm" target="_self">
+<area shape="rect" coords="266,3074,1185,3465" href="EA1018.htm" target="_self">
+<area shape="rect" coords="1795,1237,2620,1383" href="EA1009.htm" target="_self">
+<area shape="rect" coords="3601,1049,4238,1373" href="EA975.htm" target="_self">
+<area shape="rect" coords="1795,590,2557,736" href="EA1030.htm" target="_self">
+<area shape="rect" coords="4467,501,5292,825" href="EA1025.htm" target="_self">
+<area shape="rect" coords="1795,2630,2620,2776" href="EA990.htm" target="_self">
+<area shape="rect" coords="3601,2474,4352,2933" href="EA989.htm" target="_self">
+<area shape="rect" coords="1795,2234,2526,2557" href="EA1016.htm" target="_self">
+<area shape="rect" coords="3601,1999,4279,2390" href="EA968.htm" target="_self">
+<area shape="rect" coords="1795,1477,2369,1800" href="EA1004.htm" target="_self">
+<area shape="rect" coords="6216,4086,6915,4232" href="EA1052.htm" target="_self">
+<area shape="rect" coords="3204,4086,3758,4232" href="EA995.htm" target="_self">
+<area shape="rect" coords="5349,4086,5975,4232" href="EA1056.htm" target="_self">
+<area shape="rect" coords="3998,4086,4332,4232" href="EA1041.htm" target="_self">
+<area shape="rect" coords="825,2161,1357,2307" href="EA1039.htm" target="_self">
+<area shape="rect" coords="793,1764,1326,1910" href="EA1035.htm" target="_self">
+<area shape="rect" coords="819,1967,1352,2114" href="EA984.htm" target="_self">
+<area shape="rect" coords="788,1576,1320,1722" href="EA1060.htm" target="_self">
+<area shape="rect" coords="778,1373,1310,1519" href="EA1008.htm" target="_self">
+<area shape="rect" coords="762,1179,1587,1326" href="EA1048.htm" target="_self">
+<area shape="rect" coords="752,976,1326,1122" href="EA1003.htm" target="_self">
+<area shape="rect" coords="2202,4086,2964,4232" href="EA988.htm" target="_self">
+<area shape="rect" coords="731,772,1649,919" href="EA1015.htm" target="_self">
+<area shape="rect" coords="736,585,1310,731" href="EA999.htm" target="_self">
+<area shape="rect" coords="1795,2865,2594,3121" href="EA970.htm" target="_self">
+<area shape="rect" coords="4577,4086,5109,4232" href="EA980.htm" target="_self">
+<area shape="rect" coords="1232,3893,2030,4039" href="EA1021.htm" target="_self">
+<area shape="rect" coords="1795,1884,2281,2140" href="EA1010.htm" target="_self">
+<area shape="rect" coords="1253,52,2171,376" href="EA1031.htm" target="_self">
+</MAP>
+ </div>
+	<div class="ObjectTitle">Implementasjonsmodell - SEFRAK : Class diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:13 AM</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">5/19/2020 9:48:29 AM</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue">liehen</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{4919AFDC-DB95-4766-AC95-EAAAC41A4177}</td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">implementasjonsmodell for SEFRAK.&lt;br/&gt;</div>
+
+</div>
+
+ </td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+</body>
+</html>
+
