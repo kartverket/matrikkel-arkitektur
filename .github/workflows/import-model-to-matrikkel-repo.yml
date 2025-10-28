@@ -5,8 +5,13 @@ on:
     types:
       - closed
     paths:
-      - 'implementasjonsmodellAPI/**'  # Only trigger when files in 'something/' change
-  workflow_dispatch:  # Allow manual trigger
+      - 'implementasjonsmodellAPI/**'  # Trigges kun ved endringer på implementasjonsmodellen
+  workflow_dispatch:
+    inputs:
+      branch_name:
+        description: 'Navn på branch som skal opprettes i matrikkel repoet'
+        required: false
+        type: string
 
 env:
   ORGANIZATION: kartverket
@@ -61,7 +66,11 @@ jobs:
             echo "EOF" >> $GITHUB_ENV
             echo "SOURCE_PR=#${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
           else
-            echo "BRANCH_NAME=Manuell-oppdatering-av-implementasjonsmodell-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
+            if [ -n "${{ inputs.branch_name }}" ]; then
+              echo "BRANCH_NAME=${{ inputs.branch_name }}" >> $GITHUB_ENV
+            else
+              echo "BRANCH_NAME=Manuell-oppdatering-av-implementasjonsmodell-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
+            fi
             echo "PR_TITLE<<EOF" >> $GITHUB_ENV
             echo "Oppdatering av implementasjonsmodell" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
@@ -134,7 +143,7 @@ jobs:
           
           **Source Repository:** ${{ github.repository }}
           **Source PR:** $SOURCE_PR
-          **Merged Commit:** ${{ github.sha }}
+          **Source Commit:** ${{ github.sha }}
           **Triggered by:** ${{ github.actor }}
           **Workflow Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           EOF
