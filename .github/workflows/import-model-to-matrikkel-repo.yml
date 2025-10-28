@@ -14,7 +14,6 @@ env:
   SOURCE_DIR: implementasjonsmodellAPI
   TARGET_REPO: matrikkel
   TARGET_DIR: server/eksternapi/api/v1/matrikkelapi-v1-endpoints/src/webapp/webapp/dokumentasjon/implementasjonsmodellAPI
-  OCTO_STS_IDENTITY: matrikkel
 
 jobs:
   copy-and-create-pr:
@@ -40,7 +39,7 @@ jobs:
         uses: octo-sts/action@v1.0.1
         with:
           scope: ${{ env.ORGANIZATION }}/${{ env.TARGET_REPO }}
-          identity: ${{ env.OCTO_STS_IDENTITY }}
+          identity: ${{ env.SOURCE_REPO }}
 
       - name: Checkout target repository
         uses: actions/checkout@v4
