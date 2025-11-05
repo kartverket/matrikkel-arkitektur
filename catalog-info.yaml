@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: matrikkel-arkitektur
 spec:
-  type: library
+  type: documentation
   owner: heimdall
   lifecycle: production
   system: matrikkel
