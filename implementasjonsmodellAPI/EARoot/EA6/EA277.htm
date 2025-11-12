@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>endringslogg::AvtaleGrensePunktfesteEndring</title>
+<title>endringslogg::BruksenhetEndring</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> endringslogg::AvtaleGrensePunktfesteEndring </h1>
+			<h1> endringslogg::BruksenhetEndring </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA263.htm">endringslogg</a> / <a href="EA277.htm">AvtaleGrensePunktfesteEndring</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA263.htm">endringslogg</a> / <a href="EA277.htm">BruksenhetEndring</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -115,15 +89,15 @@
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">AvtaleGrensePunktfesteEndring  : Public   Class</span>
+	<span class="ObjectTitle">BruksenhetEndring  : Public   Class</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">1/6/2021 2:59:33 PM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">1/6/2021 3:00:12 PM</td>
+			<td class="ObjectDetailsValue">08.07.2013 10:36:32</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,14 +142,14 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{6A859F9C-360F-4eb2-9A62-DC862CE224E1}</td>
+			<td class="ObjectDetailsValue">{EAFB9D45-731C-45ea-9E52-16A6395A48F5}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="EA261.htm">Implementasjonsmodell - Endringslogg</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Endring av AvtaleGrensePunktfeste.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Endring av Bruksenhet.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -193,7 +167,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA824.htm">AvtaleGrensePunktfesteId</a><br />
+						<a href="../EA5/EA195.htm">BruksenhetId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -207,8 +181,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1134" /></button>Details:
-							<div id="detailsDIVLink1134" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1139" /></button>Details:
+							<div id="detailsDIVLink1139" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -216,7 +190,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA822.htm">AvtaleGrensePunktfeste</a><br />
+						<a href="../EA5/EA193.htm">Bruksenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -224,14 +198,14 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> AvtaleGrensePunktfesteId<br />
+						<strong>Name:</strong> BruksenhetId<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1135" /></button>Details:
-							<div id="detailsDIVLink1135" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1140" /></button>Details:
+							<div id="detailsDIVLink1140" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -280,7 +254,7 @@
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA292.htm">Endring</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA283.htm">Endring</a></td>
 					<td width="10%" class="TableRow" valign="top">Class</td>
 					<td width="10%" class="TableRow" valign="top">Generalization</td>
 					<td width="10%" class="TableRow" valign="top">To</td>

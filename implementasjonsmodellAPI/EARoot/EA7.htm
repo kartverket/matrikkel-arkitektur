@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA6/EA263.htm">endringslogg</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA6/EA263.htm">endringslogg</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -114,106 +88,75 @@
 <li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA264.htm">AdresseEndring</a></li>
 <li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA265.htm">AnleggsprojeksjonsflateEndring</a></li>
 <li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA266.htm">AnleggsprojeksjonsflateEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA267.htm">AnleggsprojeksjonsflateEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA268.htm">AnleggsprojeksjonsgrenseEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA269.htm">AnleggsprojeksjonsgrenseEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA270.htm">AnleggsprojeksjonsgrenseEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA271.htm">AnleggsprojeksjonspunktEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA272.htm">AnleggsprojeksjonspunktEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA273.htm">AnleggsprojeksjonspunktEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA274.htm">AnnenPersonEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA275.htm">AnnenPersonEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA276.htm">AnnenPersonEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA277.htm">AvtaleGrensePunktfesteEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA278.htm">AvtaleGrensePunktfesteEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA279.htm">AvtaleGrensePunktfesteEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA280.htm">AvtaleStedbundenRettighetEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA281.htm">AvtaleStedbundenRettighetEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA282.htm">AvtaleStedbundenRettighetEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA283.htm">BruksenhetEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA284.htm">BruksenhetEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA285.htm">BruksenhetEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA286.htm">BygningEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA287.htm">BygningEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA288.htm">BygningEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA289.htm">BygningsendringEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA290.htm">BygningsendringEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA291.htm">BygningsendringEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA292.htm">Endring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA293.htm">EndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA294.htm">EndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA295.htm">EndringsBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA296.htm">EndringsKildeKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA297.htm">EndringsKildeKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA298.htm">EndringsKildeKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA299.htm">EndringsType</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA300.htm">EndringsTypeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA301.htm">ForretningsEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA302.htm">ForretningsEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA303.htm">ForretningsEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA304.htm">FylkeEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA305.htm">FylkeEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA306.htm">FylkeEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA307.htm">FysiskPersonEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA308.htm">FysiskPersonEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA309.htm">FysiskPersonEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA310.htm">GrunnervervEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA311.htm">GrunnervervEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA312.htm">GrunnervervEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA313.htm">GrunnforurensingEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA314.htm">GrunnforurensingEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA315.htm">GrunnforurensingEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA316.htm">JordskifteKrevdEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA317.htm">JordskifteKrevdEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA318.htm">JordskifteKrevdEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA319.htm">JuridiskPersonEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA320.htm">JuridiskPersonEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA321.htm">JuridiskPersonEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA322.htm">KlageEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA323.htm">KlageEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA324.htm">KlageEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA325.htm">KodeEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA326.htm">KodeEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA327.htm">KodeEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA328.htm">KommuneEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA329.htm">KommuneEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA330.htm">KommuneEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA331.htm">KretsEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA332.htm">KretsEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA333.htm">KretsEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA334.htm">KretsflateEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA335.htm">KulturminneEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA336.htm">KulturminneEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA337.htm">KulturminneEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA338.htm">MatrikkeladresseEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA339.htm">MatrikkeladresseEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA340.htm">MatrikkeladresseEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA341.htm">MatrikkelenhetEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA342.htm">MatrikkelenhetEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA343.htm">MatrikkelenhetEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA344.htm">PersonEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA345.htm">PersonEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA346.htm">SamlaFastEiendomEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA347.htm">SamlaFastEiendomEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA348.htm">SamlaFastEiendomEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA349.htm">SefrakMinneEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA350.htm">SefrakMinneEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA351.htm">SefrakMinneEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA352.htm">TeigEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA353.htm">TeigEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA354.htm">TeigEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA355.htm">TeiggrenseEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA356.htm">TeiggrenseEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA357.htm">TeiggrenseEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA358.htm">TeiggrensepunktEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA359.htm">TeiggrensepunktEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA360.htm">TeiggrensepunktEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA361.htm">VegadresseEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA362.htm">VegadresseEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA363.htm">VegadresseEndringIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA364.htm">VegEndring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA365.htm">VegEndringId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA366.htm">VegEndringIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA267.htm">AnleggsprojeksjonsgrenseEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA268.htm">AnleggsprojeksjonsgrenseEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA269.htm">AnleggsprojeksjonspunktEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA270.htm">AnleggsprojeksjonspunktEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA271.htm">AnnenPersonEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA272.htm">AnnenPersonEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA273.htm">AvtaleGrensePunktfesteEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA274.htm">AvtaleGrensePunktfesteEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA275.htm">AvtaleStedbundenRettighetEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA276.htm">AvtaleStedbundenRettighetEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA277.htm">BruksenhetEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA278.htm">BruksenhetEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA279.htm">BygningEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA280.htm">BygningEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA281.htm">BygningsendringEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA282.htm">BygningsendringEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA283.htm">Endring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA284.htm">EndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA285.htm">EndringsBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA286.htm">EndringsKildeKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA287.htm">EndringsKildeKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA288.htm">EndringsKildeKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA289.htm">EndringsType</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA290.htm">EndringsTypeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA291.htm">ForretningsEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA292.htm">ForretningsEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA293.htm">FylkeEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA294.htm">FylkeEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA295.htm">FysiskPersonEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA296.htm">FysiskPersonEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA297.htm">GrunnervervEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA298.htm">GrunnervervEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA299.htm">GrunnforurensingEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA300.htm">GrunnforurensingEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA301.htm">JordskifteKrevdEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA302.htm">JordskifteKrevdEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA303.htm">JuridiskPersonEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA304.htm">JuridiskPersonEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA305.htm">KlageEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA306.htm">KlageEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA307.htm">KodeEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA308.htm">KodeEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA309.htm">KommuneEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA310.htm">KommuneEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA311.htm">KretsEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA312.htm">KretsEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA313.htm">KretsflateEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA314.htm">KulturminneEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA315.htm">KulturminneEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA316.htm">MatrikkeladresseEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA317.htm">MatrikkeladresseEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA318.htm">MatrikkelenhetEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA319.htm">MatrikkelenhetEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA320.htm">PersonEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA321.htm">PersonEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA322.htm">SamlaFastEiendomEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA323.htm">SamlaFastEiendomEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA324.htm">SefrakInfoEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA325.htm">SefrakInfoEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA326.htm">TeigEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA327.htm">TeigEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA328.htm">TeiggrenseEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA329.htm">TeiggrenseEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA330.htm">TeiggrensepunktEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA331.htm">TeiggrensepunktEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA332.htm">VegadresseEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA333.htm">VegadresseEndringId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA334.htm">VegEndring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA6/EA335.htm">VegEndringId</a></li>
 </ul>
 
 					</td>
@@ -223,11 +166,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:08</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>

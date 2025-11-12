@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA102.htm">Byggesakdata</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA102.htm">Byggesakdata</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">2/19/2020 9:57:12 PM</td>
+			<td width="85%" class="ObjectDetailsValue">19.02.2020 21:57:12</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/19/2020 9:57:12 PM</td>
+			<td class="ObjectDetailsValue">19.02.2020 21:57:12</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -193,7 +167,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D950104C-203B-4791-8E2E-62164235A391}"></a>bebygdAreal
+					bebygdAreal
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -203,14 +177,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{2440B720-40A3-4796-BA72-34B345379B56}"></a>bygningsnummer
+					bygningsnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -220,14 +194,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{42E7DEAF-5598-45e4-AB01-B948F813B3A5}"></a>harHeis
+					harHeis
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -237,14 +211,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{26E604BE-9B40-4b4e-B6F6-479F48CC310F}"></a>tittel
+					tittel
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -254,7 +228,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
@@ -271,7 +245,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA249.htm">«enum» NaringsgruppeKode</a><br />
+						<a href="../EA5/EA258.htm">«enum» VannforsyningsKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -294,7 +268,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA190.htm">«enum» AvlopsKode</a><br />
+						<a href="../EA5/EA249.htm">«enum» NaringsgruppeKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -340,7 +314,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA228.htm">«enum» EnergikildeKode</a><br />
+						<a href="../EA17/EA919.htm">Person</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -363,7 +337,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA950.htm">Person</a><br />
+						<a href="../EA17/EA919.htm">Person</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -386,7 +360,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA258.htm">«enum» VannforsyningsKode</a><br />
+						<a href="../EA5/EA190.htm">«enum» AvlopsKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -409,7 +383,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA950.htm">Person</a><br />
+						<a href="../EA5/EA228.htm">«enum» EnergikildeKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">

@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA18/EA967.htm">sefrak</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA18/EA936.htm">sefrak</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,100 +84,11 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA18/EA965.htm">Implementasjonsmodell - SEFRAK</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA968.htm">Ajourforing</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA969.htm">AjourforingList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA970.htm">AntallSkorsteinerRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA971.htm">BygningerRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA972.htm">EndringsgradKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA973.htm">EndringsgradKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA974.htm">EndringsgradKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA975.htm">Endringsvurdering</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA976.htm">EndringsvurderingList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA977.htm">EtasjetallKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA978.htm">EtasjetallKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA979.htm">EtasjetallKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA980.htm">EtasjetallRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA981.htm">FasadeKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA982.htm">FasadeKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA983.htm">FasadeKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA984.htm">FasadeRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA985.htm">ForholdAndreHusKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA986.htm">ForholdAndreHusKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA987.htm">ForholdAndreHusKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA988.htm">ForholdAndreHusRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA989.htm">Fotohenvisning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA990.htm">FotohenvisningerRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA991.htm">FotohenvisningList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA992.htm">FredningKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA993.htm">FredningKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA994.htm">FredningKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA995.htm">FredningRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA996.htm">FunksjonKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA997.htm">FunksjonKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA998.htm">FunksjonKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA999.htm">FunksjonRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1000.htm">FysiskMiljoKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1001.htm">FysiskMiljoKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1002.htm">FysiskMiljoKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1003.htm">FysiskMiljoRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1004.htm">HovedmalRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1005.htm">KjellerKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1006.htm">KjellerKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1007.htm">KjellerKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1008.htm">KjellerRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1009.htm">MiljoOvervakingRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1010.htm">NavnRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1011.htm">ObjektnummerRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1012.htm">OpprinneligSosialtMiljoKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1013.htm">OpprinneligSosialtMiljoKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1014.htm">OpprinneligSosialtMiljoKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1015.htm">OpprinneligSosialtMiljoRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1016.htm">RegistrertRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1017.htm">SefrakBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1018.htm">SefrakIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1019.htm">SefrakIdentList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1020.htm">SefrakKodelisteRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1021.htm">SefrakKodeRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1022.htm">SefrakMinne</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1023.htm">SefrakMinneId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1024.htm">SefrakMinneIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1025.htm">SefrakReferanse</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1026.htm">SefrakReferanseKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1027.htm">SefrakReferanseKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1028.htm">SefrakReferanseKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1029.htm">SefrakReferanseList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1030.htm">SefrakReferanserRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1031.htm">SefrakRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1032.htm">TakformKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1033.htm">TakformKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1034.htm">TakformKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1035.htm">TakformRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1036.htm">TaktekkingKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1037.htm">TaktekkingKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1038.htm">TaktekkingKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1039.htm">TaktekkingRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1040.htm">TiderRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1041.htm">TidRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1042.htm">TidsKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1043.htm">TidsKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1044.htm">TidsKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1045.htm">UnderbygningKonstrKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1046.htm">UnderbygningKonstrKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1047.htm">UnderbygningKonstrKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1048.htm">UnderbygningKonstrRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1049.htm">VerdivurderingKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1050.htm">VerdivurderingKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1051.htm">VerdivurderingKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1052.htm">VerdivurderingRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1053.htm">VernevedtakKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1054.htm">VernevedtakKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1055.htm">VernevedtakKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1056.htm">VernevedtakRubrikk</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1057.htm">YtterveggKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1058.htm">YtterveggKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1059.htm">YtterveggKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA1060.htm">YtterveggRubrikk</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA18/EA934.htm">Implementasjonsmodell - SEFRAK</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA938.htm">SefrakBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA939.htm">SefrakInfo</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA940.htm">SefrakInfoId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA937.htm">SefrakInfoIdList</a></li>
 </ul>
 
 					</td>
@@ -213,11 +98,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:11 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:11</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>

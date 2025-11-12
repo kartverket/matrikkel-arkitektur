@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Implementasjonsmodell - Matrikkelenhet</title>
+<title>matrikkelenhet::ArealkildeKodeId</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Implementasjonsmodell - Matrikkelenhet </h1>
+			<h1> matrikkelenhet::ArealkildeKodeId </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA787.htm">matrikkelenhet</a> / <a href="EA785.htm">Implementasjonsmodell - Matrikkelenhet</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA785.htm">ArealkildeKodeId</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,239 +84,91 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA785.htm">Implementasjonsmodell - Matrikkelenhet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA788.htm">AdministrativGrenseKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA789.htm">AdministrativGrenseKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA790.htm">Andel</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA791.htm">Anleggseiendom</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA792.htm">AnleggseiendomId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA793.htm">AnleggseiendomIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA794.htm">Anleggsprojeksjonsflate</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA795.htm">AnleggsprojeksjonsflateBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA796.htm">AnleggsprojeksjonsflateForMatrikkelenhet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA797.htm">AnleggsprojeksjonsflateForMatrikkelenhetList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA798.htm">AnleggsprojeksjonsflateId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA799.htm">AnleggsprojeksjonsflateIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA800.htm">Anleggsprojeksjonsgrense</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA801.htm">AnleggsprojeksjonsgrenseBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA802.htm">AnleggsprojeksjonsgrenseId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA803.htm">AnleggsprojeksjonsgrenseIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA804.htm">Anleggsprojeksjonspunkt</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA805.htm">AnleggsprojeksjonspunktBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA806.htm">AnleggsprojeksjonspunktId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA807.htm">AnleggsprojeksjonspunktIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA808.htm">AnleggstypeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA809.htm">AnleggstypeKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA810.htm">AnnenMatrikkelenhet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA811.htm">AnnenMatrikkelenhetId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA812.htm">AnnenMatrikkelenhetIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA813.htm">AnnenMatrikkelenhetsKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA814.htm">AnnenMatrikkelenhetsKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA815.htm">ArealkildeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA816.htm">ArealkildeKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA817.htm">ArealmerknadKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA818.htm">ArealmerknadKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA819.htm">ArealmerknadKodeIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA820.htm">ArsakTilFeilrettingKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA821.htm">ArsakTilFeilrettingKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA822.htm">AvtaleGrensePunktfeste</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA823.htm">AvtaleGrensePunktfesteBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA824.htm">AvtaleGrensePunktfesteId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA825.htm">AvtaleGrensePunktfesteIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA826.htm">AvtaleStedbundenRettighet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA827.htm">AvtaleStedbundenRettighetBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA828.htm">AvtaleStedbundenRettighetId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA829.htm">AvtaleStedbundenRettighetIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA830.htm">Eierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA831.htm">EierforholdKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA832.htm">EierforholdKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA833.htm">EierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA834.htm">Festegrunn</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA835.htm">FestegrunnId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA836.htm">FestegrunnIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA837.htm">FormalSeksjonKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA838.htm">FormalSeksjonKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA839.htm">ForretningsklasseKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA840.htm">ForretningstypeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA841.htm">ForretningstypeKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA842.htm">GrensemerkeNedsattIKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA843.htm">GrensemerkeNedsattIKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA844.htm">GrensepunkttypeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA845.htm">GrensepunkttypeKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA846.htm">Grunnboka</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA847.htm">Grunneiendom</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA848.htm">GrunneiendomId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA849.htm">GrunneiendomIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA850.htm">Grunnerverv</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA851.htm">GrunnervervBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA852.htm">GrunnervervId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA853.htm">GrunnervervIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA854.htm">HjelpelinjeTypeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA855.htm">HjelpelinjetypeKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA856.htm">IkkeTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA857.htm">IkkeTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA858.htm">Jordsameie</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA859.htm">JordsameieId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA860.htm">JordsameieIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA861.htm">JordskifteKrevd</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA862.htm">JordskifteKrevdBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA863.htm">JordskifteKrevdId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA864.htm">JordskifteKrevdIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA865.htm">JuridiskPersonIkkeTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA866.htm">JuridiskPersonIkkeTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA867.htm">JuridiskPersonTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA868.htm">JuridiskPersonTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA869.htm">Klage</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA870.htm">KlageBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA871.htm">KlageId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA872.htm">KlageIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA873.htm">Kontaktinstans</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA874.htm">KontaktinstansList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA875.htm">MatrenhForSamlaFastEdm</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA876.htm">MatrenhForSamlaFastEdmList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA877.htm">Matrikkelenhet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA878.htm">MatrikkelenhetBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA879.htm">MatrikkelenhetId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA880.htm">MatrikkelenhetIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA881.htm">MatrikkelenhetIdentList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA882.htm">MatrikkelenhetIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA883.htm">MatrikkelenhetIkkeTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA884.htm">MatrikkelenhetIkkeTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA885.htm">MatrikkelenhetstypeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA886.htm">MatrikkelenhetstypeKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA887.htm">MatrikkelenhetTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA888.htm">MatrikkelenhetTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA889.htm">Matrikkelnummer</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA890.htm">Medium</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA891.htm">MediumId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA892.htm">PersonIkkeTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA893.htm">PersonIkkeTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA894.htm">PersonTinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA895.htm">PersonTinglystEierforholdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA896.htm">RettsstiftelseForStedbundenRettighet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA897.htm">RolleIForretningKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA898.htm">RolleIForretningKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA899.htm">SamlaFastEiendom</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA900.htm">SamlaFastEiendomBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA901.htm">SamlaFastEiendomId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA902.htm">SamlaFastEiendomIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA903.htm">Seksjon</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA904.htm">SeksjonId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA905.htm">SeksjonIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA906.htm">Teig</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA907.htm">TeigBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA908.htm">TeigForMatrikkelenhet</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA909.htm">TeigForMatrikkelenhetList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA910.htm">Teiggrense</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA911.htm">TeiggrenseId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA912.htm">TeiggrenseIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA913.htm">Teiggrensepunkt</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA914.htm">TeiggrensepunktId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA915.htm">TeiggrensepunktIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA916.htm">TeigId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA917.htm">TeigIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA918.htm">TeigIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA919.htm">TerrengdetaljKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA920.htm">TerrengdetaljKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA921.htm">TinglysingsstatusKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA922.htm">TinglysingsstatusKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA923.htm">TinglystEierforhold</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA924.htm">TinglystEierforholdList</a></li>
-</ul>
+<a href="EA756.htm">matrikkelenhet</a></ul>
 
 					</td>
-					<td class="contentcell"><div class="PageBody">
-	<div class="diagram_image"> 
-<img src="EA786.png" usemap="#EA786" width="1502" height="1183" border="0" />
-
-<MAP NAME="EA786">
-<area shape="rect" coords="30,2358,693,2559" href="EA896.htm" target="_self">
-<area shape="rect" coords="1065,2469,1803,2772" href="EA826.htm" target="_self">
-<area shape="rect" coords="1074,2157,1803,2412" href="EA822.htm" target="_self">
-<area shape="rect" coords="2049,894,2349,978" href="../EA1/EA21.htm" target="_self">
-<area shape="rect" coords="5898,474,6324,738" href="EA880.htm" target="_self">
-<area shape="rect" coords="6630,501,7068,711" href="../EA12/EA722.htm" target="_self">
-<area shape="rect" coords="5451,60,5973,144" href="EA867.htm" target="_self">
-<area shape="rect" coords="1725,69,2310,153" href="EA865.htm" target="_self">
-<area shape="rect" coords="4878,3648,5340,3735" href="EA885.htm" target="_self">
-<area shape="rect" coords="4407,3648,4737,3834" href="EA790.htm" target="_self">
-<area shape="rect" coords="4407,4266,4887,4353" href="EA813.htm" target="_self">
-<area shape="rect" coords="4407,4566,4752,4653" href="EA808.htm" target="_self">
-<area shape="rect" coords="2934,357,3264,444" href="EA831.htm" target="_self">
-<area shape="rect" coords="2430,4047,2856,4134" href="EA837.htm" target="_self">
-<area shape="rect" coords="4770,3228,5115,3357" href="../EA11/EA645.htm" target="_self">
-<area shape="rect" coords="6132,3048,6654,3177" href="../EA11/EA681.htm" target="_self">
-<area shape="rect" coords="4770,2265,5112,2352" href="EA815.htm" target="_self">
-<area shape="rect" coords="5421,3228,5901,3357" href="../EA11/EA680.htm" target="_self">
-<area shape="rect" coords="2502,1596,3750,3120" href="EA877.htm" target="_self">
-<area shape="rect" coords="2394,4467,3048,4692" href="EA903.htm" target="_self">
-<area shape="rect" coords="4587,1803,5241,1890" href="EA887.htm" target="_self">
-<area shape="rect" coords="2562,1158,3198,1245" href="EA883.htm" target="_self">
-<area shape="rect" coords="1068,3156,1794,3342" href="EA875.htm" target="_self">
-<area shape="rect" coords="1095,1521,1803,1746" href="EA850.htm" target="_self">
-<area shape="rect" coords="1077,1845,1806,2067" href="EA861.htm" target="_self">
-<area shape="rect" coords="1068,2826,1797,3090" href="EA869.htm" target="_self">
-<area shape="rect" coords="3315,3357,3753,3543" href="EA834.htm" target="_self">
-<area shape="rect" coords="1068,3588,1797,3810" href="EA899.htm" target="_self">
-<area shape="rect" coords="1290,882,1608,990" href="../EA17/EA940.htm" target="_self">
-<area shape="rect" coords="2589,5085,3654,5301" href="EA796.htm" target="_self">
-<area shape="rect" coords="4617,5151,5103,5238" href="EA794.htm" target="_self">
-<area shape="rect" coords="3315,4506,3753,4653" href="EA791.htm" target="_self">
-<area shape="rect" coords="6123,2715,6645,2799" href="../EA11/EA666.htm" target="_self">
-<area shape="rect" coords="3192,759,3522,984" href="EA830.htm" target="_self">
-<area shape="rect" coords="5838,3633,6399,3819" href="../EA11/EA689.htm" target="_self">
-<area shape="rect" coords="4791,1986,5241,2202" href="EA908.htm" target="_self">
-<area shape="rect" coords="5682,1944,6321,2325" href="EA906.htm" target="_self">
-<area shape="rect" coords="2592,66,3114,153" href="EA892.htm" target="_self">
-<area shape="rect" coords="3564,60,3750,168" href="../EA17/EA950.htm" target="_self">
-<area shape="rect" coords="4800,30,5208,177" href="EA894.htm" target="_self">
-<area shape="rect" coords="3492,432,3876,618" href="EA873.htm" target="_self">
-<area shape="rect" coords="4512,891,4752,1005" href="../EA12/EA719.htm" target="_self">
-<area shape="rect" coords="4344,1413,4920,1677" href="EA889.htm" target="_self">
-<area shape="rect" coords="4770,2607,5502,2910" href="../EA11/EA685.htm" target="_self">
-<area shape="rect" coords="2610,729,3090,999" href="EA856.htm" target="_self">
-<area shape="rect" coords="4800,729,5184,915" href="EA923.htm" target="_self">
-<area shape="rect" coords="5451,780,5748,867" href="EA846.htm" target="_self">
-<area shape="rect" coords="3315,3909,3825,4134" href="EA858.htm" target="_self">
-<area shape="rect" coords="3315,4236,3801,4383" href="EA810.htm" target="_self">
-<area shape="rect" coords="3315,3648,3690,3795" href="EA847.htm" target="_self">
-</MAP>
- </div>
-	<div class="ObjectTitle">Implementasjonsmodell - Matrikkelenhet : Class diagram</div>
-	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">ArealkildeKodeId  : Public   Class</span>
+	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 12:00:00 AM</td>
+			<td width="85%" class="ObjectDetailsValue">17.06.2015 15:08:52</td>
 		</tr>
 		<tr>
-			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">2/11/2021 11:29:56 AM</td>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">17.06.2015 15:08:52</td>
 		</tr>
-		<tr style="padding-top: 10px;">
-			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
-			<td width="85%" class="ObjectDetailsValue"></td>			
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
-			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td width="85%" class="ObjectDetailsValue">liehen</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">foring</td>
 		</tr>
 		<tr id="proj01" style="display: none;">
-			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
-			<td width="85%" class="ObjectDetailsValue"></td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
-			<td width="85%" class="ObjectDetailsValue"></td>			
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
-			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
-			<td width="85%" class="ObjectDetailsValue">{68647775-807E-4190-BECB-A4D657A026D5}</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{89529AC7-4B60-4a76-9B74-EBEAC9FB2ADE}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Hovedmodell for matrikkelenhet og tilhørende klasser.&lt;br/&gt;</div>
+	
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
 
-</div>
 
+			</table>
+		</div>	</div>
+ </div>
  </td>
 				</tr>
 			</tbody>

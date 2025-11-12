@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA24.htm">adresse</a> / <a href="EA85.htm">Veg</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA24.htm">adresse</a> / <a href="EA85.htm">Veg</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:05 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:05</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">5/22/2019 12:28:39 PM</td>
+			<td class="ObjectDetailsValue">22.05.2019 12:28:39</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -172,7 +146,7 @@
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a>, <a href="../EA7/EA367.htm">Implementasjonsmodell - Forretning</a>, <a href="../EA11/EA627.htm">Implementasjonsmodell - Kommunal tillegsdel</a></td>
+			<td class="ObjectDetailsValue"><a href="EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a>, <a href="../EA7/EA336.htm">Implementasjonsmodell - Forretning</a>, <a href="../EA11/EA596.htm">Implementasjonsmodell - Kommunal tillegsdel</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">En gate, vegstrekning, sti, plass eller område som har eller skal tildeles et adressenavn. Tilsvarende anvendelse av begrepet Veg finnes ikke i matrikkelforskriften.&lt;br/&gt;&lt;br/&gt;Merknad:&lt;br/&gt;Vegen eksisterer selv om det ikke er knyttet noen vegadresser til den.&lt;br/&gt;</div>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D1B3D113-15F9-448d-99CF-9EECDCD1EEF0}"></a>adressekode
+					adressekode
 				</td>
 				<td width="25%" class="TableRow">
 					public 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{1DD3C809-8E03-4aa0-8EE8-A754571D2701}"></a>adressenavn
+					adressenavn
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -232,7 +206,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +223,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E00C941F-202C-4b90-BEF8-6707445542D2}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -259,14 +233,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{354A3B27-4C3B-44af-9B51-0B22D48602DC}"></a>kortAdressenavn
+					kortAdressenavn
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -276,7 +250,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -293,7 +267,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{91AF80E2-6A93-4bbf-ADE4-343E99B180A7}"></a>stedsnummer
+					stedsnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -303,7 +277,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -330,7 +304,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA91.htm">VegId</a><br />
+						<a href="../EA12/EA690.htm">KommuneId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -353,7 +327,30 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA719.htm">Kommune</a><br />
+						<a href="EA91.htm">VegId</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink207" /></button>Details:
+							<div id="detailsDIVLink207" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA12/EA688.htm">Kommune</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -367,8 +364,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink207" /></button>Details:
-							<div id="detailsDIVLink207" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink208" /></button>Details:
+							<div id="detailsDIVLink208" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Id til vegens Kommune. Vegen må ha knytning til en kommune.&lt;br/&gt;</div>
 
 							</div>
@@ -377,7 +374,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA11/EA707.htm">VegTillegg</a><br />
+						<a href="../EA11/EA676.htm">VegTillegg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -391,33 +388,10 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink208" /></button>Details:
-							<div id="detailsDIVLink208" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for veg. Denne er aldri null.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA721.htm">KommuneId</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink209" /></button>Details:
 							<div id="detailsDIVLink209" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for veg. Denne er aldri null.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -431,6 +405,29 @@
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
 					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA332.htm">VegadresseEndring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> VegId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink210" /></button>Details:
+							<div id="detailsDIVLink210" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
@@ -448,56 +445,10 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink210" /></button>Details:
-							<div id="detailsDIVLink210" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til vegadressens veg.. Den må være gitt.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA364.htm">VegEndring</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> VegId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink211" /></button>Details:
 							<div id="detailsDIVLink211" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA361.htm">VegadresseEndring</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> VegId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink212" /></button>Details:
-							<div id="detailsDIVLink212" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Id til vegadressens veg.. Den må være gitt.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -518,8 +469,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink213" /></button>Details:
-							<div id="detailsDIVLink213" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink212" /></button>Details:
+							<div id="detailsDIVLink212" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -527,7 +478,31 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA7/EA442.htm">KommuneendringOmadressering</a><br />
+						<a href="../EA11/EA676.htm">VegTillegg</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> Veg<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink213" /></button>Details:
+							<div id="detailsDIVLink213" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Veg som dette tillegg tilhører.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA334.htm">VegEndring</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -543,15 +518,14 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink214" /></button>Details:
 							<div id="detailsDIVLink214" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Vegid for vegadressen etter fullføring av ommatrikuleringen.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA11/EA707.htm">VegTillegg</a><br />
+						<a href="../EA7/EA411.htm">KommuneendringOmadressering</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -559,7 +533,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Veg<br />
+						<strong>Name:</strong> VegId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -567,7 +541,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink215" /></button>Details:
 							<div id="detailsDIVLink215" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Veg som dette tillegg tilhører.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Vegid for vegadressen etter fullføring av ommatrikuleringen.&lt;br/&gt;</div>
 
 							</div>
 						</div>

@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA15/EA772.htm">jobb</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA15/EA741.htm">jobb</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,19 +84,19 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA15/EA770.htm">Implementasjonsmodell - Jobb</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA773.htm">Jobb</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA774.htm">JobbId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA775.htm">JobbIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA776.htm">JobbOppgave</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA777.htm">JobbOppgaveId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA778.htm">JobbOppgaveIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA779.htm">JobbStatusKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA780.htm">JobbStatusKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA781.htm">JobbStatusKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA782.htm">JobbtypeKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA783.htm">JobbtypeKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA784.htm">JobbtypeKodeIdList</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA15/EA739.htm">Implementasjonsmodell - Jobb</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA742.htm">Jobb</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA743.htm">JobbId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA744.htm">JobbIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA745.htm">JobbOppgave</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA746.htm">JobbOppgaveId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA747.htm">JobbOppgaveIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA748.htm">JobbStatusKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA749.htm">JobbStatusKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA750.htm">JobbStatusKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA751.htm">JobbtypeKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA752.htm">JobbtypeKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA15/EA753.htm">JobbtypeKodeIdList</a></li>
 </ul>
 
 					</td>
@@ -132,11 +106,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">7/5/2013 8:24:58 AM</td>
+			<td width="85%" class="ObjectDetailsValue">05.07.2013 08:24:58</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">7/5/2013 8:24:58 AM</td>
+			<td class="ObjectDetailsValue">05.07.2013 08:24:58</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>

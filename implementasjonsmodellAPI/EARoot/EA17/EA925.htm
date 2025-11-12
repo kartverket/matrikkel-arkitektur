@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Implementasjonsmodell - Person</title>
+<title>person::PersonIdKodeId</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Implementasjonsmodell - Person </h1>
+			<h1> person::PersonIdKodeId </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA927.htm">person</a> / <a href="EA925.htm">Implementasjonsmodell - Person</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA896.htm">person</a> / <a href="EA925.htm">PersonIdKodeId</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,112 +84,91 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA925.htm">Implementasjonsmodell - Person</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA928.htm">AnnenPerson</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA929.htm">AnnenPersonId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA930.htm">AnnenPersonIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA931.htm">AnnenPersonIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA932.htm">Bostedsadresse</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA933.htm">Det sentrale folkeregister</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA934.htm">Enhetsregisteret</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA935.htm">FysiskPerson</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA936.htm">FysiskPersonId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA937.htm">FysiskPersonIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA938.htm">FysiskPersonIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA939.htm">Hjemlandsadresse</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA940.htm">JuridiskPerson</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA941.htm">JuridiskPersonId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA942.htm">JuridiskPersonIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA943.htm">JuridiskPersonIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA944.htm">LandKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA945.htm">LandKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA946.htm">LandKodeIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA947.htm">LandKodeIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA948.htm">MottakerAdresse</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA949.htm">OrganisasjonsformKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA950.htm">Person</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA951.htm">PersonBubble</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA952.htm">PersonId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA953.htm">PersonIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA954.htm">PersonIdentList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA955.htm">PersonIdKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA956.htm">PersonIdKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA957.htm">PersonIdKodeIdent</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA958.htm">PersonIdList</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA959.htm">PersonKategoriKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA960.htm">PersonKategoriKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA961.htm">PersonStatusKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA962.htm">PersonStatusKodeId</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA963.htm">SpesifisertRegTypeKode</a></li>
-<li><img src="../../images/5.png" alt="Class"/> <a href="EA964.htm">SpesifisertRegTypeKodeId</a></li>
-</ul>
+<a href="EA896.htm">person</a></ul>
 
 					</td>
-					<td class="contentcell"><div class="PageBody">
-	<div class="diagram_image"> 
-<img src="EA926.png" usemap="#EA926" width="1532" height="1158" border="0" />
-
-<MAP NAME="EA926">
-<area shape="rect" coords="3020,177,3540,385" href="../EA1/EA21.htm" target="_self">
-<area shape="rect" coords="3618,4179,4158,4361" href="EA957.htm" target="_self">
-<area shape="rect" coords="1435,62,2396,457" href="EA939.htm" target="_self">
-<area shape="rect" coords="3004,2750,3742,2895" href="EA955.htm" target="_self">
-<area shape="rect" coords="2791,2459,3581,2604" href="EA959.htm" target="_self">
-<area shape="rect" coords="1346,2750,2136,2895" href="EA961.htm" target="_self">
-<area shape="rect" coords="1055,2459,1845,2604" href="EA963.htm" target="_self">
-<area shape="rect" coords="6180,3607,6794,3753" href="EA946.htm" target="_self">
-<area shape="rect" coords="2791,1559,3737,1814" href="EA928.htm" target="_self">
-<area shape="rect" coords="1710,3051,2500,3914" href="EA932.htm" target="_self">
-<area shape="rect" coords="1409,1570,2500,1960" href="EA935.htm" target="_self">
-<area shape="rect" coords="4345,3602,5084,3857" href="EA937.htm" target="_self">
-<area shape="rect" coords="5198,3607,6066,3862" href="EA942.htm" target="_self">
-<area shape="rect" coords="4465,3051,4964,3202" href="EA953.htm" target="_self">
-<area shape="rect" coords="3529,3607,4231,3862" href="EA930.htm" target="_self">
-<area shape="rect" coords="4517,650,5577,1040" href="EA948.htm" target="_self">
-<area shape="rect" coords="4792,52,5333,203" href="EA944.htm" target="_self">
-<area shape="rect" coords="6846,577,7584,774" href="../EA2/EA76.htm" target="_self">
-<area shape="rect" coords="2661,650,3867,1040" href="EA950.htm" target="_self">
-<area shape="rect" coords="4034,2459,4985,2781" href="EA949.htm" target="_self">
-<area shape="rect" coords="4034,1559,4985,1882" href="EA940.htm" target="_self">
-<area shape="rect" coords="5598,1648,6248,1798" href="EA934.htm" target="_self">
-<area shape="rect" coords="52,1669,1123,1819" href="EA933.htm" target="_self">
-</MAP>
- </div>
-	<div class="ObjectTitle">Implementasjonsmodell - Person : Class diagram</div>
-	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+					<td class="contentcell"><div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">PersonIdKodeId  : Public   Class</span>
+	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 12:00:00 AM</td>
+			<td width="85%" class="ObjectDetailsValue">19.06.2015 09:03:31</td>
 		</tr>
 		<tr>
-			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">5/19/2020 9:48:21 AM</td>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">19.06.2015 09:04:03</td>
 		</tr>
-		<tr style="padding-top: 10px;">
-			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
-			<td width="85%" class="ObjectDetailsValue"></td>			
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj00" style="display: none;">
-			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td width="85%" class="ObjectDetailsValue">liehen</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">foring</td>
 		</tr>
 		<tr id="proj01" style="display: none;">
-			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
-			<td width="85%" class="ObjectDetailsValue"></td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" >Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr>
-			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
-			<td width="85%" class="ObjectDetailsValue"></td>			
+			<td class="ObjectDetailsTopic"><button onclick="switchAdvancedProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="adv" /></button>Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
-			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
-			<td width="85%" class="ObjectDetailsValue">{1C09D650-B491-4076-A7EB-DF84D02F7D1E}</td>
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{2617327C-B65A-4a22-BA73-7D75E850C2DB}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Hovedmodell for person og tilhørende klasser.&lt;br/&gt;</div>
+	
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+		</ul>
+		<div class="ItemBody" id="CustomPropertiesTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Property</td>
+					<td width="70%" class="TableHeading">Value</td>
+				</tr>
+			<tr>
+				<td width="30%" class="TableRow">isFinalSpecialization:</td>
+				<td width="70%" class="TableRow">0</td>
+			</tr>
 
-</div>
 
+			</table>
+		</div>	</div>
+ </div>
  </td>
 				</tr>
 			</tbody>

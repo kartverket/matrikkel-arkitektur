@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA17/EA927.htm">person</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA17/EA896.htm">person</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,44 +84,44 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA17/EA925.htm">Implementasjonsmodell - Person</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA928.htm">AnnenPerson</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA929.htm">AnnenPersonId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA930.htm">AnnenPersonIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA931.htm">AnnenPersonIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA932.htm">Bostedsadresse</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA933.htm">Det sentrale folkeregister</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA934.htm">Enhetsregisteret</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA935.htm">FysiskPerson</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA936.htm">FysiskPersonId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA937.htm">FysiskPersonIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA938.htm">FysiskPersonIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA939.htm">Hjemlandsadresse</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA940.htm">JuridiskPerson</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA941.htm">JuridiskPersonId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA942.htm">JuridiskPersonIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA943.htm">JuridiskPersonIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA944.htm">LandKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA945.htm">LandKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA946.htm">LandKodeIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA947.htm">LandKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA948.htm">MottakerAdresse</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA949.htm">OrganisasjonsformKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA950.htm">Person</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA951.htm">PersonBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA952.htm">PersonId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA953.htm">PersonIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA954.htm">PersonIdentList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA955.htm">PersonIdKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA956.htm">PersonIdKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA957.htm">PersonIdKodeIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA958.htm">PersonIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA959.htm">PersonKategoriKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA960.htm">PersonKategoriKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA961.htm">PersonStatusKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA962.htm">PersonStatusKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA963.htm">SpesifisertRegTypeKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA964.htm">SpesifisertRegTypeKodeId</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA17/EA894.htm">Implementasjonsmodell - Person</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA897.htm">AnnenPerson</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA898.htm">AnnenPersonId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA899.htm">AnnenPersonIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA900.htm">AnnenPersonIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA901.htm">Bostedsadresse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA902.htm">Det sentrale folkeregister</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA903.htm">Enhetsregisteret</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA904.htm">FysiskPerson</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA905.htm">FysiskPersonId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA906.htm">FysiskPersonIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA907.htm">FysiskPersonIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA908.htm">Hjemlandsadresse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA909.htm">JuridiskPerson</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA910.htm">JuridiskPersonId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA911.htm">JuridiskPersonIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA912.htm">JuridiskPersonIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA913.htm">LandKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA914.htm">LandKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA915.htm">LandKodeIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA916.htm">LandKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA917.htm">MottakerAdresse</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA918.htm">OrganisasjonsformKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA919.htm">Person</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA920.htm">PersonBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA921.htm">PersonId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA922.htm">PersonIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA923.htm">PersonIdentList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA924.htm">PersonIdKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA925.htm">PersonIdKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA926.htm">PersonIdKodeIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA927.htm">PersonIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA928.htm">PersonKategoriKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA929.htm">PersonKategoriKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA930.htm">PersonStatusKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA931.htm">PersonStatusKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA932.htm">SpesifisertRegTypeKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA17/EA933.htm">SpesifisertRegTypeKodeId</a></li>
 </ul>
 
 					</td>
@@ -157,11 +131,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:09 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:09</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -243,7 +217,7 @@
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="./EA16/EA787.htm">matrikkelenhet</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="./EA16/EA756.htm">matrikkelenhet</a></td>
 					<td width="10%" class="TableRow" valign="top">Package</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">To</td>

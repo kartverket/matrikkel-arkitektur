@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA7/EA369.htm">forretning</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA7/EA338.htm">forretning</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,183 +84,183 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA7/EA367.htm">Implementasjonsmodell - Forretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA370.htm">AktiverUtgattMatrikkelenhetForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA371.htm">AktiverUtgattMatrikkelenhetForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA372.htm">AktiverUtgattMatrikkelenhetForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA373.htm">ArealIForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA374.htm">ArealIForretningList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA375.htm">ArealmalingForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA376.htm">ArealmalingForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA377.htm">ArealmalingForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA378.htm">ArealoverforingForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA379.htm">ArealoverforingForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA380.htm">ArealoverforingForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA381.htm">ArealoverforingMellomFestegrunnerForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA382.htm">ArealoverforingMellomFestegrunnerForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA383.htm">ArealoverforingMellomFestegrunnOgFestetPaForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA384.htm">ArealoverforingMellomFestegrunnOgFestetPaForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA385.htm">DigitaliseringAvKoordinatForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA386.htm">DigitaliseringAvKoordinatForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA387.htm">DigitaliseringAvKoordinatForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA388.htm">EksisterendeMatrikkelenhetForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA389.htm">EksisterendeMatrikkelenhetForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA390.htm">EksisterendeMatrikkelenhetForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA391.htm">EndreEgenskapForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA392.htm">EndreEgenskapForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA393.htm">EndreEgenskapForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA394.htm">EndreFestegrunnForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA395.htm">EndreFestegrunnForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA396.htm">EndreForretningsdataForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA397.htm">EndreForretningsdataForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA398.htm">EndreMatrikkelenhetstypeForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA399.htm">EndreMatrikkelenhetstypeForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA400.htm">EndreMatrikkelenhetstypeForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA401.htm">EtablereFesteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA402.htm">EtablereFesteForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA403.htm">EtablereFesteForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA404.htm">FeilrettingAvSeksjonerForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA405.htm">FeilrettingAvSeksjonerForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA406.htm">FeilrettingAvSeksjonerForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA407.htm">Forretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA408.htm">ForretningBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA409.htm">ForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA410.htm">ForretningIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA411.htm">ForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA412.htm">ForretningsklasseKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA413.htm">ForretningsklasseKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA414.htm">FradelAnleggseiendomForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA415.htm">FradelAnleggseiendomForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA416.htm">FradelAnleggseiendomForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA417.htm">FradelingForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA418.htm">FradelingForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA419.htm">FradelingForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA420.htm">FullforingAvIkkeFullfortOppmalingsForretningMLForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA421.htm">FullforingAvIkkeFullfortOppmalingsForretningMLForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA422.htm">FullforingAvIkkeFullfortOppmalingsForretningMLForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA423.htm">FullforingAvMidlertidigForretningDLForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA424.htm">FullforingAvMidlertidigForretningDLForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA425.htm">FullforingAvMidlertidigForretningDLForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA426.htm">GrensegangUArealendringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA427.htm">GrensegangUArealendringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA428.htm">GrensegangUArealendringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA429.htm">GrensejusteringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA430.htm">GrensejusteringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA431.htm">GrensejusteringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA432.htm">GrensejustUmatrGrunnForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA433.htm">GrensejustUmatrGrunnForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA434.htm">GrensejustUmatrGrunnForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA435.htm">GrunneiendomFraFesteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA436.htm">GrunneiendomFraFesteForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA437.htm">GrunneiendomFraFesteForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA438.htm">JordskifteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA439.htm">KartForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA440.htm">KartForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA441.htm">KartForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA442.htm">KommuneendringOmadressering</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA443.htm">KommuneendringOmadresseringList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA444.htm">KonvJordskifteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA445.htm">KonvJordskifteForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA446.htm">KonvJordskifteForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA447.htm">KvalitetshevingForEksisterendeMatrikkelenhetForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA448.htm">KvalitetshevingForEksisterendeMatrikkelenhetForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA449.htm">KvalitetshevingForEksisterendeMatrikkelenhetForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA450.htm">MatrikkelenhetForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA451.htm">MatrikkelenhetForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA452.htm">MatrikkelenhetForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA453.htm">MatrikkelenhetGeometriForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA454.htm">MatrikkelenhetGeometriForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA455.htm">MatrikkelenhetGeometriForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA456.htm">MatrikkelenhetUtgarForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA457.htm">MatrikkelenhetUtgarForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA458.htm">MatrikkelenhetUtgarForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA459.htm">MatrikulerEksisterendeFesteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA460.htm">MatrikulerEksisterendeFesteForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA461.htm">MatrikulerEksisterendeFesteForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA462.htm">NymatrikulerAnleggseiendomForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA463.htm">NymatrikulerAnleggseiendomForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA464.htm">NymatrikulerAnleggseiendomForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA465.htm">NymatrikulerFraMatrikulertGrunnForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA466.htm">NymatrikulerFraMatrikulertGrunnForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA467.htm">NymatrikulerFraMatrikulertGrunnForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA468.htm">NymatrikuleringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA469.htm">NymatrikuleringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA470.htm">NymatrikuleringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA471.htm">OmgjoringAvPunktfesteTilArealfesteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA472.htm">OmgjoringAvPunktfesteTilArealfesteForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA473.htm">OmmatrikuleringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA474.htm">OmmatrikuleringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA475.htm">OmmatrikuleringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA476.htm">OmmatrikuleringKommuneendringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA477.htm">OmmatrikuleringKommuneendringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA478.htm">OmmatrikuleringKommuneendringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA479.htm">OmmatrikuleringKommunesammenslForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA480.htm">OmmatrikuleringKommunesammenslForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA481.htm">OmmatrikuleringKommunesammenslForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA482.htm">OmnummereringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA483.htm">OmnummereringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA484.htm">OmnummereringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA485.htm">OmnummereringKommuneendringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA486.htm">OmnummereringKommuneendringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA487.htm">OmnummereringKommuneendringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA488.htm">OmregistrerGrunneiendomTilAnleggseiendomForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA489.htm">OmregistrerGrunneiendomTilAnleggseiendomForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA490.htm">OmregistrerGrunneiendomTilAnleggseiendomForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA491.htm">OpphevSlettetSeksjoneringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA492.htm">OpphevSlettetSeksjoneringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA493.htm">OpphevSlettetSeksjoneringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA494.htm">OpplosRegistrertJordsameieForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA495.htm">OpplosRegistrertJordsameieForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA496.htm">OpplosRegistrertJordsameieForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA497.htm">OpprettNyttJordsameieForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA498.htm">OpprettNyttJordsameieForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA499.htm">OpprettNyttJordsameieForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA500.htm">PlanlagtFradelingForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA501.htm">PlanlagtFradelingForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA502.htm">PlanlagtFradelingForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA503.htm">RegistrerAktuellEierForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA504.htm">RegistrerAktuellEierForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA505.htm">RegistrerAktuellEierForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA506.htm">RegistrerUregistrertJordsameieForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA507.htm">RegistrerUregistrertJordsameieForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA508.htm">RegistrerUregistrertJordsameieForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA509.htm">ReseksjoneringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA510.htm">ReseksjoneringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA511.htm">ReseksjoneringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA512.htm">ReseksjoneringGABForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA513.htm">ReseksjoneringGABForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA514.htm">ReseksjoneringGABForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA515.htm">RettingAvForretningForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA516.htm">RettingAvForretningForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA517.htm">RettingAvForretningForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA518.htm">RettingAvForretningsdataForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA519.htm">RettingAvForretningsdataForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA520.htm">ReverserOmnummereringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA521.htm">SammenslaingForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA522.htm">SammenslaingForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA523.htm">SammenslaingForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA524.htm">SammenslaOmmatrikuleringFestegrunn</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA525.htm">SammenslaOmmatrikuleringFestegrunnList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA526.htm">SammenslaReseksjonering</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA527.htm">SammenslaReseksjoneringList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA528.htm">SeksjoneringAvGrunnForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA529.htm">SeksjoneringAvGrunnForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA530.htm">SeksjoneringAvGrunnForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA531.htm">SeksjoneringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA532.htm">SeksjoneringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA533.htm">SeksjoneringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA534.htm">SkylddelingForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA535.htm">SkylddelingForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA536.htm">SkylddelingForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA537.htm">SlettSeksjoneringForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA538.htm">SlettSeksjoneringForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA539.htm">SlettSeksjoneringForretningIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA540.htm">SplittingAvFesteForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA541.htm">SplittingAvFesteForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA542.htm">TinglystDokumentIdent</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA543.htm">VedlikeholdGrenseISjoForretning</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA544.htm">VedlikeholdGrenseISjoForretningId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA545.htm">VedlikeholdGrenseISjoForretningIdList</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA7/EA336.htm">Implementasjonsmodell - Forretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA339.htm">AktiverUtgattMatrikkelenhetForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA340.htm">AktiverUtgattMatrikkelenhetForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA341.htm">AktiverUtgattMatrikkelenhetForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA342.htm">ArealIForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA343.htm">ArealIForretningList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA344.htm">ArealmalingForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA345.htm">ArealmalingForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA346.htm">ArealmalingForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA347.htm">ArealoverforingForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA348.htm">ArealoverforingForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA349.htm">ArealoverforingForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA350.htm">ArealoverforingMellomFestegrunnerForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA351.htm">ArealoverforingMellomFestegrunnerForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA352.htm">ArealoverforingMellomFestegrunnOgFestetPaForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA353.htm">ArealoverforingMellomFestegrunnOgFestetPaForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA354.htm">DigitaliseringAvKoordinatForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA355.htm">DigitaliseringAvKoordinatForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA356.htm">DigitaliseringAvKoordinatForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA357.htm">EksisterendeMatrikkelenhetForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA358.htm">EksisterendeMatrikkelenhetForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA359.htm">EksisterendeMatrikkelenhetForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA360.htm">EndreEgenskapForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA361.htm">EndreEgenskapForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA362.htm">EndreEgenskapForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA363.htm">EndreFestegrunnForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA364.htm">EndreFestegrunnForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA365.htm">EndreForretningsdataForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA366.htm">EndreForretningsdataForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA367.htm">EndreMatrikkelenhetstypeForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA368.htm">EndreMatrikkelenhetstypeForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA369.htm">EndreMatrikkelenhetstypeForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA370.htm">EtablereFesteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA371.htm">EtablereFesteForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA372.htm">EtablereFesteForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA373.htm">FeilrettingAvSeksjonerForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA374.htm">FeilrettingAvSeksjonerForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA375.htm">FeilrettingAvSeksjonerForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA376.htm">Forretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA377.htm">ForretningBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA378.htm">ForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA379.htm">ForretningIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA380.htm">ForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA381.htm">ForretningsklasseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA382.htm">ForretningsklasseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA383.htm">FradelAnleggseiendomForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA384.htm">FradelAnleggseiendomForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA385.htm">FradelAnleggseiendomForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA386.htm">FradelingForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA387.htm">FradelingForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA388.htm">FradelingForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA389.htm">FullforingAvIkkeFullfortOppmalingsForretningMLForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA390.htm">FullforingAvIkkeFullfortOppmalingsForretningMLForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA391.htm">FullforingAvIkkeFullfortOppmalingsForretningMLForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA392.htm">FullforingAvMidlertidigForretningDLForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA393.htm">FullforingAvMidlertidigForretningDLForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA394.htm">FullforingAvMidlertidigForretningDLForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA395.htm">GrensegangUArealendringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA396.htm">GrensegangUArealendringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA397.htm">GrensegangUArealendringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA398.htm">GrensejusteringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA399.htm">GrensejusteringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA400.htm">GrensejusteringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA401.htm">GrensejustUmatrGrunnForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA402.htm">GrensejustUmatrGrunnForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA403.htm">GrensejustUmatrGrunnForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA404.htm">GrunneiendomFraFesteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA405.htm">GrunneiendomFraFesteForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA406.htm">GrunneiendomFraFesteForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA407.htm">JordskifteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA408.htm">KartForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA409.htm">KartForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA410.htm">KartForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA411.htm">KommuneendringOmadressering</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA412.htm">KommuneendringOmadresseringList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA413.htm">KonvJordskifteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA414.htm">KonvJordskifteForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA415.htm">KonvJordskifteForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA416.htm">KvalitetshevingForEksisterendeMatrikkelenhetForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA417.htm">KvalitetshevingForEksisterendeMatrikkelenhetForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA418.htm">KvalitetshevingForEksisterendeMatrikkelenhetForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA419.htm">MatrikkelenhetForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA420.htm">MatrikkelenhetForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA421.htm">MatrikkelenhetForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA422.htm">MatrikkelenhetGeometriForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA423.htm">MatrikkelenhetGeometriForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA424.htm">MatrikkelenhetGeometriForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA425.htm">MatrikkelenhetUtgarForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA426.htm">MatrikkelenhetUtgarForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA427.htm">MatrikkelenhetUtgarForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA428.htm">MatrikulerEksisterendeFesteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA429.htm">MatrikulerEksisterendeFesteForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA430.htm">MatrikulerEksisterendeFesteForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA431.htm">NymatrikulerAnleggseiendomForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA432.htm">NymatrikulerAnleggseiendomForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA433.htm">NymatrikulerAnleggseiendomForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA434.htm">NymatrikulerFraMatrikulertGrunnForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA435.htm">NymatrikulerFraMatrikulertGrunnForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA436.htm">NymatrikulerFraMatrikulertGrunnForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA437.htm">NymatrikuleringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA438.htm">NymatrikuleringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA439.htm">NymatrikuleringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA440.htm">OmgjoringAvPunktfesteTilArealfesteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA441.htm">OmgjoringAvPunktfesteTilArealfesteForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA442.htm">OmmatrikuleringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA443.htm">OmmatrikuleringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA444.htm">OmmatrikuleringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA445.htm">OmmatrikuleringKommuneendringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA446.htm">OmmatrikuleringKommuneendringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA447.htm">OmmatrikuleringKommuneendringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA448.htm">OmmatrikuleringKommunesammenslForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA449.htm">OmmatrikuleringKommunesammenslForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA450.htm">OmmatrikuleringKommunesammenslForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA451.htm">OmnummereringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA452.htm">OmnummereringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA453.htm">OmnummereringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA454.htm">OmnummereringKommuneendringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA455.htm">OmnummereringKommuneendringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA456.htm">OmnummereringKommuneendringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA457.htm">OmregistrerGrunneiendomTilAnleggseiendomForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA458.htm">OmregistrerGrunneiendomTilAnleggseiendomForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA459.htm">OmregistrerGrunneiendomTilAnleggseiendomForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA460.htm">OpphevSlettetSeksjoneringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA461.htm">OpphevSlettetSeksjoneringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA462.htm">OpphevSlettetSeksjoneringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA463.htm">OpplosRegistrertJordsameieForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA464.htm">OpplosRegistrertJordsameieForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA465.htm">OpplosRegistrertJordsameieForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA466.htm">OpprettNyttJordsameieForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA467.htm">OpprettNyttJordsameieForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA468.htm">OpprettNyttJordsameieForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA469.htm">PlanlagtFradelingForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA470.htm">PlanlagtFradelingForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA471.htm">PlanlagtFradelingForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA472.htm">RegistrerAktuellEierForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA473.htm">RegistrerAktuellEierForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA474.htm">RegistrerAktuellEierForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA475.htm">RegistrerUregistrertJordsameieForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA476.htm">RegistrerUregistrertJordsameieForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA477.htm">RegistrerUregistrertJordsameieForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA478.htm">ReseksjoneringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA479.htm">ReseksjoneringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA480.htm">ReseksjoneringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA481.htm">ReseksjoneringGABForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA482.htm">ReseksjoneringGABForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA483.htm">ReseksjoneringGABForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA484.htm">RettingAvForretningForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA485.htm">RettingAvForretningForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA486.htm">RettingAvForretningForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA487.htm">RettingAvForretningsdataForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA488.htm">RettingAvForretningsdataForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA489.htm">ReverserOmnummereringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA490.htm">SammenslaingForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA491.htm">SammenslaingForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA492.htm">SammenslaingForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA493.htm">SammenslaOmmatrikuleringFestegrunn</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA494.htm">SammenslaOmmatrikuleringFestegrunnList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA495.htm">SammenslaReseksjonering</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA496.htm">SammenslaReseksjoneringList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA497.htm">SeksjoneringAvGrunnForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA498.htm">SeksjoneringAvGrunnForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA499.htm">SeksjoneringAvGrunnForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA500.htm">SeksjoneringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA501.htm">SeksjoneringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA502.htm">SeksjoneringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA503.htm">SkylddelingForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA504.htm">SkylddelingForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA505.htm">SkylddelingForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA506.htm">SlettSeksjoneringForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA507.htm">SlettSeksjoneringForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA508.htm">SlettSeksjoneringForretningIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA509.htm">SplittingAvFesteForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA510.htm">SplittingAvFesteForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA511.htm">TinglystDokumentIdent</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA512.htm">VedlikeholdGrenseISjoForretning</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA513.htm">VedlikeholdGrenseISjoForretningId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA7/EA514.htm">VedlikeholdGrenseISjoForretningIdList</a></li>
 </ul>
 
 					</td>
@@ -296,11 +270,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>

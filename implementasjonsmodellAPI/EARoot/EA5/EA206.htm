@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA188.htm">bygning</a> / <a href="EA206.htm">Bygning</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA188.htm">bygning</a> / <a href="EA206.htm">Bygning</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/20/2013 1:08:57 PM</td>
+			<td class="ObjectDetailsValue">20.06.2013 13:08:57</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -172,7 +146,7 @@
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA186.htm">Implementasjonsmodell - Bygg</a>, <a href="../EA14/EA745.htm">Implementasjonsmodell - Kulturminne</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a></td>
+			<td class="ObjectDetailsValue"><a href="EA186.htm">Implementasjonsmodell - Bygg</a>, <a href="../EA14/EA714.htm">Implementasjonsmodell - Kulturminne</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">Bygning er matrikkelens representasjon av en planlagt, under oppføring, fullført eller av en eller annen grunn utgått bygning. Alle bygninger oppført etter 1983 er registrert. I enkelte kommuner har man registrert samtlige bygninger.&lt;br/&gt;&lt;br/&gt;En bygning er identifisert med sitt bygningsnummer som er unikt på tvers av kommuner. Enhver bygning har en bygningsstatus som angir tilstand ved siste registrering. Det lagres også histrorikk for dette.&lt;br/&gt;&lt;br/&gt;En bygning har en eller flere bruksenheter som beskriver logiske enheter ved bygningen (leiligheter, lokaler). Hver av disse kan ha en egen knytning til adresse og matrikkelenhet.&lt;br/&gt;For bygninger registreres enkelte endringer slik at det er mulig å se hva de enkelte endringer medførte for bygningen. Dette er aktuelt for ombygginger og tilbygging som medfører byggesaksbehandlinger. Dette blir gjort ved at det registreres en &quot;bygningsendring&quot; når endringen påbegynnes. Ved dennes ferdigstilling vil bygningen endres med dennes verdier.&lt;br/&gt;</div>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3657BACE-1C92-4770-BDCF-448F587107DE}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{30045758-D014-4e34-9982-AF8923C0ED35}"></a>ufullstendigAreal
+					ufullstendigAreal
 				</td>
 				<td width="25%" class="TableRow">
 					public 
@@ -232,7 +206,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -259,30 +233,6 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA223.htm">«enum» BygningstypeKode</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BygningstypeKodeId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink783" /></button>Details:
-							<div id="detailsDIVLink783" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Bygningstypen sier hva bygningen er brukt til.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
 						<a href="EA207.htm">BygningId</a><br />
 						Class &nbsp;
 					</td>
@@ -297,9 +247,33 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink783" /></button>Details:
+							<div id="detailsDIVLink783" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA223.htm">«enum» BygningstypeKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BygningstypeKodeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink784" /></button>Details:
 							<div id="detailsDIVLink784" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Bygningstypen sier hva bygningen er brukt til.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -316,7 +290,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA286.htm">BygningEndring</a><br />
+						<a href="../EA14/EA722.htm">FredetBygning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -332,6 +306,30 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink785" /></button>Details:
 							<div id="detailsDIVLink785" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">En bygning som er knyttet til enkeltminnet.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA279.htm">BygningEndring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BygningId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink786" /></button>Details:
+							<div id="detailsDIVLink786" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -353,33 +351,9 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink786" /></button>Details:
-							<div id="detailsDIVLink786" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Bygningsendringens tilhørende bygning, kan ikke være null.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA14/EA753.htm">FredetBygning</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BygningId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink787" /></button>Details:
 							<div id="detailsDIVLink787" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">En bygning som er knyttet til enkeltminnet.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Bygningsendringens tilhørende bygning, kan ikke være null.&lt;br/&gt;</div>
 
 							</div>
 						</div>
