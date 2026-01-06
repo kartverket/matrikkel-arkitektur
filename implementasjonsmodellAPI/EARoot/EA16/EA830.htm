@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>matrikkelenhet::Eierforhold</title>
+<title>matrikkelenhet::JordskifteKrevd</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> matrikkelenhet::Eierforhold </h1>
+			<h1> matrikkelenhet::JordskifteKrevd </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA787.htm">matrikkelenhet</a> / <a href="EA830.htm">Eierforhold</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA830.htm">JordskifteKrevd</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +84,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA787.htm">matrikkelenhet</a></ul>
+<a href="EA756.htm">matrikkelenhet</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Eierforhold  : Public abstract  Class</span>
+	<span class="ObjectTitle">JordskifteKrevd  : Public   Class</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:07</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/17/2015 3:41:58 PM</td>
+			<td class="ObjectDetailsValue">02.07.2013 10:37:49</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,14 +142,14 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{F6A11FA2-483D-4404-AE3E-3DF7B3080EB5}</td>
+			<td class="ObjectDetailsValue">{5B1E0172-8A1B-40a6-BE96-375D181E015E}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA785.htm">Implementasjonsmodell - Matrikkelenhet</a></td>
+			<td class="ObjectDetailsValue"><a href="EA754.htm">Implementasjonsmodell - Matrikkelenhet</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Alle typer eierforhold mot matrikkelenhet.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Opplysning om at det er satt fram krav om sak for jordskifteretten, jf. matrikkelforskriften § 46. JordskifteKrevd ligger bare lagret i matrikkelen mens kravet er under behandling.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -195,17 +169,34 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{1A05C2D5-F4E1-420b-AE62-CAD10B6EC647}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
 				</td>
 				<td width="25%" class="TableRow">
-					long
+					<a href="EA832.htm">JordskifteKrevdId</a>
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						&nbsp;
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					jordskifteKrevdFortDato
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					Timestamp
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -213,7 +204,34 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Intern nøkkel for forekomsten.&lt;br/&gt;
+			Når opplysningen er ført i matrikkelen. Denne settes automatisk til dagens dato ved føring.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					jordskifteReferanse
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					String
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Knytning til det saksnummeret jordskifteretten benytter.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -232,7 +250,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA719.htm">Kommune</a><br />
+						<a href="EA832.htm">JordskifteKrevdId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -240,23 +258,22 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3155" /></button>Details:
-							<div id="detailsDIVLink3155" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Kommune som matrikkelenhet hører til.&lt;br/&gt;</div>
-
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3327" /></button>Details:
+							<div id="detailsDIVLink3327" class="DetailsDiv" >
+							&nbsp;
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA877.htm">Matrikkelenhet</a><br />
+						<a href="EA848.htm">MatrikkelenhetId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -264,23 +281,22 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Matrikkelenhet<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3156" /></button>Details:
-							<div id="detailsDIVLink3156" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Matrikkelenhet som eierforholdet gjelder for. Må være gitt.&lt;br/&gt;</div>
-
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3328" /></button>Details:
+							<div id="detailsDIVLink3328" class="DetailsDiv" >
+							&nbsp;
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA831.htm">«enum» EierforholdKode</a><br />
+						<a href="EA846.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -288,15 +304,15 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> EierforholdKodeId<br />
+						<strong>Name:</strong> MatrikkelenhetId<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3157" /></button>Details:
-							<div id="detailsDIVLink3157" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Type eierforhold som blir registrert gjennom matrikkelen eller som kommer fra Tinglysingssystemet. Må være gitt for lagrede forekomster. Kan være null for genererte forekomster (som for seksjoner under seksjonert matrikkelenhet).&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3329" /></button>Details:
+							<div id="detailsDIVLink3329" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Et sett med MatrikkelenhetId som er matrikkelenhetene som kravet er knyttet til.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -314,6 +330,29 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA301.htm">JordskifteKrevdEndring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> JordskifteKrevdId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3330" /></button>Details:
+							<div id="detailsDIVLink3330" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
 						<a href="../EA1/EA21.htm">UUID</a><br />
 						Class &nbsp;
 					</td>
@@ -328,55 +367,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3158" /></button>Details:
-							<div id="detailsDIVLink3158" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA877.htm">Matrikkelenhet</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Eierforhold<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3159" /></button>Details:
-							<div id="detailsDIVLink3159" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Matrikkelenhetens eierforhold.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA877.htm">Matrikkelenhet</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3160" /></button>Details:
-							<div id="detailsDIVLink3160" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3331" /></button>Details:
+							<div id="detailsDIVLink3331" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -425,30 +417,9 @@
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA856.htm">IkkeTinglystEierforhold</a></td>
-					<td width="10%" class="TableRow" valign="top">Class</td>
-					<td width="10%" class="TableRow" valign="top">Generalization</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
 					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA21.htm">UUID</a></td>
 					<td width="10%" class="TableRow" valign="top">Class</td>
 					<td width="10%" class="TableRow" valign="top">Strong</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA923.htm">TinglystEierforhold</a></td>
-					<td width="10%" class="TableRow" valign="top">Class</td>
-					<td width="10%" class="TableRow" valign="top">Generalization</td>
-					<td width="10%" class="TableRow" valign="top">From</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA873.htm">Kontaktinstans</a></td>
-					<td width="10%" class="TableRow" valign="top">Class</td>
-					<td width="10%" class="TableRow" valign="top">Generalization</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>

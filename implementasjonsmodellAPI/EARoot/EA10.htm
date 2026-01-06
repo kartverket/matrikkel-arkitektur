@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA9/EA592.htm">grunnforurensing</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA9/EA561.htm">grunnforurensing</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,22 +84,22 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA9/EA590.htm">Implementasjonsmodell - Grunnforurensing</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA593.htm">Grunnforurensing</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA594.htm">GrunnforurensingBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA595.htm">GrunnforurensingId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA596.htm">GrunnforurensingIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA597.htm">MyndighetKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA598.htm">MyndighetKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA599.htm">MyndighetKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA600.htm">PavirkningsgradKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA601.htm">PavirkningsgradKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA602.htm">PavirkningsgradKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA603.htm">Vedtak</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA604.htm">VedtakList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA605.htm">VedtakstypeKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA606.htm">VedtakstypeKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA607.htm">VedtakstypeKodeIdList</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA9/EA559.htm">Implementasjonsmodell - Grunnforurensing</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA562.htm">Grunnforurensing</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA563.htm">GrunnforurensingBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA564.htm">GrunnforurensingId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA565.htm">GrunnforurensingIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA566.htm">MyndighetKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA567.htm">MyndighetKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA568.htm">MyndighetKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA569.htm">PavirkningsgradKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA570.htm">PavirkningsgradKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA571.htm">PavirkningsgradKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA572.htm">Vedtak</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA573.htm">VedtakList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA574.htm">VedtakstypeKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA575.htm">VedtakstypeKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA9/EA576.htm">VedtakstypeKodeIdList</a></li>
 </ul>
 
 					</td>
@@ -135,11 +109,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:11 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:11</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:11 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:11</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>matrikkelenhet::MatrenhForSamlaFastEdm</title>
+<title>matrikkelenhet::Teig</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> matrikkelenhet::MatrenhForSamlaFastEdm </h1>
+			<h1> matrikkelenhet::Teig </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA787.htm">matrikkelenhet</a> / <a href="EA875.htm">MatrenhForSamlaFastEdm</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA875.htm">Teig</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +84,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA787.htm">matrikkelenhet</a></ul>
+<a href="EA756.htm">matrikkelenhet</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">MatrenhForSamlaFastEdm  : Public   Class</span>
+	<span class="ObjectTitle">Teig  : Public   Class</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:07 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:07</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2015 8:28:03 AM</td>
+			<td class="ObjectDetailsValue">07.10.2018 23:49:24</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,14 +142,14 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{9C5184F4-F7D3-40cf-B857-24E586AE8EFD}</td>
+			<td class="ObjectDetailsValue">{9AC127B4-A168-47bc-B6C8-2BF302EFA090}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA785.htm">Implementasjonsmodell - Matrikkelenhet</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA8/EA516.htm">Implementasjonsmodell - Geometri</a>, <a href="EA754.htm">Implementasjonsmodell - Matrikkelenhet</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a>, <a href="../EA7/EA336.htm">Implementasjonsmodell - Forretning</a>, <a href="../EA11/EA596.htm">Implementasjonsmodell - Kommunal tillegsdel</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Komponent brukt i samlaFastEiendom for å koble matrikkelenhet mot samlaFastEiendom, og for å kunne angi om matrikkelenheten er hovedmatrikkelenhet i samlaFastEiendom.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">En teig er et sammenhengende areal som avgrenses av teiggrense.&lt;br/&gt;&lt;br/&gt;Merknad:&lt;br/&gt;Teiger skal ikke overlappe hverandre. Naboteiger skal ha delt geometri.&lt;br/&gt;Matrikkelenheter som består av flere areal som er sammenhengende i bare et punkt er teigdelt etter denne definisjonen.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -184,6 +158,7 @@
 			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent != null ? parent.toggleItem('TaggedVal') : toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent != null ? parent.toggleItem('Links') : toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -194,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{48221CB9-8194-405c-ABE0-447675A9572A}"></a>hovedmatrikkelenhet
+					avklartEiere
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -204,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -212,7 +187,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Hvilken matrikkelenhet som er hovedmatrikkelenhet i samla fast eiendom.&lt;br/&gt;
+			Angir om det er avklart hvilke matrikkelenheter som har andel i det uregistrerte jordsameiet.&lt;br/&gt;&lt;br/&gt;Merknad: Denne kan bare være Ja/True hvis UregistrertJordameie er Ja/true.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -221,17 +196,17 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{A47C167B-F2B0-4102-9F82-7A49919AC617}"></a>id
+					datafangstdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
 				</td>
 				<td width="25%" class="TableRow">
-					long
+					Date
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -239,7 +214,132 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Persistent id for denne komponenten.&lt;br/&gt;
+			Datafangstdato.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					id
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					TeigId
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						&nbsp;
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					lagretBeregnetAreal
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					double
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Beregnet areal i kartplan, det vil si areal av teig som er avgrenset av teiggrenser og/eller hjelpelinjer.&lt;br/&gt;Hvis noen av teiggrensene til teigen er hjelpelinjer eller teigen er omtvistet (merket på teig eller teiggrense) skal teigarealmerknad alltid oppgis sammen med teigarealet.&lt;br/&gt;Merknad 1: For teiger tilhørende punktfester angis ikke teigareal, kun arealmerknad på teig. Teiger som inneholder punktfester (øyer avgrenset av hjelpelinje punktfeste), får ikke fratrekk for disse ved beregning av teigareal.&lt;br/&gt;Merknad 2: Det oppgis ikke kvalitet/nøyaktighet på det beregnede arealet. Informasjon om kvalitet kan avledes fra arealmerknad(er) på teig og fra antatt stedfestingsnøyaktighet på teiggrensepunkt eller teiggrenser.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					teigMedFlereMatrikkelenheter
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					Boolean
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Teig som er knyttet til flere matrikkelenheter, men hvor de interne grensene mellom matrikkelenhetene er ukjente (i hvert fall ikke registrert i matrikkelen).&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					tvist
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					Boolean
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Om det er tvil/tvist om eiendomsretten til teigen.&lt;br/&gt;&lt;br/&gt;Merknad:&lt;br/&gt;Kan også være brukt når teigen har omtvistede grenser eller grenser det er tvil om forløpet til, men der skal grensene være merket med &#8221;omtvistet&#8221;.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					uregistrertJordsameie
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					Boolean
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Angir om teigen inngår i brukssameie mellom matrikkelenheter, hvor jordsameiet ikke har eget matrikkelnummer (dvs. ikke matrikkelenheten &quot;Jordsameie&quot;).&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -258,7 +358,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA879.htm">MatrikkelenhetId</a><br />
+						<a href="../EA11/EA670.htm">TeigTillegg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -266,38 +366,15 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> TeigTillegg<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3358" /></button>Details:
-							<div id="detailsDIVLink3358" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA877.htm">Matrikkelenhet</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> MatrikkelenhetId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3359" /></button>Details:
-							<div id="detailsDIVLink3359" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Matrikkelenhet som er knyttet til SamlaFastEiendom.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3562" /></button>Details:
+							<div id="detailsDIVLink3562" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for teig som inneholder blant annet referanser. Denne er aldri null.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -305,7 +382,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA899.htm">SamlaFastEiendom</a><br />
+						<a href="../EA8/EA530.htm">ComplexSurface</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -313,15 +390,62 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> SamlaFastEiendom<br />
+						<strong>Name:</strong> ComplexSurface<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3360" /></button>Details:
-							<div id="detailsDIVLink3360" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">SamlaFastEiendom denne matrikkelenheten er knyttet til.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3563" /></button>Details:
+							<div id="detailsDIVLink3563" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Flaten til en teig definerer avgrensningen til teigen. De fleste teiger vil være definert med en flate som kun har en ytre grenselinje (exterior). Men dersom teigen har andre teiger eller vann innenfor den ytre grenselinjen vil de ytre avgrensningene disse også definere utstrekningen av flaten (interior).&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA885.htm">TeigId</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3564" /></button>Details:
+							<div id="detailsDIVLink3564" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA8/EA554.htm">Representasjonspunkt</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> Representasjonspunkt<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3565" /></button>Details:
+							<div id="detailsDIVLink3565" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Punkt som representerer teigen. Punktet må ligge innenfor teigens avgrensing. Representasjonspunktet til en teig er vanligvis plassert i tyngdepunktet til flata.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -339,7 +463,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA899.htm">SamlaFastEiendom</a><br />
+						<a href="../EA1/EA21.htm">UUID</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -347,16 +471,204 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> MatrenhForSamlaFastEdm<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3361" /></button>Details:
-							<div id="detailsDIVLink3361" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Sett med MatrenhForSamlaFastEdm. Inneholder id&#39;er for Matrikkelenheter som inngår i samla fast eiendom, med flagg som angir om matrikkelenheten er hovedmatrikkelenhet i samla fast eiendom.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3566" /></button>Details:
+							<div id="detailsDIVLink3566" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA786.htm">«enum» ArealmerknadKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> ArealmerknadKodeId<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3567" /></button>Details:
+							<div id="detailsDIVLink3567" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Merknader som har betydning for forståelsen til areal. Det kan være ingen, én eller flere merknader til arealet.&lt;br/&gt;Merknad 1: Dårlig stedfestingsnøyaktighet på grenser og grensepunkt som arealet beregnes ut fra kommer ikke fram under teigarealmerknad.&lt;br/&gt;Merknad 2: Kodeverdiene avledes fra hjelpelinjekodeverdier, med unntak av &quot;Omtvistet&quot; som avledes fra tvist-koding på teig- eller omtvistet på grense.&lt;br/&gt;</div>
 
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA11/EA670.htm">TeigTillegg</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> Teig<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3568" /></button>Details:
+							<div id="detailsDIVLink3568" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Teigen som disse tilleggsdataene tilhører. Må være gitt.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA326.htm">TeigEndring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TeigId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3569" /></button>Details:
+							<div id="detailsDIVLink3569" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA879.htm">Teiggrense</a><br />
+						Class «KunLogiskSett» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> avgrensing<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3570" /></button>Details:
+							<div id="detailsDIVLink3570" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Relasjonen er avledet fra geometrien. Den finnes ikke i databasen, og er med for forståelsen av modellen.&lt;br/&gt;&lt;br/&gt;Teig har flate og grense har forløp.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA7/EA422.htm">MatrikkelenhetGeometriForretning</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TeigId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3571" /></button>Details:
+							<div id="detailsDIVLink3571" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Sett medteiggrensepunktId for teiggrensepunkt som er knyttet til forretningen.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA877.htm">TeigForMatrikkelenhet</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TeigId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3572" /></button>Details:
+							<div id="detailsDIVLink3572" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til Teig som koblingen gjelder for. Må være gitt.&lt;br/&gt;&lt;br/&gt;Teig inngår ikke i matrikkelenhet når&lt;br/&gt;- Vann med uklare eiendomsforhold&lt;br/&gt;- Ukjent matrikkelenhet&lt;br/&gt;&lt;br/&gt;Teig inngår i flere matrikkelenheter når&lt;br/&gt;- Uregistrert jordsameie&lt;br/&gt;- Ukjente grenser mellom matrikkelenheter&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA1/EA21.htm">UUID</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3573" /></button>Details:
+							<div id="detailsDIVLink3573" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA7/EA422.htm">MatrikkelenhetGeometriForretning</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3574" /></button>Details:
+							<div id="detailsDIVLink3574" class="DetailsDiv" >
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -394,7 +706,33 @@
 
 
 			</table>
-		</div>	</div>
+		</div>		<div class="ItemBody" id="LinksTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA21.htm">UUID</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Strong</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA21.htm">UUID</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Strong</td>
+					<td width="10%" class="TableRow" valign="top">From</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
  </div>
  </td>
 				</tr>

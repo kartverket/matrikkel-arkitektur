@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA24.htm">adresse</a> / <a href="EA88.htm">VegadresseIdent</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA24.htm">adresse</a> / <a href="EA88.htm">VegadresseIdent</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/26/2013 1:42:33 PM</td>
+			<td class="ObjectDetailsValue">26.06.2013 13:42:33</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -194,7 +168,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{90BA9498-D2EF-4831-BFED-162D6C69E1F6}"></a>adressekode
+					adressekode
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -204,7 +178,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -221,7 +195,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{BAAEB1AD-342B-4b14-8205-C00D8F0C1CDC}"></a>bokstav
+					bokstav
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -231,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -248,7 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{853005A3-8F1D-4afa-B73A-B8FC80F54239}"></a>nummer
+					nummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -258,7 +232,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

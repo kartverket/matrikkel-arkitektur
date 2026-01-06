@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA24.htm">adresse</a> / <a href="EA25.htm">Adresse</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA24.htm">adresse</a> / <a href="EA25.htm">Adresse</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:05 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:05</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/26/2013 9:05:35 AM</td>
+			<td class="ObjectDetailsValue">26.06.2013 09:05:35</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -172,7 +146,7 @@
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA5/EA186.htm">Implementasjonsmodell - Bygg</a>, <a href="../EA11/EA627.htm">Implementasjonsmodell - Kommunal tillegsdel</a></td>
+			<td class="ObjectDetailsValue"><a href="EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA5/EA186.htm">Implementasjonsmodell - Bygg</a>, <a href="../EA11/EA596.htm">Implementasjonsmodell - Kommunal tillegsdel</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">Matrikkelforskriften § 2d definerer den offisielle adressen som den fullstendige adressen for en&lt;br/&gt;bygning, bygningsendring, bruksenhet, eiendom eller annet objekt som er registrert med adresse i matrikkelen.&lt;br/&gt;I den offisielle adressen vil bruksenhetsnummer (fra bygg) inngå i den offisielle adressen når dette er&lt;br/&gt;nødvendig for å oppnå unik adresse.&lt;br/&gt;</div>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{A48D862B-47BE-4552-A25F-1AFE2253D6D2}"></a>adressetilleggsnavn
+					adressetilleggsnavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{FF5A8AFB-066A-4e8e-9ECB-E86BFBDFBF59}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -232,14 +206,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{CDFCF89B-6D5F-47f6-BFCC-2BA6F2FDB5C1}"></a>kortnavn
+					kortnavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -249,7 +223,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +250,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA719.htm">Kommune</a><br />
+						<a href="EA27.htm">AdresseId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -299,7 +273,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA56.htm">Krets</a><br />
+						<a href="../EA8/EA554.htm">Representasjonspunkt</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -307,7 +281,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KretsId<br />
+						<strong>Name:</strong> Representasjonspunkt<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -315,7 +289,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink43" /></button>Details:
 							<div id="detailsDIVLink43" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Adresser er vanligvis knyttet til flere kretser, men kun til en krets av hver kretstype/subklasse&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Representasjonspunkt for adressen.&lt;br/&gt;Angir normalt atkomsten til en bygning, bolig eller andre objekter og steder.&lt;br/&gt;&lt;br/&gt;Dersom en adresse kun gjelder en bygning med en adresse, plasseres punktet innenfor bygingens omriss like ved inngang /atkomst.. &lt;br/&gt;Det samme gjelder dersom det er knyttet flere adresser til flere innganger/atkomster til en bygning. Adressepunktene plasseres like ved de respektive innganger/atkomster innenfor bygningens omriss. For bygg med altangang eller svalgang med atkomst til den enkelte bolig via utvendig atkomsttrapp, plasseres adressepunktet i trapp nærmest terrengnivå&lt;br/&gt;&lt;br/&gt;Punkt registreres også uten at en har bygningens omriss, -men da settes ikke kvalitetsmerket for at den er verifisert mot omrisset.&lt;br/&gt;&lt;br/&gt;For ubebygde eiendommer verifiseres det at punktet er innenfor teigen og ved atkomst.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -323,7 +297,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA27.htm">AdresseId</a><br />
+						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -346,7 +320,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA585.htm">Representasjonspunkt</a><br />
+						<a href="../EA11/EA604.htm">AdresseTillegg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -354,7 +328,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Representasjonspunkt<br />
+						<strong>Name:</strong> AdresseTillegg<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -362,7 +336,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink45" /></button>Details:
 							<div id="detailsDIVLink45" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Representasjonspunkt for adressen.&lt;br/&gt;Angir normalt atkomsten til en bygning, bolig eller andre objekter og steder.&lt;br/&gt;&lt;br/&gt;Dersom en adresse kun gjelder en bygning med en adresse, plasseres punktet innenfor bygingens omriss like ved inngang /atkomst.. &lt;br/&gt;Det samme gjelder dersom det er knyttet flere adresser til flere innganger/atkomster til en bygning. Adressepunktene plasseres like ved de respektive innganger/atkomster innenfor bygningens omriss. For bygg med altangang eller svalgang med atkomst til den enkelte bolig via utvendig atkomsttrapp, plasseres adressepunktet i trapp nærmest terrengnivå&lt;br/&gt;&lt;br/&gt;Punkt registreres også uten at en har bygningens omriss, -men da settes ikke kvalitetsmerket for at den er verifisert mot omrisset.&lt;br/&gt;&lt;br/&gt;For ubebygde eiendommer verifiseres det at punktet er innenfor teigen og ved atkomst.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for adressen, inneholder blant annet kommentarer.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -370,7 +344,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA56.htm">Krets</a><br />
+						<a href="EA59.htm">KretsId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -378,7 +352,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KretsId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -417,7 +391,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA877.htm">Matrikkelenhet</a><br />
+						<a href="../EA12/EA688.htm">Kommune</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -440,7 +414,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA200.htm">Bygg</a><br />
+						<a href="EA56.htm">Krets</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -448,7 +422,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> KretsId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -456,14 +430,15 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink49" /></button>Details:
 							<div id="detailsDIVLink49" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Adresser er vanligvis knyttet til flere kretser, men kun til en krets av hver kretstype/subklasse&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA877.htm">Matrikkelenhet</a><br />
+						<a href="EA37.htm">Atkomst</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -486,7 +461,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA877.htm">Matrikkelenhet</a><br />
+						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -510,7 +485,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA59.htm">KretsId</a><br />
+						<a href="../EA5/EA200.htm">Bygg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -533,7 +508,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA37.htm">Atkomst</a><br />
+						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -556,7 +531,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA11/EA635.htm">AdresseTillegg</a><br />
+						<a href="EA56.htm">Krets</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -564,7 +539,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> AdresseTillegg<br />
+						<strong>Name:</strong> KretsId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -572,8 +547,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink54" /></button>Details:
 							<div id="detailsDIVLink54" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for adressen, inneholder blant annet kommentarer.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -590,7 +564,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA11/EA635.htm">AdresseTillegg</a><br />
+						<a href="../EA1/EA21.htm">UUID</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -598,7 +572,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Adresse<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -606,15 +580,14 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink55" /></button>Details:
 							<div id="detailsDIVLink55" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Adresse som disse tilleggsdataene tilhører. Må være gitt.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA1/EA21.htm">UUID</a><br />
+						<a href="../EA3/EA111.htm">Melding</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -637,6 +610,30 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA11/EA604.htm">AdresseTillegg</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> Adresse<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink57" /></button>Details:
+							<div id="detailsDIVLink57" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Adresse som disse tilleggsdataene tilhører. Må være gitt.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
 						<a href="../EA5/EA193.htm">Bruksenhet</a><br />
 						Class &nbsp;
 					</td>
@@ -651,33 +648,10 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink57" /></button>Details:
-							<div id="detailsDIVLink57" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Adressen til bruksenheten; del av logisk ident.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA3/EA111.htm">Melding</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink58" /></button>Details:
 							<div id="detailsDIVLink58" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Adressen til bruksenheten; del av logisk ident.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>

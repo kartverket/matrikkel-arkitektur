@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA117.htm">Meldingstype</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA117.htm">Meldingstype</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/22/2015 11:09:49 AM</td>
+			<td class="ObjectDetailsValue">22.06.2015 11:09:49</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -194,7 +168,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{2C44FEF1-60B3-4df2-AEE2-84BC36227F2F}"></a>EndretSammenslaingsMelding
+					EndretSammenslaingsMelding
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -204,7 +178,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -221,7 +195,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{F3779389-F6AF-4933-982D-43CDA61B06A6}"></a>FeilfortSammenslaingsMelding
+					FeilfortSammenslaingsMelding
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -231,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -248,7 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7A3C3DD3-73E6-4cec-93B2-E766CE874FC6}"></a>HjemmelshaverMelding
+					HjemmelshaverMelding
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -258,7 +232,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -275,7 +249,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D6B47EF1-06B1-4194-8A7A-A32CE13C4CE5}"></a>NySammenslaingsMelding
+					NySammenslaingsMelding
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -285,7 +259,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -302,7 +276,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{F6175C99-4BEB-4a27-9327-968BB8DCB9EA}"></a>NyTinglysingsMelding
+					NyTinglysingsMelding
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -312,7 +286,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -329,7 +303,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{716D2EA0-B529-4b89-9BC2-26521C804718}"></a>EierforholdMelding
+					EierforholdMelding
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -339,7 +313,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -431,7 +405,7 @@
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA10/EA621.htm">MatrikkelEnumKode</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA10/EA590.htm">MatrikkelEnumKode</a></td>
 					<td width="10%" class="TableRow" valign="top">Class</td>
 					<td width="10%" class="TableRow" valign="top">Generalization</td>
 					<td width="10%" class="TableRow" valign="top">To</td>

@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA10/EA610.htm">kode</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA10/EA579.htm">kode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,22 +84,22 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA10/EA608.htm">Implementasjonsmodell - Kode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA611.htm">EnumTre</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA612.htm">Kode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA613.htm">KodeEnumTre</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA614.htm">KodeEnumTreId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA615.htm">KodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA616.htm">KodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA617.htm">KodeList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA618.htm">KodelisteBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA619.htm">MatrikkelDbKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA620.htm">MatrikkelDbKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA621.htm">MatrikkelEnumKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA622.htm">MatrikkelEnumKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA623.htm">MatrikkelEnumKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA624.htm">MatrikkelKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA625.htm">MatrikkelKodeId</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA10/EA577.htm">Implementasjonsmodell - Kode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA580.htm">EnumTre</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA581.htm">Kode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA582.htm">KodeEnumTre</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA583.htm">KodeEnumTreId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA584.htm">KodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA585.htm">KodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA586.htm">KodeList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA587.htm">KodelisteBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA588.htm">MatrikkelDbKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA589.htm">MatrikkelDbKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA590.htm">MatrikkelEnumKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA591.htm">MatrikkelEnumKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA592.htm">MatrikkelEnumKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA593.htm">MatrikkelKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA10/EA594.htm">MatrikkelKodeId</a></li>
 </ul>
 
 					</td>
@@ -135,11 +109,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:07 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:07</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:07 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:07</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>

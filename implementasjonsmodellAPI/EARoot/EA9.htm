@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.5</a> / <a href="./EA8/EA549.htm">geometri</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="./EA8/EA518.htm">geometri</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,45 +84,45 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA8/EA547.htm">Implementasjonsmodell - Geometri</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA552.htm">AnleggsprojeksjonsArc</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA553.htm">AnleggsprojeksjonsBoundary</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA554.htm">AnleggsprojeksjonsBoundaryList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA555.htm">AnleggsprojeksjonsComplexSurface</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA556.htm">AnleggsprojeksjonsCurveSegment</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA557.htm">AnleggsprojeksjonsPolyline</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA558.htm">Arc</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA559.htm">Boundary</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA560.htm">BoundaryList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA561.htm">ComplexSurface</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA562.htm">CurveDirection</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA563.htm">CurveDirectionList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA564.htm">CurveSegment</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA565.htm">Geometri</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA566.htm">KoordinatkvalitetKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA567.htm">KoordinatkvalitetKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA568.htm">KoordinatkvalitetKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA569.htm">KoordinatsystemKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA570.htm">KoordinatsystemKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA571.htm">KoordinatsystemKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA572.htm">MalemetodeKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA573.htm">MalemetodeKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA574.htm">MalemetodeKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA575.htm">Multipolygon</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA576.htm">NoyaktighetsklasseKode</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA577.htm">NoyaktighetsklasseKodeId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA578.htm">NoyaktighetsklasseKodeIdList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA579.htm">Polygon</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA580.htm">PolygonList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA581.htm">Polyline</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA582.htm">Posisjonskvalitet</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA583.htm">Position</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA584.htm">PositionList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA585.htm">Representasjonspunkt</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA586.htm">Ring</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA587.htm">RingList</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA588.htm">SelectionPolygon</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA589.htm">SelectionRectangle</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA8/EA516.htm">Implementasjonsmodell - Geometri</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA521.htm">AnleggsprojeksjonsArc</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA522.htm">AnleggsprojeksjonsBoundary</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA523.htm">AnleggsprojeksjonsBoundaryList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA524.htm">AnleggsprojeksjonsComplexSurface</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA525.htm">AnleggsprojeksjonsCurveSegment</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA526.htm">AnleggsprojeksjonsPolyline</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA527.htm">Arc</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA528.htm">Boundary</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA529.htm">BoundaryList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA530.htm">ComplexSurface</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA531.htm">CurveDirection</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA532.htm">CurveDirectionList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA533.htm">CurveSegment</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA534.htm">Geometri</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA535.htm">KoordinatkvalitetKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA536.htm">KoordinatkvalitetKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA537.htm">KoordinatkvalitetKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA538.htm">KoordinatsystemKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA539.htm">KoordinatsystemKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA540.htm">KoordinatsystemKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA541.htm">MalemetodeKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA542.htm">MalemetodeKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA543.htm">MalemetodeKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA544.htm">Multipolygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA545.htm">NoyaktighetsklasseKode</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA546.htm">NoyaktighetsklasseKodeId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA547.htm">NoyaktighetsklasseKodeIdList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA548.htm">Polygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA549.htm">PolygonList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA550.htm">Polyline</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA551.htm">Posisjonskvalitet</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA552.htm">Position</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA553.htm">PositionList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA554.htm">Representasjonspunkt</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA555.htm">Ring</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA556.htm">RingList</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA557.htm">SelectionPolygon</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA8/EA558.htm">SelectionRectangle</a></li>
 </ul>
 
 					</td>
@@ -158,11 +132,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:07 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:07</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -230,7 +204,7 @@
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="./EA16/EA787.htm">matrikkelenhet</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="./EA5/EA188.htm">bygning</a></td>
 					<td width="10%" class="TableRow" valign="top">Package</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
@@ -244,7 +218,7 @@
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="./EA5/EA188.htm">bygning</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="./EA16/EA756.htm">matrikkelenhet</a></td>
 					<td width="10%" class="TableRow" valign="top">Package</td>
 					<td width="10%" class="TableRow" valign="top">Dependency</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
