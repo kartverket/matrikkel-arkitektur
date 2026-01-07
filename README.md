@@ -297,6 +297,8 @@ Endringene vil nå overskrive den gamle implementasjonsmodellen som lå i `imple
    git add .
    git commit -m "Beskrivende melding om endringene dine"
    ```
+### NB! Dobbeltsjekk at du har commitet alle ny filer!
+Ved bytte mellom versjoner (og OS), så kan mange genererte filnavn endres.
 
 6. **Push til GitHub:**
    ```bash
