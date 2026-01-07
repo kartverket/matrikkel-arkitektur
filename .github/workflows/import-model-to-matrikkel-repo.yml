@@ -57,7 +57,7 @@ jobs:
         id: pr
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "BRANCH_NAME=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+            echo "BRANCH_NAME=implementasjonsmodell/${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
             echo "PR_TITLE<<EOF" >> $GITHUB_ENV
             echo "${{ github.event.pull_request.title }}" >> $GITHUB_ENV
             echo "EOF" >> $GITHUB_ENV
@@ -67,9 +67,9 @@ jobs:
             echo "SOURCE_PR=#${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
           else
             if [ -n "${{ inputs.branch_name }}" ]; then
-              echo "BRANCH_NAME=${{ inputs.branch_name }}" >> $GITHUB_ENV
+              echo "BRANCH_NAME=implementasjonsmodell/${{ inputs.branch_name }}" >> $GITHUB_ENV
             else
-              echo "BRANCH_NAME=Manuell-oppdatering-av-implementasjonsmodell-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
+              echo "BRANCH_NAME=implementasjonsmodell/manuell-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_ENV
             fi
             echo "PR_TITLE<<EOF" >> $GITHUB_ENV
             echo "Oppdatering av implementasjonsmodell" >> $GITHUB_ENV
@@ -108,7 +108,7 @@ jobs:
             echo "No changes to commit"
             echo "HAS_CHANGES=false" >> $GITHUB_ENV
           else
-            git commit -m "Sync: $PR_TITLE"
+            git commit -m "Implementasjonsmodell: $PR_TITLE"
             echo "HAS_CHANGES=true" >> $GITHUB_ENV
           fi
 
