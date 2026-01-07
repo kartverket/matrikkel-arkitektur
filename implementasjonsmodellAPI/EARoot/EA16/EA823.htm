@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA823.htm">HjelpelinjeTypeKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA823.htm">HjelpelinjeTypeKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">15.10.2020 13:20:06</td>
+			<td class="ObjectDetailsValue">10/15/2020 1:20:06 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					ikke_hjelpelinje
+					<a name="{E30C1C75-3E91-4645-AB09-40910A0D6F27}"></a>ikke_hjelpelinje
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -195,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Vannkant
+					<a name="{5565F9BE-1508-4284-872E-2BA35782A561}"></a>Vannkant
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -205,7 +231,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +248,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Vegkant
+					<a name="{B4D6D0FB-EB6A-41a1-AF15-4BA1CA3E3E18}"></a>Vegkant
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -232,7 +258,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +275,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Fiktiv_grense
+					<a name="{CC6BAA17-8765-4f07-99C9-31CBD3E71AE4}"></a>Fiktiv_grense
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -259,7 +285,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +302,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Punktfeste
+					<a name="{C786504C-9E4D-4b82-8F7B-21661CAE3BB6}"></a>Punktfeste
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -286,7 +312,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -303,7 +329,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Teigdeler
+					<a name="{62947376-39B7-49fb-BC61-A89AEE19B6E4}"></a>Teigdeler
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -313,7 +339,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

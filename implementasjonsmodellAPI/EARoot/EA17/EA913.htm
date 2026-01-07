@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA896.htm">person</a> / <a href="EA913.htm">LandKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA896.htm">person</a> / <a href="EA913.htm">LandKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">21.02.2017 12:57:22</td>
+			<td class="ObjectDetailsValue">2/21/2017 12:57:22 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					AFGHANISTAN
+					<a name="{6B6248A9-4BBF-4f69-AA67-1201D79540B6}"></a>AFGHANISTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,14 +204,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ALBANIA
+					<a name="{035AC4AB-9FDA-4e92-996D-8455F9815CE0}"></a>ALBANIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -195,14 +221,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ALGERIE
+					<a name="{315A9E7A-048D-4268-8AA6-701502DE9117}"></a>ALGERIE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -212,14 +238,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					AM. SAMOA
+					<a name="{5892C69D-474E-4000-A125-40849EA769CB}"></a>AM. SAMOA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -229,14 +255,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ANDORRA
+					<a name="{86A649FE-4EAC-4bb1-8BEF-BE046B42CF90}"></a>ANDORRA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -246,14 +272,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ANGOLA
+					<a name="{C08BAA04-E8C4-406b-82F8-683590E21EBF}"></a>ANGOLA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -263,14 +289,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ANGUILLA
+					<a name="{F370A1D2-73B4-4594-81AE-98A12A49101B}"></a>ANGUILLA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -280,14 +306,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ANTIGUA OG BARBUDA
+					<a name="{940F7AD8-F6B7-4567-AC21-5F4B7F6DADF0}"></a>ANTIGUA OG BARBUDA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -297,14 +323,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ARGENTINA
+					<a name="{CA19E30E-2ED5-4aea-A4D7-8154E5629FCD}"></a>ARGENTINA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -314,14 +340,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ARMENIA
+					<a name="{5C123FD8-38BE-45d9-99D4-A517A6BF1803}"></a>ARMENIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -331,14 +357,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ARUBA
+					<a name="{F15A4433-A9EF-4311-917F-325043855D38}"></a>ARUBA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -348,14 +374,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					AUSTRALIA
+					<a name="{3974D62C-BBEC-425f-AE98-86090AC3606D}"></a>AUSTRALIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -365,14 +391,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					AZERBAJDZJAN
+					<a name="{7D10EBAA-C437-4b10-B4B0-2CD37839C19E}"></a>AZERBAJDZJAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -382,14 +408,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BAHAMAS
+					<a name="{D8DAA83F-0FB4-4a6a-B682-D37D26EBFE43}"></a>BAHAMAS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -399,14 +425,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BAHRAIN
+					<a name="{F8878321-647E-491d-A9C1-48FB2D8B3523}"></a>BAHRAIN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -416,14 +442,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BANGLADESH
+					<a name="{90A528EF-A10E-4247-A97E-2ECDE85D0577}"></a>BANGLADESH
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -433,14 +459,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BARBADOS
+					<a name="{628AFFB0-14FE-4de4-B952-BA01D583D71A}"></a>BARBADOS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -450,14 +476,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BELGIA
+					<a name="{36258FD0-BC61-4983-9307-453A2EB6220F}"></a>BELGIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -467,14 +493,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BELIZE
+					<a name="{62DE8478-6277-4636-9B71-9F0C7C43811C}"></a>BELIZE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -484,14 +510,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BENIN
+					<a name="{ED4371CB-0402-4bb2-BF7F-07296B7B9A91}"></a>BENIN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -501,14 +527,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BERMUDA
+					<a name="{649BE3EB-E104-47b8-97ED-8CB667E5C8A7}"></a>BERMUDA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -518,14 +544,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BHUTAN
+					<a name="{87A31FAD-47E9-423e-9CEC-D8CAF96BB11B}"></a>BHUTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -535,14 +561,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BOLIVIA
+					<a name="{F7FA1CF1-BDB9-40df-A8A8-7EB85B40988F}"></a>BOLIVIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -552,14 +578,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BOSNIA-HERCEGOVINA
+					<a name="{90455278-70D4-44a7-9F4C-1A3A87C06059}"></a>BOSNIA-HERCEGOVINA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -569,14 +595,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BOTSWANA
+					<a name="{B1203806-C152-4925-A928-60754D0EA2D1}"></a>BOTSWANA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -586,14 +612,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BRASIL
+					<a name="{E776AA16-A03A-46dc-B429-C5AFFD038451}"></a>BRASIL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -603,14 +629,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BRITISK-INDISKE HAV
+					<a name="{2799DB44-1A98-46ed-B2FA-D51E9079BF97}"></a>BRITISK-INDISKE HAV
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -620,14 +646,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BRUNEI
+					<a name="{0BEC8349-8A18-45be-BB6E-205D28588E19}"></a>BRUNEI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -637,14 +663,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BULGARIA
+					<a name="{8787F963-91CF-489e-A68B-5A714AD4E70C}"></a>BULGARIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -654,14 +680,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BURKINA FASO
+					<a name="{E6239A83-E135-448e-9CDA-6D25B92BF4F2}"></a>BURKINA FASO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -671,14 +697,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					BURUNDI
+					<a name="{5E642603-90F9-4280-85F5-5EDDD7ADEDD8}"></a>BURUNDI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -688,14 +714,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					CANADA
+					<a name="{AA1E8A45-AEA5-4b7d-B5FC-42FD5CF7F039}"></a>CANADA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -705,14 +731,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					CAYMANØYENE
+					<a name="{7BC233EA-4EAF-489e-AF34-C04C36B8E338}"></a>CAYMANØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -722,14 +748,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					CHILE
+					<a name="{5A574FEF-B020-4e3c-A3A9-B98B7FD15CC7}"></a>CHILE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -739,14 +765,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					CHRISTMASØYA
+					<a name="{BCE7794F-7424-4f92-BF1B-217936066E21}"></a>CHRISTMASØYA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -756,14 +782,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					COLOMBIA
+					<a name="{BD0F815D-F0B5-4372-BF0F-07790A247EF6}"></a>COLOMBIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -773,14 +799,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					COOKØYENE
+					<a name="{4085A498-C376-46aa-A9B2-9CD348188CD5}"></a>COOKØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -790,14 +816,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					COSTA RICA
+					<a name="{A645DB76-0000-447d-9BEA-30EA7E7FF455}"></a>COSTA RICA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -807,14 +833,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					CUBA
+					<a name="{00D105FE-7777-48ea-B121-C8D1F56795DC}"></a>CUBA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -824,14 +850,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DANMARK
+					<a name="{7397BDF2-C184-4f5d-95F0-C8D5DBC3AF47}"></a>DANMARK
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -841,14 +867,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DE ARABISKE EMIRATER
+					<a name="{0AFB903B-4CBE-4e34-A95F-FAD260407B62}"></a>DE ARABISKE EMIRATER
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -858,14 +884,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DE NEDERLANDSKE ANTILLENE
+					<a name="{73C1F4FE-76A0-459b-8BD8-EE73CBDD1F45}"></a>DE NEDERLANDSKE ANTILLENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -875,14 +901,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DEN DOMINIKANSKE REP
+					<a name="{7CE1006D-387F-4dbf-9553-879EFB2F2BBD}"></a>DEN DOMINIKANSKE REP
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -892,14 +918,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DEN TSJEKKISKE REP
+					<a name="{818F3D78-CFE6-4942-9EC2-B15189072271}"></a>DEN TSJEKKISKE REP
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -909,14 +935,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DEN TSJEKKISKE REP.
+					<a name="{80FCCCB3-3C56-468f-AB5F-F9F43CC70A19}"></a>DEN TSJEKKISKE REP.
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -926,14 +952,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DET PALESTINSKE OMRÅDET
+					<a name="{478EF9DD-4DE9-47e4-A48B-7F7348B02999}"></a>DET PALESTINSKE OMRÅDET
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -943,14 +969,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DJIBOUTI
+					<a name="{80B21C25-9CFF-4628-8125-2B6D8194F041}"></a>DJIBOUTI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -960,14 +986,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DOMINICA
+					<a name="{60D1B940-E811-4501-A568-8C41BC404303}"></a>DOMINICA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -977,14 +1003,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ECUADOR
+					<a name="{FEF5017D-A99C-44cd-9E4B-35E5AF4AC173}"></a>ECUADOR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -994,14 +1020,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					EGYPT
+					<a name="{743BF687-774E-41b6-B4A6-EF6F189E2AE6}"></a>EGYPT
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1011,14 +1037,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					EKVATORIAL-GUINEA
+					<a name="{9B946FC8-2CFD-4467-B5A1-35649A4CED02}"></a>EKVATORIAL-GUINEA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1028,14 +1054,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					EL SALVADOR
+					<a name="{C5B5A1B5-47F8-456c-ACE7-72147BFD772A}"></a>EL SALVADOR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1045,14 +1071,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ELFENBEINSKYSTEN
+					<a name="{1ED2C07A-C000-4971-BA9D-03BB14631FB8}"></a>ELFENBEINSKYSTEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1062,14 +1088,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ERITREA
+					<a name="{2ACA76BD-F7CE-4a08-9A01-E1CA844614A1}"></a>ERITREA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1079,14 +1105,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ESTLAND
+					<a name="{D0C25595-3D33-4029-8ED3-A83DF814B122}"></a>ESTLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1096,14 +1122,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ETIOPIA
+					<a name="{011DEC01-6D5F-405f-A6A6-1A64F23DAA4D}"></a>ETIOPIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1113,14 +1139,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FALKLANDSØYENE
+					<a name="{6E733240-1F60-4d08-8E10-D2D8F6F8745A}"></a>FALKLANDSØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1130,14 +1156,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FIJI
+					<a name="{3CE969E2-ACFF-4872-9343-0927886C0183}"></a>FIJI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1147,14 +1173,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FILIPPINENE
+					<a name="{EFB2B8A7-AC9B-4b7f-86EF-D1CACB3FFA24}"></a>FILIPPINENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1164,14 +1190,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FINLAND
+					<a name="{D59896BC-D0CC-46cd-9656-89AF407A4F92}"></a>FINLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1181,14 +1207,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FRANKRIKE
+					<a name="{82768910-912C-4afd-AF49-9C967E2C392B}"></a>FRANKRIKE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1198,14 +1224,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FRANSK GUYANA
+					<a name="{2129D614-25C2-4a23-80D7-BCAC5A304B9C}"></a>FRANSK GUYANA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1215,14 +1241,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FRANSK POLYNESIA
+					<a name="{51196661-B6F4-4511-A3C4-E5EA254C2B9B}"></a>FRANSK POLYNESIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1232,14 +1258,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FÆRØYENE
+					<a name="{792444CC-2715-47db-9F80-522032123863}"></a>FÆRØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1249,14 +1275,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GABON
+					<a name="{C430B7B2-DB95-47d6-82A2-221734478DDC}"></a>GABON
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1266,14 +1292,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GAMBIA
+					<a name="{BA078301-F414-483d-9C32-44885C2EBF99}"></a>GAMBIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1283,14 +1309,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GEORGIA
+					<a name="{112B2DBE-B6A6-46d7-8553-83823323B1A9}"></a>GEORGIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1300,14 +1326,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GHANA
+					<a name="{3E185F54-7E32-49e2-9F83-0FC86583420C}"></a>GHANA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1317,14 +1343,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GIBRALTAR
+					<a name="{58EA2A2D-D6A8-4d61-BBF1-700B9F7F2998}"></a>GIBRALTAR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1334,14 +1360,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GRENADA
+					<a name="{4ADEDE4E-94C9-49a5-846D-110841B1B05A}"></a>GRENADA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1351,14 +1377,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GRØNLAND
+					<a name="{5E00D84F-2000-4547-A0C1-19CF578E1FCB}"></a>GRØNLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1368,14 +1394,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GUADELOUPE
+					<a name="{9AB8AAEA-F4C5-497a-97BF-0F1AA8A0E0A4}"></a>GUADELOUPE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1385,14 +1411,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GUAM
+					<a name="{07A75881-B2B2-40cd-8EED-57280B2659AD}"></a>GUAM
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1402,14 +1428,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GUATEMALA
+					<a name="{DC103436-8E5A-4436-8794-1A466F9B5E31}"></a>GUATEMALA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1419,14 +1445,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GUINEA
+					<a name="{924E717B-7F30-4ede-AB2A-C0753598EEAA}"></a>GUINEA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1436,14 +1462,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GUINEA-BISSAU
+					<a name="{4B623199-3F2F-4545-8891-6BD4FB134C43}"></a>GUINEA-BISSAU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1453,14 +1479,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GUYANA
+					<a name="{1133E9DB-E54F-45f9-B2AD-8DD495CAB0AB}"></a>GUYANA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1470,14 +1496,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HAITI
+					<a name="{28849066-83F7-44d3-A405-2F103B3498AC}"></a>HAITI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1487,14 +1513,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HELLAS
+					<a name="{495ED96E-7F9C-412a-A1F3-D03E614417E5}"></a>HELLAS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1504,14 +1530,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HONDURAS
+					<a name="{8DDA6F39-B686-4825-B94D-B05B4184369E}"></a>HONDURAS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1521,14 +1547,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HONGKONG
+					<a name="{D75C5C42-E700-4412-A1E6-8104784BFACC}"></a>HONGKONG
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1538,14 +1564,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HVITERUSSLAND
+					<a name="{92993B44-839A-4255-9AF4-AB1B23092AB4}"></a>HVITERUSSLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1555,14 +1581,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					INDIA
+					<a name="{A757DBD7-D641-4a1c-BF37-B14160C870CE}"></a>INDIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1572,14 +1598,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					INDONESIA
+					<a name="{21BEC117-6864-4de9-92A1-24BB50B0684F}"></a>INDONESIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1589,14 +1615,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					IRAK
+					<a name="{96E8303E-C790-4c21-9E24-A9738065D758}"></a>IRAK
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1606,14 +1632,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					IRAN
+					<a name="{45719A11-9F77-4f8f-9B31-510D21691C85}"></a>IRAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1623,14 +1649,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					IRLAND
+					<a name="{D2835629-425A-40c6-A749-DFA4F78EC154}"></a>IRLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1640,14 +1666,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ISLAND
+					<a name="{F8E8A7BE-EBB6-458f-810E-562FE2BAD1D6}"></a>ISLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1657,14 +1683,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ISRAEL
+					<a name="{9A3F1ACB-3DDE-40c5-9322-531EFC114F29}"></a>ISRAEL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1674,14 +1700,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ITALIA
+					<a name="{22F46D01-BAFF-4f7c-AED8-3F3949ED0516}"></a>ITALIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1691,14 +1717,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					JAMAICA
+					<a name="{81334924-08D6-4c73-AD3A-5AF04DFC1EE4}"></a>JAMAICA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1708,14 +1734,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					JAPAN
+					<a name="{6D175CA5-34FD-478a-92C7-E7B8DED2D525}"></a>JAPAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1725,14 +1751,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					JOMFRUØYENE AM.
+					<a name="{52DAD58B-221D-4aa6-AD7B-ADD829AB9BA7}"></a>JOMFRUØYENE AM.
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1742,14 +1768,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					JOMFRUØYENE BRIT.
+					<a name="{9AFBDC21-8032-47e8-A6DC-F8CBACC0A76F}"></a>JOMFRUØYENE BRIT.
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1759,14 +1785,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					JORDAN
+					<a name="{1E280133-CFD1-43f6-973D-EC87A94D2FA4}"></a>JORDAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1776,14 +1802,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KAMERUN
+					<a name="{38D1F937-3F31-4ee0-A7B8-944186D0239B}"></a>KAMERUN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1793,14 +1819,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KAMPUTCHEA
+					<a name="{137B0909-F1D4-4c2a-ACC9-C1FB3B54C933}"></a>KAMPUTCHEA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1810,14 +1836,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KANARIØYENE
+					<a name="{07A92069-A920-48e8-ADC7-979E25569A57}"></a>KANARIØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1827,14 +1853,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KAPP VERDE
+					<a name="{88157E1E-1128-4c64-AAAD-285C479CEFA6}"></a>KAPP VERDE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1844,14 +1870,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KAZAKHSTAN
+					<a name="{A7BDA9B5-4BCF-4fa2-9409-A6ADFD658526}"></a>KAZAKHSTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1861,14 +1887,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KENYA
+					<a name="{CFB57415-AFCF-4d10-BA17-287D658B52A1}"></a>KENYA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1878,14 +1904,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KINA
+					<a name="{1DFD6576-8DAF-4f7b-B3C9-B25E3CBBC6AC}"></a>KINA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1895,14 +1921,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KIRIBATI
+					<a name="{8E697501-6F9A-4d97-A811-29714D0407BF}"></a>KIRIBATI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1912,14 +1938,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KOKOSØYENE
+					<a name="{AFF2A4D4-A2FD-407c-A78B-EFB20CD7E2A4}"></a>KOKOSØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1929,14 +1955,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KOMORENE
+					<a name="{FCCB8E60-D6F1-4cd6-84BB-B10ACEA29DB0}"></a>KOMORENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1946,14 +1972,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KONGO, DEN DEMOKR. REPUBL
+					<a name="{A238954A-BDA0-4dd0-908C-ED914F498B4E}"></a>KONGO, DEN DEMOKR. REPUBL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1963,14 +1989,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KONGO, REPUBLIKKEN
+					<a name="{74AF19EB-0ECF-48f1-9722-FA93DEE22D99}"></a>KONGO, REPUBLIKKEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1980,14 +2006,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KOSOVO
+					<a name="{366C4761-BF80-4ca3-ADA6-3342BA18FCCE}"></a>KOSOVO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1997,14 +2023,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KROATIA
+					<a name="{9C81F5A1-796A-426c-89B5-C8C6F71ACA42}"></a>KROATIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2014,14 +2040,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KUWAIT
+					<a name="{19AB7936-A097-466e-BC3A-CE367345A358}"></a>KUWAIT
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2031,14 +2057,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KYPROS
+					<a name="{8DAF0FBD-1785-48e9-BC71-3D86AF10947A}"></a>KYPROS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2048,14 +2074,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KYRGYZSTAN
+					<a name="{57B944C2-DA14-412b-9EC1-E2C82DD5E8E1}"></a>KYRGYZSTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2065,14 +2091,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LAOS
+					<a name="{FA07C00B-1BE1-47c6-92EF-33CC003B62B6}"></a>LAOS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2082,14 +2108,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LATVIA
+					<a name="{D3FB8321-1A38-406e-AE4A-83EB172F64D7}"></a>LATVIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2099,14 +2125,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LESOTHO
+					<a name="{44271083-C9F9-4a7d-AAA3-542A2C3A8B28}"></a>LESOTHO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2116,14 +2142,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LIBANON
+					<a name="{50809231-4DBD-4ede-AF0F-A6B65BF022D0}"></a>LIBANON
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2133,14 +2159,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LIBERIA
+					<a name="{E4819C0A-FBEF-49b7-B395-EA162E2D455B}"></a>LIBERIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2150,14 +2176,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LIBYA
+					<a name="{C225FCC8-CAEE-4a6c-B52C-6A8AD2CF08A0}"></a>LIBYA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2167,14 +2193,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LIECHTENSTEIN
+					<a name="{376D2849-E191-457e-A44B-1B85C9F054CE}"></a>LIECHTENSTEIN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2184,14 +2210,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LITAUEN
+					<a name="{94CC75F7-D719-47c2-AB7B-1D33C892AE80}"></a>LITAUEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2201,14 +2227,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					LUXEMBOURG
+					<a name="{F1C496FD-49D1-47b1-9402-CAD56B1BAAE3}"></a>LUXEMBOURG
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2218,14 +2244,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MACAO
+					<a name="{DDCF7109-8A97-43cb-8651-AA1FCAAF8E2F}"></a>MACAO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2235,14 +2261,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MADAGASKAR
+					<a name="{EE928FC1-6155-4588-BB6E-777029EDDAE0}"></a>MADAGASKAR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2252,14 +2278,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MAKEDONIA
+					<a name="{59BCFB7B-72BE-44d2-A4FB-1BA58EA0770F}"></a>MAKEDONIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2269,14 +2295,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MALAWI
+					<a name="{77AD0BA5-FF18-47e3-B47F-5558E3C59733}"></a>MALAWI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2286,14 +2312,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MALAYSIA
+					<a name="{668B36ED-AE5F-40c0-9E5C-86177860801C}"></a>MALAYSIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2303,14 +2329,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MALDIVENE
+					<a name="{E4F374D5-5AE3-4886-ABB4-6707C7DF3B79}"></a>MALDIVENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2320,14 +2346,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MALI
+					<a name="{0774D96D-D9C5-4587-A15E-C73FF07DB239}"></a>MALI
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2337,14 +2363,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MALTA
+					<a name="{5D6DBAD5-8AEB-4a10-8768-49FBF369F03F}"></a>MALTA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2354,14 +2380,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MAROKKO
+					<a name="{C5421A6A-33F4-46bb-92F5-F006630C740C}"></a>MAROKKO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2371,14 +2397,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MARSHALLØYENE
+					<a name="{1187518D-63BE-413b-8F92-C746DFD3E8F3}"></a>MARSHALLØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2388,14 +2414,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MARTINIQUE
+					<a name="{3B85D800-3D26-49b8-9EC7-9E170308F9C0}"></a>MARTINIQUE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2405,14 +2431,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MAURITANIA
+					<a name="{2BE06212-F995-48c9-B4DD-1E7B8FE8E3F1}"></a>MAURITANIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2422,14 +2448,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MAURITIUS
+					<a name="{E3564732-E196-4149-B550-F2753A26E020}"></a>MAURITIUS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2439,14 +2465,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MAYOTTE
+					<a name="{5D226391-DB2D-4c5f-8C72-CB588A7D2A97}"></a>MAYOTTE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2456,14 +2482,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MEXICO
+					<a name="{97CA2BBD-07B5-4fc5-901B-F09D5487BF3E}"></a>MEXICO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2473,14 +2499,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MIKRONESIAFØDERASJONEN
+					<a name="{C0323C49-9E80-4c7d-91F7-6AE9C04BE676}"></a>MIKRONESIAFØDERASJONEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2490,14 +2516,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MINDRE STILLEHAVSØYER
+					<a name="{460F92EA-BC75-408f-8382-42A5513326F6}"></a>MINDRE STILLEHAVSØYER
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2507,14 +2533,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MOLDOVA
+					<a name="{1A0A1FE9-D760-48f9-80FF-356FAEA920D6}"></a>MOLDOVA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2524,14 +2550,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MONACO
+					<a name="{BAA4A63E-31B6-4230-B729-7AA64F5EF9A8}"></a>MONACO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2541,14 +2567,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MONGOLIA
+					<a name="{14671894-2D54-4f69-97B6-8B5AB1202AA2}"></a>MONGOLIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2558,14 +2584,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MONTSERRAT
+					<a name="{C7B0BA90-1D27-4cdb-AD13-9809C578D0E9}"></a>MONTSERRAT
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2575,14 +2601,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MOSAMBIK
+					<a name="{6575B480-4CD9-49f0-8F69-595E910F89D4}"></a>MOSAMBIK
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2592,14 +2618,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MYANMAR (BURMA)
+					<a name="{6893019D-179D-41d1-A3B5-582823EECDC5}"></a>MYANMAR (BURMA)
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2609,14 +2635,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NAMIBIA
+					<a name="{578180B4-C45D-42b6-9202-B9A63750B2DC}"></a>NAMIBIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2626,14 +2652,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NAURU
+					<a name="{884AD731-2FA0-4a7f-B94F-5F8BFE9C882D}"></a>NAURU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2643,14 +2669,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NEDERLAND
+					<a name="{76D7F14C-F6F1-48a7-A3A6-82C70E061ADB}"></a>NEDERLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2660,14 +2686,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NEPAL
+					<a name="{C55965B3-50E6-413e-B764-227F35E7EF99}"></a>NEPAL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2677,14 +2703,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NEW ZEALAND
+					<a name="{491C9A50-49C2-4b13-BFB0-F87E8EEDD69D}"></a>NEW ZEALAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2694,14 +2720,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NICARAGUA
+					<a name="{9BDFA88C-C9C1-443a-8295-09B03BDAF9EA}"></a>NICARAGUA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2711,14 +2737,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NIGER
+					<a name="{777F3337-5F3A-40a5-A504-7041BF9BE8B0}"></a>NIGER
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2728,14 +2754,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NIGERIA
+					<a name="{90CB268D-4546-434c-9DD4-00244AEEEAAA}"></a>NIGERIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2745,14 +2771,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NIUE
+					<a name="{082D8379-DA90-4a70-879E-D02627CB7D37}"></a>NIUE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2762,14 +2788,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NORD-KOREA
+					<a name="{6A3BD753-80EB-4a25-8E33-283A7FEC48E5}"></a>NORD-KOREA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2779,14 +2805,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NORD-MARIANENE
+					<a name="{9AE387B0-3FA4-4102-AABE-98CC1F752C11}"></a>NORD-MARIANENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2796,14 +2822,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NORFOLKØYA
+					<a name="{1B1038DC-C1EC-4522-8421-8D9EF8588538}"></a>NORFOLKØYA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2813,14 +2839,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NORGE
+					<a name="{28823B76-3B64-47bd-81E9-EF8B17BBB5E4}"></a>NORGE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2830,14 +2856,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					NY-KALEDONIA
+					<a name="{59519B1D-9ABB-4ad7-9DC4-72D1EB9D1F92}"></a>NY-KALEDONIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2847,14 +2873,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					OMAN
+					<a name="{AFCF6584-CA48-4ae5-A1C6-E443DD4A38ED}"></a>OMAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2864,14 +2890,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PAKISTAN
+					<a name="{2A38593F-41F2-4454-88B4-B7E242E22664}"></a>PAKISTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2881,14 +2907,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PALAU
+					<a name="{B560F4A2-9372-4c55-B973-55E3FB4BFAC4}"></a>PALAU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2898,14 +2924,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PANAMA
+					<a name="{EDE473CF-26D5-4823-A1A1-DD9A2132263F}"></a>PANAMA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2915,14 +2941,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PAPUA NY-GUINEA
+					<a name="{97087CBB-5866-4450-9AF9-8A0A16146480}"></a>PAPUA NY-GUINEA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2932,14 +2958,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PARAGUAY
+					<a name="{15F731DF-B8A4-4f53-8581-37CB4341EA97}"></a>PARAGUAY
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2949,14 +2975,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PERU
+					<a name="{BF311B9D-2F2F-4bd4-AED6-513DB8C79A20}"></a>PERU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2966,14 +2992,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PITCAIRN
+					<a name="{9BA5AA9A-B6DF-4e5b-86AE-01A89E22D29C}"></a>PITCAIRN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2983,14 +3009,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					POLEN
+					<a name="{F7F5A487-5321-4ca0-AB76-936A6EDD1A25}"></a>POLEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3000,14 +3026,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PORTUGAL
+					<a name="{EE09C7E3-6D90-436b-9E2B-CFD5E70F52F0}"></a>PORTUGAL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3017,14 +3043,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					PUERTO RICO
+					<a name="{40A35B9C-CB2A-490b-844C-BDAD599AF2EB}"></a>PUERTO RICO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3034,14 +3060,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					QATAR
+					<a name="{8900608D-E996-4906-B9C9-32A4DB9C2250}"></a>QATAR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3051,14 +3077,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					RÉUNION
+					<a name="{58BD3ED2-AB43-4b98-BA6B-4A908537C7B2}"></a>RÉUNION
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3068,14 +3094,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ROMANIA
+					<a name="{DE2DC77F-054A-469f-AA38-420BB2F27FC5}"></a>ROMANIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3085,14 +3111,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					RUSSLAND
+					<a name="{E5A795E4-A8A3-4082-B80A-D27F22BFB0BC}"></a>RUSSLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3102,14 +3128,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					RWANDA
+					<a name="{4D1C98EA-3F8F-4691-A003-3C56746105E2}"></a>RWANDA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3119,14 +3145,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SALOMONØYENE
+					<a name="{0DBCB90B-A6CE-4911-960E-0C64358B17BC}"></a>SALOMONØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3136,14 +3162,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SAN MARINO
+					<a name="{2F85AE9B-0973-4c78-A05C-6BE76AB65AE0}"></a>SAN MARINO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3153,14 +3179,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SAO TOME OG PRINCIPE
+					<a name="{F2DC9888-85B8-49ce-B3A9-E6983DFF051F}"></a>SAO TOME OG PRINCIPE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3170,14 +3196,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SAUDI-ARABIA
+					<a name="{EF74349B-4CFA-4e00-9A9A-98C3DE741D3D}"></a>SAUDI-ARABIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3187,14 +3213,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SENEGAL
+					<a name="{8CE88A32-F8BC-40ca-90D0-9076D6D2F9BC}"></a>SENEGAL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3204,14 +3230,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SENTRALAFRIKANSKE REPUBLIKK
+					<a name="{219D88B8-A55B-4dd1-A410-AC1E064C5CAE}"></a>SENTRALAFRIKANSKE REPUBLIKK
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3221,14 +3247,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SERBIA
+					<a name="{A5DE9BBD-4E00-41a4-882C-EAFB9C62C452}"></a>SERBIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3238,14 +3264,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SERBIA OG MONTENEGRO
+					<a name="{961040DA-0527-4426-9BB2-7F4E807F6CD3}"></a>SERBIA OG MONTENEGRO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3255,14 +3281,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SEYCHELLENE
+					<a name="{B1B7A1B3-0E1C-467c-B7EF-FB42BED837EB}"></a>SEYCHELLENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3272,14 +3298,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SIERRA LEONE
+					<a name="{0E530623-5AE9-4e31-AB5C-EC177841BB88}"></a>SIERRA LEONE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3289,14 +3315,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SINGAPORE
+					<a name="{86D9706B-BCCA-4df3-A797-5E92EAAF0F8E}"></a>SINGAPORE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3306,14 +3332,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SLOVAKIA
+					<a name="{59AE49C2-D995-45b9-851F-C3E05622D705}"></a>SLOVAKIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3323,14 +3349,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SLOVENIA
+					<a name="{150B2DB9-79BD-4720-9374-3BA77B98C9C6}"></a>SLOVENIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3340,14 +3366,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SOMALIA
+					<a name="{D0427784-1E07-4302-ADC1-FDE95526675C}"></a>SOMALIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3357,14 +3383,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SPANIA
+					<a name="{D1162C86-52DB-4c02-8D54-E2A72A22D2B2}"></a>SPANIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3374,14 +3400,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SRI LANKA
+					<a name="{B38A4D8E-C198-4b1f-A4E2-4E8F7AB74532}"></a>SRI LANKA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3391,14 +3417,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ST. LUCIA
+					<a name="{3956F8BA-14C6-4d17-84A6-80C8E7F1168E}"></a>ST. LUCIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3408,14 +3434,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ST. VINCENT OG GRENADINENE
+					<a name="{5431636D-DE4D-498e-9C6A-A5493B093B0B}"></a>ST. VINCENT OG GRENADINENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3425,14 +3451,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ST.HELENA
+					<a name="{98DBE828-877A-469c-9F9C-1F3A3392164E}"></a>ST.HELENA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3442,14 +3468,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ST.KITTS OG NEVIS
+					<a name="{08775CA2-BE84-41c1-B853-A748798FFE38}"></a>ST.KITTS OG NEVIS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3459,14 +3485,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ST.PIERRE OG MIQUELON
+					<a name="{F87569D8-D34F-4b48-965A-797C6A9E158B}"></a>ST.PIERRE OG MIQUELON
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3476,14 +3502,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					STATSLØS
+					<a name="{E1835F7B-3097-4e9b-9063-4DD37655835D}"></a>STATSLØS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3493,14 +3519,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					STORBRITANNIA
+					<a name="{B9F7E9FE-9FFC-4edd-B640-B5EA2FE544F8}"></a>STORBRITANNIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3510,14 +3536,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SUDAN
+					<a name="{5C28054B-B99A-4099-8496-608C0867B229}"></a>SUDAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3527,14 +3553,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SURINAME
+					<a name="{685F28D0-FB12-4f83-8736-28183C7F1065}"></a>SURINAME
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3544,14 +3570,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SVEITS
+					<a name="{3ADD325C-BC39-4eb5-99AC-0011E89BF88E}"></a>SVEITS
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3561,14 +3587,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SVERIGE
+					<a name="{18D6CF2A-A345-455a-9E08-4B76A1C64571}"></a>SVERIGE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3578,14 +3604,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SWAZILAND
+					<a name="{A3B21F8A-78A7-4032-8632-9C50B5C1FF3C}"></a>SWAZILAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3595,14 +3621,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SYRIA
+					<a name="{05E8B2E1-5E7B-4363-923F-7B506339F95E}"></a>SYRIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3612,14 +3638,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SØR-AFRIKA
+					<a name="{709FC43E-E87E-47dc-A8F2-CF2B9FBD5C97}"></a>SØR-AFRIKA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3629,14 +3655,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SØR-KOREA
+					<a name="{6EDEC938-4393-4bef-B5C4-5BF92E6293DD}"></a>SØR-KOREA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3646,14 +3672,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TADZJIKISTAN
+					<a name="{3F9C55B9-7766-43ca-B36E-554C2B142CE5}"></a>TADZJIKISTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3663,14 +3689,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TAIWAN
+					<a name="{F3099EBE-71A2-417e-971C-703F0F88E177}"></a>TAIWAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3680,14 +3706,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TANZANIA
+					<a name="{56F6A627-C96A-4719-B284-69E9AF40EF0D}"></a>TANZANIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3697,14 +3723,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TCHAD
+					<a name="{127C6D76-AB56-4a54-A447-01064EA8D6D3}"></a>TCHAD
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3714,14 +3740,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					THAILAND
+					<a name="{E275317F-F0C6-476b-AEAF-4ECB196751F0}"></a>THAILAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3731,14 +3757,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TOGO
+					<a name="{76FA8FF4-DE7D-466b-A6EB-D36B4C99A61B}"></a>TOGO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3748,14 +3774,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TOKELAU
+					<a name="{155FC6E6-C47B-4988-A1D5-A7B1AAB315CC}"></a>TOKELAU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3765,14 +3791,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TONGA
+					<a name="{A66C7A28-B1FC-4737-B1A1-A17554C13341}"></a>TONGA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3782,14 +3808,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TRINIDAD OG TOBAGO
+					<a name="{EFDBE04C-5815-4dc7-A62E-AA961EB009A7}"></a>TRINIDAD OG TOBAGO
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3799,14 +3825,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TUNISIA
+					<a name="{70915955-BC0A-489c-87E2-2EF038F3518B}"></a>TUNISIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3816,14 +3842,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TURKMENISTAN
+					<a name="{1EE63EC0-00E6-47f2-8328-12781A644FC1}"></a>TURKMENISTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3833,14 +3859,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TURKS/CAICOSØYENE
+					<a name="{C3B954B4-1B6E-4bf3-A5BF-DA6BCEECEE8B}"></a>TURKS/CAICOSØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3850,14 +3876,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TUVALU
+					<a name="{7CD603AF-2709-4ca7-9E05-49D56F48D046}"></a>TUVALU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3867,14 +3893,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TYRKIA
+					<a name="{14F3C914-272E-46f1-9DAD-111D660D66FC}"></a>TYRKIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3884,14 +3910,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TYSKLAND
+					<a name="{F4CB4895-2D93-46f6-A81C-04B0D80EF310}"></a>TYSKLAND
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3901,14 +3927,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UGANDA
+					<a name="{017646B4-CF87-4712-8489-0D9597D83279}"></a>UGANDA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3918,14 +3944,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UKJENT
+					<a name="{50F0869B-F936-48ce-9A39-B9055E5119C0}"></a>UKJENT
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3935,14 +3961,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UKRAINA
+					<a name="{623B345E-7BC2-4032-B3E1-B776534AF668}"></a>UKRAINA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3952,14 +3978,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UNGARN
+					<a name="{297EF28A-4689-44f1-9AAD-20E3E307BD7B}"></a>UNGARN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3969,14 +3995,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOPPGITT/UKJENT
+					<a name="{1BFFA5EF-C445-46b1-8AAB-046EFB09FC71}"></a>UOPPGITT/UKJENT
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3986,14 +4012,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					URUGUAY
+					<a name="{5BCE5F70-C970-4394-BC7B-25FE8F700F52}"></a>URUGUAY
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4003,14 +4029,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					USA
+					<a name="{0E418FB4-5F4D-46d4-BA2F-BF2EB0671EDA}"></a>USA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4020,14 +4046,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UZBEKISTAN
+					<a name="{57775CE3-9B44-4c0b-8F18-11440925DC2B}"></a>UZBEKISTAN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4037,14 +4063,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					VANUATU
+					<a name="{1ACC8063-4683-4687-9261-68240BD2771D}"></a>VANUATU
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4054,14 +4080,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					VATIKANSTATEN
+					<a name="{909721CF-CE0C-4a4a-A6E7-0BFD68A0E67C}"></a>VATIKANSTATEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4071,14 +4097,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					VENEZUELA
+					<a name="{85F445FC-D13E-4079-987E-3AE229622884}"></a>VENEZUELA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4088,14 +4114,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					VEST-SAHARA
+					<a name="{13FDF2C8-7AD7-4c3e-8A04-65D7C862FADE}"></a>VEST-SAHARA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4105,14 +4131,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					VEST-SAMOA
+					<a name="{75567A3A-145D-4e49-BAFC-44667EAB0E13}"></a>VEST-SAMOA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4122,14 +4148,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					VIETNAM
+					<a name="{20F962F8-A546-46f3-9BC4-D18FC1E04F26}"></a>VIETNAM
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4139,14 +4165,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					WALLIS/FUTUNAØYENE
+					<a name="{F3C1B7F9-76A8-4105-BA56-6CAE31AAAF58}"></a>WALLIS/FUTUNAØYENE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4156,14 +4182,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					YEMEN
+					<a name="{87DFF7A9-8B31-43da-9A8B-797C99505977}"></a>YEMEN
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4173,14 +4199,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ZAMBIA
+					<a name="{C6359594-88C4-4eec-8EA4-F16F9E064682}"></a>ZAMBIA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4190,14 +4216,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ZIMBABWE
+					<a name="{328AC5E9-6192-4733-B1DE-980156B6AF0E}"></a>ZIMBABWE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4207,14 +4233,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ØSTERRIKE
+					<a name="{43374DA7-5D1A-441a-A704-135C46DB309B}"></a>ØSTERRIKE
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4224,14 +4250,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ØST-TIMOR
+					<a name="{A290ABCD-3129-4c65-A410-DDF523636740}"></a>ØST-TIMOR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -4241,7 +4267,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						

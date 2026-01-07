@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA164.htm">DomeneAvgrensning</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA164.htm">DomeneAvgrensning</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">18.06.2015 13:13:46</td>
+			<td class="ObjectDetailsValue">6/18/2015 1:13:46 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					alle_matrikkeldata
+					<a name="{9A6371AF-A972-4334-9CC9-3E65AC1BAE8A}"></a>alle_matrikkeldata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -195,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					matrikkel_kjernedata
+					<a name="{0638A599-1588-4a30-B2A4-656256252D8A}"></a>matrikkel_kjernedata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -205,7 +231,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +248,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					sefrakdata
+					<a name="{83D7B3D6-FAEF-4384-9D4C-8111960E0DF8}"></a>sefrakdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -232,7 +258,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +275,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kommunedata
+					<a name="{AC88FF6F-26A1-48c5-9006-D3E13F5E432E}"></a>kommunedata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -259,7 +285,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +302,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					brukerdata
+					<a name="{B158BFDB-458A-49a2-A5A4-4FA56616EDC9}"></a>brukerdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -286,7 +312,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -303,7 +329,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					registerinndata
+					<a name="{9ED8466B-DC70-4838-92A9-82898E453966}"></a>registerinndata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -313,7 +339,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -330,7 +356,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					brukerrettighetdata
+					<a name="{FBF3C620-3F1C-4bee-8E11-10EAADB4917A}"></a>brukerrettighetdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -340,7 +366,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -357,7 +383,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					koder
+					<a name="{E49BF8E2-A1ED-4cac-89BF-F899750CE24F}"></a>koder
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -367,7 +393,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -384,7 +410,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					fobdata
+					<a name="{ABF66B7F-6BF9-42f7-80C5-D8F912E591DF}"></a>fobdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -394,7 +420,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -411,7 +437,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					postendata
+					<a name="{08A07A07-FBF8-447c-BB32-BB19A1A5B2E7}"></a>postendata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -421,7 +447,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -438,7 +464,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					driftdata
+					<a name="{B8D16663-1911-4349-A98D-A0FB29E976E6}"></a>driftdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -448,7 +474,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -465,7 +491,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					jobbkodata
+					<a name="{A4DC6A6F-052E-4ad2-9604-9422BDEAF340}"></a>jobbkodata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -475,7 +501,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -492,7 +518,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					grunnforurensingdata
+					<a name="{B42603E8-6D2F-4189-89BD-36FAF98435D8}"></a>grunnforurensingdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -502,7 +528,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -519,7 +545,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kulturminnedata
+					<a name="{A4333C5A-DE6C-4a6f-AEE1-5DA380E51A18}"></a>kulturminnedata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -529,7 +555,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -546,7 +572,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					postnummerdata
+					<a name="{2199AE9E-0ED9-4aee-9046-F94192902B34}"></a>postnummerdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -556,7 +582,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -573,7 +599,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					brukeradministreringdata
+					<a name="{AC2DB4DA-E1B2-4fe9-93B1-099C18C05EA4}"></a>brukeradministreringdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -583,7 +609,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -600,7 +626,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					massivoppdateringdata
+					<a name="{27FEBF4E-6C56-4fc4-BAA8-797D017C274C}"></a>massivoppdateringdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -610,7 +636,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -627,7 +653,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					frigivingAvData
+					<a name="{4084EEE6-2C3D-41e0-B3FA-13CE88F8AF9A}"></a>frigivingAvData
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -637,7 +663,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -654,7 +680,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					frigivingAvDataEndringslogg
+					<a name="{CFD29DDA-E391-4e12-A276-5DB1472DA125}"></a>frigivingAvDataEndringslogg
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -664,7 +690,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -681,7 +707,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					konsesjon
+					<a name="{2F4D3BBD-A9F1-4128-A515-6B3FFE627095}"></a>konsesjon
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -691,7 +717,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -708,7 +734,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					historikk
+					<a name="{EA8E7C75-5385-4c2c-BD70-C4C9ED53D08F}"></a>historikk
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -718,7 +744,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -735,7 +761,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					annenPerson
+					<a name="{528D8B4B-4878-4b87-B921-4D09F9EDA019}"></a>annenPerson
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -745,7 +771,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -762,7 +788,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					brukeradministratorBrukerRettighetdata
+					<a name="{DF5BC98B-0DEA-461a-942F-A86C2115025D}"></a>brukeradministratorBrukerRettighetdata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -772,7 +798,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -789,7 +815,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					brukeradministratorMatrikkeldata
+					<a name="{03DCD44E-4812-4ce9-A82A-B93FB9C2AFDE}"></a>brukeradministratorMatrikkeldata
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -799,7 +825,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

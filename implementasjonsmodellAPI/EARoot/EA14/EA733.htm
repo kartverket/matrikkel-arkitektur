@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA716.htm">kulturminne</a> / <a href="EA733.htm">KulturminnekategoriKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA716.htm">kulturminne</a> / <a href="EA733.htm">KulturminnekategoriKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">20.06.2013 11:01:31</td>
+			<td width="85%" class="ObjectDetailsValue">6/20/2013 11:01:31 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">02.07.2015 13:36:17</td>
+			<td class="ObjectDetailsValue">7/2/2015 1:36:17 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -167,7 +193,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					AnnenKulturminnelokalitet
+					<a name="{8A590E05-1AB6-4d66-AB2A-04C20F35466B}"></a>AnnenKulturminnelokalitet
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -177,14 +203,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					AnnetKulturminne
+					<a name="{3FADBF30-7D75-48be-A857-E1C9A7E0BCFB}"></a>AnnetKulturminne
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -194,14 +220,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ArkeologiskEnkeltminne
+					<a name="{40027479-7A55-4e1f-8487-09D4B8997B9D}"></a>ArkeologiskEnkeltminne
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -211,14 +237,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ArkeologiskLokalitet
+					<a name="{F6530790-8B7C-4ce7-BFA1-8D1C25DDD5DE}"></a>ArkeologiskLokalitet
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -228,14 +254,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bygning
+					<a name="{18080366-0752-490a-AF7D-949DCDF67542}"></a>Bygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -245,14 +271,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bygningslokalitet
+					<a name="{B53B1560-3887-4db1-8ECD-7A7AFEAB6A23}"></a>Bygningslokalitet
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -262,14 +288,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HistoriskHage
+					<a name="{125DBE96-FE57-4d9a-B130-5A032385A5EE}"></a>HistoriskHage
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -279,14 +305,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kirke
+					<a name="{0EB1EA9E-23D4-4c20-A85B-6632B5882346}"></a>Kirke
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -296,14 +322,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kirkested
+					<a name="{A8B84A4B-BC30-4a29-BF5A-ED4A37258CA9}"></a>Kirkested
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -313,14 +339,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KulturminneUnderVannEnkeltminne
+					<a name="{A4496C68-A0FF-43ac-8E7F-70D9F6CDD33A}"></a>KulturminneUnderVannEnkeltminne
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -330,14 +356,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KulturminneUnderVannLokalitet
+					<a name="{C595182B-311B-4f97-A3F4-9EB0FDEF47F9}"></a>KulturminneUnderVannLokalitet
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -347,14 +373,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TekniskIndustreltEnkeltminne
+					<a name="{FC5E8755-358F-4b88-AFA3-A6A7F229A429}"></a>TekniskIndustreltEnkeltminne
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -364,14 +390,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TekniskIndustriellLokalitet
+					<a name="{E9D3C31B-3120-49be-A5C1-2F25C58F74B7}"></a>TekniskIndustriellLokalitet
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -381,7 +407,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						

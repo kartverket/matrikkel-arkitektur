@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA561.htm">grunnforurensing</a> / <a href="EA559.htm">Implementasjonsmodell - Grunnforurensing</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA561.htm">grunnforurensing</a> / <a href="EA559.htm">Implementasjonsmodell - Grunnforurensing</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -105,27 +131,27 @@
 					</td>
 					<td class="contentcell"><div class="PageBody">
 	<div class="diagram_image"> 
-<img src="EA560.png" usemap="#EA560" border="0" />
+<img src="EA560.png" usemap="#EA560" width="880" height="583" border="0" />
 
 <MAP NAME="EA560">
-<area shape="rect" coords="304,202,404,232" href="../EA1/EA21.htm" target="_self">
-<area shape="rect" coords="418,346,540,374" href="EA574.htm" target="_self">
-<area shape="rect" coords="18,349,147,378" href="EA569.htm" target="_self">
-<area shape="rect" coords="177,349,311,379" href="EA566.htm" target="_self">
-<area shape="rect" coords="399,124,558,185" href="EA572.htm" target="_self">
-<area shape="rect" coords="251,10,367,46" href="../EA16/EA846.htm" target="_self">
-<area shape="rect" coords="14,124,228,238" href="EA562.htm" target="_self">
+<area shape="rect" coords="485,303,635,348" href="../EA1/EA21.htm" target="_self">
+<area shape="rect" coords="656,519,839,561" href="EA574.htm" target="_self">
+<area shape="rect" coords="56,524,249,567" href="EA569.htm" target="_self">
+<area shape="rect" coords="294,524,495,569" href="EA566.htm" target="_self">
+<area shape="rect" coords="627,186,866,278" href="EA572.htm" target="_self">
+<area shape="rect" coords="405,15,579,101" href="../EA16/EA846.htm" target="_self">
+<area shape="rect" coords="50,186,371,368" href="EA562.htm" target="_self">
 </MAP>
  </div>
 	<div class="ObjectTitle">Implementasjonsmodell - Grunnforurensing : Class diagram</div>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:13</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:13 AM</td>
 		</tr>
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">19.05.2020 09:47:22</td>
+			<td width="85%" class="ObjectDetailsValue">5/19/2020 9:47:22 AM</td>
 		</tr>
 		<tr style="padding-top: 10px;">
 			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>

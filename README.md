@@ -3,7 +3,7 @@
 Implementasjonsmodellen til Matrikkelen blir laget med Enterprise Architect.
 Når endringer blir gjort i API-et skal implementasjonsmodellen også bli oppdatert, slik at nå-situasjonen til matrikkelen blir gjenspeilet i implementasjonsmodellen.
 
-Det er satt opp en Github Action slik at når en PR merges til dette repoet med endringer til implementasjonsmodellen, vil det automatisk lages en PR til matrikkel-repoet hvor implementasjonsmodellen blir lagt ut.
+Det er satt opp en GitHub Action slik at når en PR merges til dette repoet med endringer til implementasjonsmodellen, vil det automatisk lages en PR til matrikkel-repoet hvor implementasjonsmodellen blir lagt ut.
 
 # Enterprise Architect Oppsettguide for Mac og Linux
 
@@ -74,7 +74,7 @@ Et Wine-konfigurasjonsvindu vil åpne seg. Du kan lukke det etter at det vises -
 
 ### 7. Installer Enterprise Architect
 
-Installer EA med installeringsfilen som ligger i Github-repoet.
+Installer EA med installeringsfilen som ligger i GitHub-repoet.
 
 ```bash
 wine easetupfull_x64.msi
@@ -240,7 +240,7 @@ Når man avslutter Enterprise Architect, vil lisensen bli gitt tilbake slik at a
 # Oppdatering av implementasjonsmodellen
 
 Dette prosjektet ble tidligere administrert med TortoiseSVN og har blitt migrert til GitHub.
-Filene som blir generert er binær-filer. Github vil ikke klare å resolve merge-conflicts, derfor det er viktig at endringer i modellen ikke blir jobbet med av 2 samtidig, og at man alltid jobber ut i fra nyeste implementasjonsmodell.
+Filene som blir generert er binær-filer. GitHub vil ikke klare å resolve merge-conflicts, derfor det er viktig at endringer i modellen ikke blir jobbet med av 2 samtidig, og at man alltid jobber ut i fra nyeste implementasjonsmodell.
 
 
 
@@ -270,7 +270,7 @@ Filene som blir generert er binær-filer. Github vil ikke klare å resolve merge
 
 Etter du har endret på implementasjonsmodellen, må man eksportere filen som HTML.
 
-I oversikt over mappestrukturen (Project Browser menyen), så markerer man mappen `Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon <versjonsnummer>`.
+I oversikt over mappestrukturen (Project Browser menyen), så markerer man mappen `Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion <versjonsnummer>`.
 
 Gå så inn på Publish → HTML → Standard HTML Report
 
@@ -306,7 +306,7 @@ Endringene vil nå overskrive den gamle implementasjonsmodellen som lå i `imple
 7. **Opprett en Pull Request** 
 
 For at endringene skal vises frem på matrikkelforsiden i neste versjon må de legges inn i matrikkel-repoet.
-Det er laget en Github Action som automatisk lager en PR på matrikkel-repoet, når en PR på dette repoet merges med endringer på implementasjonsmodellen.
+Det er laget en GitHub Action som automatisk lager en PR på matrikkel-repoet, når en PR på dette repoet merges med endringer på implementasjonsmodellen.
 
 Det vil si: 
 - Lag et pullrequest med endringene dine i dette repoet

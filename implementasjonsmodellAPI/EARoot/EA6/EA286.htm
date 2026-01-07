@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA263.htm">endringslogg</a> / <a href="EA286.htm">EndringsKildeKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA263.htm">endringslogg</a> / <a href="EA286.htm">EndringsKildeKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">16.10.2013 11:29:22</td>
+			<td class="ObjectDetailsValue">10/16/2013 11:29:22 AM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					Matrikkel
+					<a name="{89DA37DD-A7F0-4ffa-A143-948E78A7CD43}"></a>Matrikkel
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -195,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					HistorikkFraGAB
+					<a name="{3C5B1AD6-6D48-44ff-B845-82993D36F2C8}"></a>HistorikkFraGAB
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -205,7 +231,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +248,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Konvertering
+					<a name="{10190771-631E-4375-8D64-D33B6D8CE3DF}"></a>Konvertering
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -232,7 +258,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +275,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Eksternregister
+					<a name="{FFD7D706-0E48-4d4f-B71B-9DD788F1560B}"></a>Eksternregister
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -259,7 +285,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +302,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					OpprettetUnderKonvertering
+					<a name="{1AF140E5-D3E6-4f02-8FAA-30969A7D28B8}"></a>OpprettetUnderKonvertering
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -286,7 +312,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -303,7 +329,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Massivendring
+					<a name="{03B655BD-C441-4642-AE83-CBB08A78E059}"></a>Massivendring
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -313,7 +339,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -330,7 +356,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kommuneendring
+					<a name="{19FB5D2D-30A7-4756-B11D-A26EDDCE6882}"></a>Kommuneendring
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -340,7 +366,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

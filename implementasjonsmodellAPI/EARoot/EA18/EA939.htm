@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>sefrak::SefrakInfo</title>
+<title>SefrakInfo</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -64,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> sefrak::SefrakInfo </h1>
+			<h1> SefrakInfo </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA936.htm">sefrak</a> / <a href="EA939.htm">SefrakInfo</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA936.htm">sefrak</a> / <a href="EA939.htm">SefrakInfo</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">06.11.2025 15:36:42</td>
+			<td class="ObjectDetailsValue">11/6/2025 3:36:42 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -169,7 +195,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					huslopenummer
+					<a name="{A097D034-FFDD-4cc0-A3C6-0A089BAAD5EC}"></a>huslopenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -179,14 +205,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					id
+					<a name="{2E663A00-AE4B-4a0f-A9BB-E68031BA06E6}"></a>id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -196,14 +222,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					meldeplikt
+					<a name="{51C23486-886B-44c0-AA30-7A2ACD407DDB}"></a>meldeplikt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -213,14 +239,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					objektnavn
+					<a name="{E065ED40-31EA-4879-AFE1-5229B9D2BC5F}"></a>objektnavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -230,14 +256,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					registreringskretsnummer
+					<a name="{012BF1DF-98CB-4c13-A476-2B535C0470A4}"></a>registreringskretsnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -247,7 +273,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
