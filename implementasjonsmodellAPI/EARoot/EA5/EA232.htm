@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA188.htm">bygning</a> / <a href="EA232.htm">Etasjedata</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA188.htm">bygning</a> / <a href="EA232.htm">Etasjedata</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">25.06.2013 12:07:39</td>
+			<td class="ObjectDetailsValue">6/25/2013 12:07:39 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -167,7 +193,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					alternativtAreal
+					<a name="{8E8C56C3-1BC0-413d-8451-3167E471AD61}"></a>alternativtAreal
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -177,7 +203,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -194,7 +220,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					alternativtAreal2
+					<a name="{7568A5C4-25DD-4b31-87FD-26CF544C100A}"></a>alternativtAreal2
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -204,7 +230,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -221,7 +247,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					antallBoenheter
+					<a name="{85998D30-602F-4c9b-BD9D-97703706D898}"></a>antallBoenheter
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -231,7 +257,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -248,7 +274,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksarealTilAnnet
+					<a name="{FACD871B-4704-426e-9B36-5F56700B9215}"></a>bruksarealTilAnnet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -258,7 +284,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -275,7 +301,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksarealTilBolig
+					<a name="{7019997C-8006-4b8b-A44D-47DE2424BAC5}"></a>bruksarealTilBolig
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -285,7 +311,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -302,7 +328,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksarealTotalt
+					<a name="{7541E02C-CCC1-439a-BB9E-A74338DEAF76}"></a>bruksarealTotalt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -312,7 +338,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -329,7 +355,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruttoarealTilAnnet
+					<a name="{9931AD18-909E-4009-8A5E-56A8737694E6}"></a>bruttoarealTilAnnet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -339,7 +365,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -356,7 +382,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruttoarealTilBolig
+					<a name="{074F4624-79D9-4330-8088-868B64655D10}"></a>bruttoarealTilBolig
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -366,7 +392,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -383,7 +409,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruttoarealTotalt
+					<a name="{C42FE2DC-83CF-46f0-8236-85F64A6FBF1E}"></a>bruttoarealTotalt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -393,7 +419,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA148.htm">BrukerHistorikk</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA148.htm">BrukerHistorikk</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">21.02.2017 13:44:09</td>
+			<td class="ObjectDetailsValue">2/21/2017 1:44:09 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					adgangSlettetDato
+					<a name="{ABFCAE71-6AD4-4e24-A9E6-CF47E5A5D975}"></a>adgangSlettetDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -178,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -195,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					brukernavn
+					<a name="{54B1A5E5-3A43-41bc-A084-431D3FFECB47}"></a>brukernavn
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -205,7 +231,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +248,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					epost
+					<a name="{D63CA834-2D09-4f2d-8FA6-59242175354E}"></a>epost
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -232,7 +258,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +275,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					handling
+					<a name="{FAD7D92F-58FC-46ce-A448-99405960D00B}"></a>handling
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -259,7 +285,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +302,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					id
+					<a name="{A1131B2F-A39A-4567-A993-B50FC4A9365A}"></a>id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -286,14 +312,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					merknad
+					<a name="{C9BED911-3486-4621-A9E4-01E852B3E7D2}"></a>merknad
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -303,7 +329,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -320,7 +346,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					navn
+					<a name="{88AA6F45-66B9-45ca-A297-3BA6E6A31EF9}"></a>navn
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -330,7 +356,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -347,7 +373,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					opprettetDato
+					<a name="{B2EC0B67-7C3A-451c-8394-9E67EF8449B9}"></a>opprettetDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -357,7 +383,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -374,7 +400,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					sattHistoriskAvDato
+					<a name="{8E1CAB9F-C9AE-4c70-BCB9-F16B16FC7B56}"></a>sattHistoriskAvDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -384,7 +410,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -401,7 +427,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					sistOppdatertDato
+					<a name="{5A969B19-8BBC-4fe4-B230-D929F55F02FE}"></a>sistOppdatertDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -411,7 +437,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

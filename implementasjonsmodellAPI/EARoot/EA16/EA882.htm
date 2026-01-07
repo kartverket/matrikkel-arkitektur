@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA882.htm">Teiggrensepunkt</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA882.htm">Teiggrensepunkt</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">20.02.2017 15:44:55</td>
+			<td class="ObjectDetailsValue">2/20/2017 3:44:55 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -169,7 +195,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					datafangstdato
+					<a name="{C8F7CA0E-80D1-4b08-95C5-F0E7355EF498}"></a>datafangstdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -179,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -196,7 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					id
+					<a name="{E5E194F7-7BE7-49e8-BB42-00E62FB99177}"></a>id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -206,14 +232,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					koordinatsystemKodeId
+					<a name="{F0D3B00E-8E7A-4454-9652-CC4CC9EBA280}"></a>koordinatsystemKodeId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -223,7 +249,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -240,7 +266,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kvalitet
+					<a name="{84D03A85-7297-4810-BB56-E839212A3398}"></a>kvalitet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -250,7 +276,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -267,7 +293,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					orginalKoordinatsystemKodeId
+					<a name="{7D6A8ADB-B8DF-4b3c-8DD7-AAB62028A291}"></a>orginalKoordinatsystemKodeId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -277,7 +303,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -294,7 +320,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					posisjon
+					<a name="{5A3B5CF5-91A4-4818-99E4-490643C53722}"></a>posisjon
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -304,7 +330,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

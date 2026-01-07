@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA139.htm">BrukerAktiveringsdata</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA139.htm">BrukerAktiveringsdata</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">04.07.2013 13:25:51</td>
+			<td class="ObjectDetailsValue">7/4/2013 1:25:51 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					baatBruker
+					<a name="{60CAABAA-B01B-44f1-98C1-B983E8461A4A}"></a>baatBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -178,14 +204,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					dager
+					<a name="{2F31894A-AA06-4c3d-8891-26013C383E04}"></a>dager
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -195,14 +221,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					midlertidigBruker
+					<a name="{345C019F-34E3-4243-85A3-F73E074DFF7F}"></a>midlertidigBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -212,14 +238,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ndBruker
+					<a name="{B71E56C3-CC79-4a15-837F-BA5E8EF3B3C1}"></a>ndBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -229,14 +255,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					periodiskPassordbytteAktiv
+					<a name="{F7DC118D-FE52-41e9-9EA8-60B9D2C06FB0}"></a>periodiskPassordbytteAktiv
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -246,14 +272,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					periodiskStengingAktiv
+					<a name="{E0D944D6-AA8F-4b59-90BC-FE760B7F12E0}"></a>periodiskStengingAktiv
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -263,14 +289,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					stengingAktiv
+					<a name="{CF80D8D8-D153-444d-8530-B7E8AF0F12CD}"></a>stengingAktiv
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -280,14 +306,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					stengingstidspunkt
+					<a name="{95E32B2C-A20E-4678-BFF1-2E4DECBD547A}"></a>stengingstidspunkt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -297,14 +323,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					varselSendtTidspunkt
+					<a name="{74A44B76-DCB9-44cf-88B9-C3B01889896C}"></a>varselSendtTidspunkt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -314,7 +340,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						

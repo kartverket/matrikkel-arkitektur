@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1, gyldig fra versjon 4.25.6</a> / <a href="EA579.htm">kode</a> / <a href="EA577.htm">Implementasjonsmodell - Kode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA579.htm">kode</a> / <a href="EA577.htm">Implementasjonsmodell - Kode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -105,25 +131,25 @@
 					</td>
 					<td class="contentcell"><div class="PageBody">
 	<div class="diagram_image"> 
-<img src="EA578.png" usemap="#EA578" border="0" />
+<img src="EA578.png" usemap="#EA578" width="710" height="570" border="0" />
 
 <MAP NAME="EA578">
-<area shape="rect" coords="336,173,426,243" href="EA593.htm" target="_self">
-<area shape="rect" coords="328,300,435,370" href="EA590.htm" target="_self">
-<area shape="rect" coords="170,177,260,247" href="EA588.htm" target="_self">
-<area shape="rect" coords="10,14,100,84" href="EA580.htm" target="_self">
-<area shape="rect" coords="299,10,456,98" href="EA581.htm" target="_self">
+<area shape="rect" coords="504,260,639,365" href="EA593.htm" target="_self">
+<area shape="rect" coords="492,450,653,555" href="EA590.htm" target="_self">
+<area shape="rect" coords="255,266,390,371" href="EA588.htm" target="_self">
+<area shape="rect" coords="15,21,150,126" href="EA580.htm" target="_self">
+<area shape="rect" coords="449,15,695,147" href="EA581.htm" target="_self">
 </MAP>
  </div>
 	<div class="ObjectTitle">Implementasjonsmodell - Kode : Class diagram</div>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:13</td>
+			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:13 AM</td>
 		</tr>
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">19.05.2020 09:47:28</td>
+			<td width="85%" class="ObjectDetailsValue">5/19/2020 9:47:28 AM</td>
 		</tr>
 		<tr style="padding-top: 10px;">
 			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>
