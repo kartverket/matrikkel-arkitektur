@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>matrikkelenhet::Teiggrensepunkt</title>
+<title>matrikkelenhet::Teiggrense</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> matrikkelenhet::Teiggrensepunkt </h1>
+			<h1> matrikkelenhet::Teiggrense </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA882.htm">Teiggrensepunkt</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA756.htm">matrikkelenhet</a> / <a href="EA882.htm">Teiggrense</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -115,15 +89,15 @@
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Teiggrensepunkt  : Public   Class</span>
+	<span class="ObjectTitle">Teiggrense  : Public   Class</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:08 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:08</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/20/2017 3:44:55 PM</td>
+			<td class="ObjectDetailsValue">04.05.2021 17:58:07</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,14 +142,14 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{06427B22-9579-4ccd-BF32-F982E7D1B16F}</td>
+			<td class="ObjectDetailsValue">{6B994DEC-3F10-4ae0-86D6-53F2BB120C88}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="../EA8/EA516.htm">Implementasjonsmodell - Geometri</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a>, <a href="../EA7/EA336.htm">Implementasjonsmodell - Forretning</a>, <a href="../EA11/EA596.htm">Implementasjonsmodell - Kommunal tillegsdel</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Et koordinatbestemt punkt som er påvist, beskrevet og/eller markert spesielt i den geografiske avgrensinga av teigen. &lt;br/&gt;&lt;br/&gt;Merknad1: Kan også være et registreringsteknisk hjelpepunkt.&lt;br/&gt;&lt;br/&gt;Merknad 2: &lt;br/&gt;Et teiggrensepunkt må i matrikkelen tilhøre minst en teiggrense når teiggrensen &#8221;biter seg i halen&#8221; ellers må den tilhøre minst to teiggrenser.&lt;br/&gt;Et teiggrensepunkt er enten i starten eller slutten av en teiggrense.&lt;br/&gt;I matrikkelen er teiggrensepunktene &#8221;delte&#8221;, noe som medfører at det ikke tillates sammenfallende teiggrensepunkter. &lt;br/&gt;To teiggrensepunkt kan ikke ligge nærmere hverandre enn 1 cm.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Linjer som beskriver matrikkelenhetens utstrekning i planet. Matrikkelenhetsgrense (eiendomsgrense) er en form for teiggrense.&lt;br/&gt;&lt;br/&gt;Hjelpelinjer er ogs&#229; en form for teiggrense og brukes der en mangler matrikkelenhetsgrenser. Legges inn i systemet for &#229; kunne danne flater. Det kan ikke oppgis areal p&#229; eiendommer som mangler eiendomsgrenser uten at arealmerknad oppgis. &lt;br/&gt;&lt;br/&gt;Merknad, teknisk:&lt;br/&gt;To naboteiger deler samme grense, noe som inneb&#230;rer at teiggrenser i matrikkelen m&#229; tilh&#248;re enten en eller to teiger, da l&#248;se teiggrenser ikke tillates.&lt;br/&gt;Teiggrenser kan ogs&#229; v&#230;re administrative grenser, det vil si at de ogs&#229; representer kommune-/fylkes- eller riksgrenser.&lt;br/&gt;&lt;br/&gt;Teiggrensen kan representeres grafisk som:&lt;br/&gt;&#183; Linjestykke, rett linje mellom to punkt.&lt;br/&gt;&#183; Bue, sirkelbuen mellom to punkt.&#160;&#160;Ikke lovlig p&#229; eiendomsgrenser og hjelpelinjer etablert etter 1. januar 2021 (unntak Jordskifte)&lt;br/&gt;&#183; Kurve, en kontinuerlig krum linje der det enkelte punktet i sekvensen (kurvepunkt) ikke har noen spesiell betydning. (Benyttes for &#229; beskrive avgrensinger n&#229;r disse f&#248;lger naturlige terrengdetaljer). Ikke lovlig p&#229; eiendomsgrenser etablert etter 1. januar 2021 (unntak Jordskifte), men kurve er fortsatt lovlig p&#229; hjelpelinjer.&lt;br/&gt;&lt;br/&gt;Implementasjonen av den geometriske kurven er delegert til et CurveSegment.&lt;br/&gt;Samme teiggrense skal kun v&#230;re representert en gang i Matrikkelen&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{C8F7CA0E-80D1-4b08-95C5-F0E7355EF498}"></a>datafangstdato
+					datafangstdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -213,7 +187,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Dato når datainnsamling er skjedd.&#160;&#160;Vil for eksempel være fotograferingsdato for data innsamlet via fotogrammetri, og måledato for data innsamlet i forbindelse med oppmålingsforretninger.&lt;br/&gt;
+			Dato for datainnsamling.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -222,51 +196,24 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E5E194F7-7BE7-49e8-BB42-00E62FB99177}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
 				</td>
 				<td width="25%" class="TableRow">
-					<a href="EA883.htm">TeiggrensepunktId</a>
+					<a href="EA883.htm">TeiggrenseId</a>
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{F0D3B00E-8E7A-4454-9652-CC4CC9EBA280}"></a>koordinatsystemKodeId
-				</td>
-				<td width="25%" class="TableRow">
-					Private 
-				</td>
-				<td width="25%" class="TableRow">
-					KoordinatsystemKodeId
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Angir koordinatsystemet som teiggrensepunktets koordinater er lagret i. Må være gitt.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{84D03A85-7297-4810-BB56-E839212A3398}"></a>kvalitet
+					kvalitet[0..1]
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -276,7 +223,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -284,7 +231,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Målemetode og nøyaktighet for teiggrensepunktet.&lt;br/&gt;
+			Brukes der teiggrensen har dårligere kvalitet enn dårligste teiggrensepunkt, og der den er kurvatur.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -293,17 +240,17 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7D6A8ADB-B8DF-4b3c-8DD7-AAB62028A291}"></a>orginalKoordinatsystemKodeId
+					omtvistet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
 				</td>
 				<td width="25%" class="TableRow">
-					KoordinatsystemKodeId
+					Boolean
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -311,34 +258,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Verdi for orginalt koordinatsystem. Dette blir kun satt dersom representasjonspunktet blir transformert ved henting!&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{5A3B5CF5-91A4-4818-99E4-490643C53722}"></a>posisjon
-				</td>
-				<td width="25%" class="TableRow">
-					Private 
-				</td>
-				<td width="25%" class="TableRow">
-					Position
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Grensepunktets posisjon. Må være gitt.&lt;br/&gt;
+			Angir om grensen er omtvistet, eller det er tvil om forløpet.&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -357,118 +277,24 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA11/EA664.htm">TeiggrensepunktTillegg</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> GrensepunktTillegg<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3617" /></button>Details:
-							<div id="detailsDIVLink3617" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for teiggrensepunkt som inneholder blant annet referanser. Denne er aldri null.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA538.htm">«enum» KoordinatsystemKode</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3618" /></button>Details:
-							<div id="detailsDIVLink3618" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA813.htm">«enum» GrensepunkttypeKode</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> GrensepunkttypeKodeId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3619" /></button>Details:
-							<div id="detailsDIVLink3619" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Angir hva slags grensemerke som er brukt i terrenget. Sier også om grensepunktet er merket i terrenget, eller om det bare er et registreringsteknisk punkt.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA811.htm">«enum» GrensemerkeNedsattIKode</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> GrensemerkeNedsattIKodeId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3620" /></button>Details:
-							<div id="detailsDIVLink3620" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Beskriver i hvilket medium grensemerket er nedsatt.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA879.htm">Teiggrense</a><br />
+						<a href="EA878.htm">Teig</a><br />
 						Class «KunLogiskSett» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> defineresAv<br />
+						<strong>Name:</strong> avgrensing<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> inngår i<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3621" /></button>Details:
-							<div id="detailsDIVLink3621" class="DetailsDiv" >
-							&nbsp;
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3596" /></button>Details:
+							<div id="detailsDIVLink3596" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Relasjonen er avledet fra geometrien. Den finnes ikke i databasen, og er med for forståelsen av modellen.&lt;br/&gt;&lt;br/&gt;Teig har flate og grense har forløp.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -489,8 +315,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3622" /></button>Details:
-							<div id="detailsDIVLink3622" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3597" /></button>Details:
+							<div id="detailsDIVLink3597" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -498,7 +324,31 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA883.htm">TeiggrensepunktId</a><br />
+						<a href="../EA11/EA667.htm">TeiggrenseTillegg</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TeiggrenseTillegg<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3598" /></button>Details:
+							<div id="detailsDIVLink3598" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Kommunal tilleggsdel for teiggrense son inneholder blant annet referanser. Denne er aldri null.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA8/EA533.htm">CurveSegment</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -512,8 +362,150 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3623" /></button>Details:
-							<div id="detailsDIVLink3623" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3599" /></button>Details:
+							<div id="detailsDIVLink3599" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA8/EA545.htm">«enum» NoyaktighetsklasseKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> lagretNoyaktighetsklasseId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3600" /></button>Details:
+							<div id="detailsDIVLink3600" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA826.htm">«enum» HjelpelinjeTypeKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> HjelpelinjetypeKodeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3601" /></button>Details:
+							<div id="detailsDIVLink3601" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Avgrensing for teig som brukes når matrikkelenhetsgrense/eiendomsgrense ikke er kjent eller ikke er registrert i matrikkelen.&lt;br/&gt;Brukes i følgende tilfeller:&lt;br/&gt;- punktfeste&lt;br/&gt;- generert eiendomsgrense&lt;br/&gt;- avgrensing mellom to teiger hvor grenseforløp ikke er kjent&lt;br/&gt;- avgrensing mot innsjø, vassdrag eller sjø hvor grensene ikke er registrert i Matrikkelen&lt;br/&gt;- avgrensing mot fjellområder hvor grensene ikke er registrert i Matrikkelen&lt;br/&gt;&lt;br/&gt;For bruk mot vann:&lt;br/&gt;Brukes bare når de virkelige teiggrenser i eller langs vannet ikke er tilgjengelig eller er vanskelig tilgjengelig.&lt;br/&gt;&lt;br/&gt;En bør benytte den best kartlagte avgrensingen, fordi teigene ofte presenteres sammen med det beste kartgrunnlaget.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA760.htm">«enum» AdministrativGrenseKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> AdministrativGrenseKodeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3602" /></button>Details:
+							<div id="detailsDIVLink3602" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Angir om teiggrensen samtidig representerer en administrativ grense. Standardverdi er AdministrativGrenseKode.IKKEADMGRENSE. Må være gitt.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA8/EA533.htm">CurveSegment</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> CurveSegment<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3603" /></button>Details:
+							<div id="detailsDIVLink3603" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Kurven til grenselinjen.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA891.htm">«enum» TerrengdetaljKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TerrengdetaljKodeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3604" /></button>Details:
+							<div id="detailsDIVLink3604" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Angir hvilken terrengdetalj matrikkelenhetsgrensen/eiendomsgrensen eventuelt følger.&lt;br/&gt;&lt;br/&gt;Merknad: &lt;br/&gt;Egenskapen forteller hvilken terrengdetalj grenselinja fulgte på registreringstidspunktet. En må være oppmerksom på at dette kan ha endret seg. F.eks kan en strandlinje bli fylt ut, en elv kan få et nytt forløp eller en veg kan skifte trasé. Derfor må en vurdere nøye når en oppdaterer terrengdetaljer med bedre geometri etter f.eks en nykartlegging.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA883.htm">TeiggrenseId</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3605" /></button>Details:
+							<div id="detailsDIVLink3605" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -531,7 +523,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA533.htm">CurveSegment</a><br />
+						<a href="../EA7/EA422.htm">MatrikkelenhetGeometriForretning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -539,16 +531,86 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> TeiggrensepunktId<br />
+						<strong>Name:</strong> TeiggrenseId<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3624" /></button>Details:
-							<div id="detailsDIVLink3624" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Grensepunktet som er kurvens startpunkt.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3606" /></button>Details:
+							<div id="detailsDIVLink3606" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Sett med teigId for teiger som er knyttet til forretningen.&lt;br/&gt;</div>
 
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA885.htm">Teiggrensepunkt</a><br />
+						Class «KunLogiskSett» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> defineresAv<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> inngår i<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3607" /></button>Details:
+							<div id="detailsDIVLink3607" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA8/EA531.htm">CurveDirection</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TeiggrenseId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3608" /></button>Details:
+							<div id="detailsDIVLink3608" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id for tilknyttet Teiggrense.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA328.htm">TeiggrenseEndring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> TeiggrenseId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3609" /></button>Details:
+							<div id="detailsDIVLink3609" class="DetailsDiv" >
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -569,8 +631,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3625" /></button>Details:
-							<div id="detailsDIVLink3625" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3610" /></button>Details:
+							<div id="detailsDIVLink3610" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -592,8 +654,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3626" /></button>Details:
-							<div id="detailsDIVLink3626" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3611" /></button>Details:
+							<div id="detailsDIVLink3611" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -601,7 +663,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA7/EA422.htm">MatrikkelenhetGeometriForretning</a><br />
+						<a href="../EA11/EA667.htm">TeiggrenseTillegg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -609,109 +671,15 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> TeiggrensepunktId<br />
+						<strong>Name:</strong> Teiggrense<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3627" /></button>Details:
-							<div id="detailsDIVLink3627" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Sett med teiggrenseId for teiggrenser som er knyttet til forretningen.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA330.htm">TeiggrensepunktEndring</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> TeiggrensepunktId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3628" /></button>Details:
-							<div id="detailsDIVLink3628" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA552.htm">Position</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3629" /></button>Details:
-							<div id="detailsDIVLink3629" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA533.htm">CurveSegment</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> TeiggrensepunktId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3630" /></button>Details:
-							<div id="detailsDIVLink3630" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Grensepunktet som er kurvens sluttpunkt.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA11/EA664.htm">TeiggrensepunktTillegg</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Teiggrensepunkt<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3631" /></button>Details:
-							<div id="detailsDIVLink3631" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Teiggrensepunket som disse tilleggsdataene tilhører. Må være gitt.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink3612" /></button>Details:
+							<div id="detailsDIVLink3612" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Teiggrensen som disse tilleggsdataene tilhører. Må være gitt.&lt;br/&gt;</div>
 
 							</div>
 						</div>

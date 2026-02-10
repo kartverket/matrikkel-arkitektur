@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">3/18/2021 9:47:56 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.03.2021 09:47:56</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">3/18/2021 9:47:56 AM</td>
+			<td class="ObjectDetailsValue">18.03.2021 09:47:56</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -191,7 +165,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{48DE22C3-11F8-4a61-A99D-0278E1A212E4}"></a>avtaleFortDato
+					avtaleFortDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -201,7 +175,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -218,17 +192,17 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{FF434E30-3A8D-4afb-82F2-ADF783484000}"></a>avtaleId
+					avtaleId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
 				</td>
 				<td width="25%" class="TableRow">
-					<a href="../EA16/EA797.htm">AvtaleStedbundenRettighetId</a>
+					<a href="../EA16/EA800.htm">AvtaleStedbundenRettighetId</a>
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -245,7 +219,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{1A0E5DB9-908A-4000-BC4A-7637BB670B4F}"></a>dato
+					dato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -255,7 +229,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -272,7 +246,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3A38123F-0025-4deb-B30E-45FCECA5B401}"></a>dokumentnr
+					dokumentnr
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -282,7 +256,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -299,7 +273,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{B6E09F86-126C-46bb-855D-0570E024248E}"></a>endringstype
+					endringstype
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -309,7 +283,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -326,7 +300,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{FEC95E2E-3A0B-4dc0-91F1-E5F4D5B3E8E7}"></a>feil
+					feil
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -336,7 +310,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -353,7 +327,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D535DA75-04C4-4a43-A25A-31DD1661AB89}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -363,7 +337,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -380,7 +354,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{37239B50-D2D5-47ed-BFA3-F2AF5BB32CCB}"></a>informasjon
+					informasjon
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -390,7 +364,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -407,7 +381,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{57D38A80-FD6D-416e-A8BE-7964B2727FC0}"></a>nettadresseUrl
+					nettadresseUrl
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -417,7 +391,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -434,7 +408,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{61817A67-8FE8-4e99-B0E3-613CF97B3088}"></a>referanse
+					referanse
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -444,7 +418,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -471,7 +445,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">

@@ -192,17 +192,20 @@ Klikk `Apply` og deretter `OK`.
 [//]: # (- [Installere Enterprise Architect for Mac]&#40;https://sparxsystems.com/enterprise_architect_user_guide/17.1/getting_started/enterprise_architect_macos.html&#41;)
 
 
-
 # Enterprise Architect Oppsettguide for Windows
 
 ### Kartverket windows maskin
-Hvis man har en kartverket windowsmaskin så kan Enterprise Architect lastes ned fra FIRMAPORTAL.
+Hvis man har en kartverket windowsmaskin så kan Enterprise Architect lastes ned fra FIRMAPORTAL. 
+
+Man må være med i en egen AD-gruppe for å se Enterprise Architect i Firmaportalen, kontakt servicedesk for å bli med i gruppa.
 
 ### Annen windows maskin
 
 Hvis man ikke har tilgang til FIRMAPORTAL, så kan man dobbeltklikke på installasjonsfilen `easetupfull_x64.msi` og følge promptene derfra.
 
 Hvis det trengs en installasjonsnøkkel så bruker man nøkkelen `TWC6` som er nøkkelen for versjon 10 og senere av EA.
+
+Evt se under H:\IT\ITFelles\Software\EnterpriseArcitect for å finne fil med installasjonsnøkkel
 
 
 # Enterprise Architect lisens
@@ -270,6 +273,9 @@ Filene som blir generert er binær-filer. GitHub vil ikke klare å resolve merge
 
 Etter du har endret på implementasjonsmodellen, må man eksportere filen som HTML.
 
+Du må først slette den gamle eksporterte implementasjonsmodellen, ellers blir det liggende igjen masse gamle filer.
+Det gjøres ved å slette alt i mappen `implementasjonsmodellAPI` under root på dette repoet, f.eks fra `File Explorer` 
+
 I oversikt over mappestrukturen (Project Browser menyen), så markerer man mappen `Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion <versjonsnummer>`.
 
 Gå så inn på Publish → HTML → Standard HTML Report
@@ -279,7 +285,7 @@ Gå så inn på Publish → HTML → Standard HTML Report
 I dialogen som kommer opp:
 
 - Dobbeltsjekk at "Package" er satt til den mappen man markerte. Dersom ingen mappe ble markert, så vil "Package" bli default satt til den øverste mappen i Project Browser menyen. Noe som vil føre til krøll i mappestrukturen når man publisher.
-- Sett `Output to` til `implementasjonsmodellAPI` mappen som ligger i root på dette repoet.
+- Sett `Output to` til `implementasjonsmodellAPI`-mappen som ligger i root på dette repoet.
 - Under "Default Diagram", huk av for "None" (Har nok ikke så mye å si)
 
 
@@ -287,7 +293,9 @@ I dialogen som kommer opp:
 
 Trykk `Generate`
 
-Endringene vil nå overskrive den gamle implementasjonsmodellen som lå i `implementasjonsmodellAPI` mappen.
+Endringene vil nå legges ut som ny implementasjonsmodell i `implementasjonsmodellAPI`-mappen.
+
+Etter at den er ferdig med generering, trykk gjerne `View` for å sjekke at det ser bra ut
 
 
 

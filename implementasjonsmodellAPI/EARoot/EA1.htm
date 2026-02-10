@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>MatrikkelenAPI</title>
+<title>Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -90,12 +64,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> MatrikkelenAPI </h1>
+			<h1> Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6 </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EARoot/EA1.htm">MatrikkelenAPI</a></p>
+			<p><a href="../EARoot/EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,21 +84,38 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA3.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA1/EA20.htm">domain</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA2/EA24.htm">adresse</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA3/EA97.htm">aktivitetsliste</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA4/EA132.htm">bruker</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA5/EA188.htm">bygning</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA6/EA263.htm">endringslogg</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA7/EA338.htm">forretning</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA8/EA518.htm">geometri</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA9/EA561.htm">grunnforurensing</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA10/EA579.htm">kode</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA11/EA598.htm">kommunetillegg</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA12/EA682.htm">kommune</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA13/EA696.htm">konsesjon</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA14/EA716.htm">kulturminne</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA15/EA741.htm">jobb</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA16/EA756.htm">matrikkelenhet</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA17/EA899.htm">person</a></li>
+<li><img src="../images/4.png" alt="Package"/> <a href="./EA18/EA939.htm">sefrak</a></li>
 </ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">MatrikkelenAPI  : Public   Package</span>
+	<span class="ObjectTitle">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6  : Public   Package</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.6.2013 10:15:42</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:13</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">24.9.2015 15:22:11</td>
+			<td class="ObjectDetailsValue">07.01.2026 09:33:14</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -133,11 +124,11 @@
 		</tr>
 		<tr id="proj00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td class="ObjectDetailsValue"></td>
+			<td class="ObjectDetailsValue">tofjor</td>
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
-			<td class="ObjectDetailsValue"></td>
+			<td class="ObjectDetailsValue">1.0</td>
 		</tr>
 		<tr id="proj02" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
@@ -169,7 +160,7 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{EC117563-E8A1-4021-AE39-58C876910D94}</td>
+			<td class="ObjectDetailsValue">{1E961091-F369-4b17-9F34-EB976C671BC3}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>

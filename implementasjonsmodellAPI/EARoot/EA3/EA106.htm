@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">2/19/2020 9:57:12 PM</td>
+			<td width="85%" class="ObjectDetailsValue">19.02.2020 21:57:12</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/19/2020 9:57:12 PM</td>
+			<td class="ObjectDetailsValue">19.02.2020 21:57:12</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -192,7 +166,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{A1BAD686-5CEB-45d4-8D25-06155224A491}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -202,14 +176,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{FF0207F2-9D7E-4b0d-88DF-0BFCB6B0FF21}"></a>matrikkelenhetForretningId
+					matrikkelenhetForretningId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -219,14 +193,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{F61ECDAF-0AD9-489c-B384-9C04A88F9BFF}"></a>referanseElektroniskTinglysing
+					referanseElektroniskTinglysing
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -236,14 +210,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E790426B-5D36-4e8b-AF9E-868AB98E1ED1}"></a>tinglysningsInnsendingId
+					tinglysningsInnsendingId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -253,14 +227,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{59C0B7A9-844F-442e-B60D-EB5915E510FB}"></a>tinglysningsUtfall
+					tinglysningsUtfall
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -270,7 +244,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						

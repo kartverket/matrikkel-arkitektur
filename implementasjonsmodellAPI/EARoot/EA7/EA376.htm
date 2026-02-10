@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/28/2013 12:23:05 PM</td>
+			<td class="ObjectDetailsValue">28.06.2013 12:23:05</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{8CDDB91E-EACA-4d48-BCEF-87BCC52E1B59}"></a>annenReferanse
+					annenReferanse
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{EDA2B2F0-1B19-4666-9C9E-7C9561BC177A}"></a>forretningsdokumentdato
+					forretningsdokumentdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -232,7 +206,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +223,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{1C5D792D-C57F-4cd3-8E39-C73B35DCC3FE}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -259,14 +233,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{DBBD2726-ADFA-4b6e-8086-149B9A67D56A}"></a>kommunalSaksreferanse
+					kommunalSaksreferanse
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -276,7 +250,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -293,7 +267,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{5C0A445C-8E36-4667-9CF2-5A61FBA877E7}"></a>kommunalSaksreferanseURL
+					kommunalSaksreferanseURL
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -303,7 +277,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -320,7 +294,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{F15E78CF-5A0B-46cc-8016-0F5F825F9FCF}"></a>landmalernavn
+					landmalernavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -330,7 +304,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -347,7 +321,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{5B68D775-EC4D-413a-AEB6-C64B31B3159B}"></a>landmalernummer
+					landmalernummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -357,7 +331,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -374,7 +348,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{DD455064-558E-4d49-B600-E2080C097110}"></a>lopenummer
+					lopenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -384,7 +358,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -401,7 +375,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{80C54627-C787-4739-989B-2941C4CFECA6}"></a>matrikkelforingsdato
+					matrikkelforingsdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -411,7 +385,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -428,7 +402,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{07268967-7766-4916-BB3D-11DA2B6625BD}"></a>signatur
+					signatur
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -438,7 +412,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -465,7 +439,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA809.htm">«enum» ForretningstypeKode</a><br />
+						<a href="EA378.htm">ForretningId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -473,7 +447,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> ForretningsTypeKodeId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -481,15 +455,14 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1281" /></button>Details:
 							<div id="detailsDIVLink1281" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Grunnlaget for en endring av matrikkelinformasjon.&lt;br/&gt;&lt;br/&gt;Merknad: &lt;br/&gt;Hvis et punkt er oppdatert får hele grensa eller teigen punktets forretningstype (grensa/teigen er berørt av forretningen). &lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA381.htm">«enum» ForretningsklasseKode</a><br />
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -512,15 +485,15 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
+						<a href="EA376.htm">Forretning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> rettesAv<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> retterOpp<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -535,7 +508,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA378.htm">ForretningId</a><br />
+						<a href="EA381.htm">«enum» ForretningsklasseKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -558,15 +531,15 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA376.htm">Forretning</a><br />
+						<a href="../EA16/EA812.htm">«enum» ForretningstypeKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> rettesAv<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> retterOpp<br />
+						<strong>Name:</strong> ForretningsTypeKodeId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -574,7 +547,8 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1285" /></button>Details:
 							<div id="detailsDIVLink1285" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Grunnlaget for en endring av matrikkelinformasjon.&lt;br/&gt;&lt;br/&gt;Merknad: &lt;br/&gt;Hvis et punkt er oppdatert får hele grensa eller teigen punktets forretningstype (grensa/teigen er berørt av forretningen). &lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -591,7 +565,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA487.htm">RettingAvForretningsdataForretning</a><br />
+						<a href="../EA6/EA291.htm">ForretningsEndring</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -614,15 +588,15 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA365.htm">EndreForretningsdataForretning</a><br />
+						<a href="EA376.htm">Forretning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> rettesAv<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> ForretningId<br />
+						<strong>Name:</strong> retterOpp<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -660,7 +634,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA291.htm">ForretningsEndring</a><br />
+						<a href="EA487.htm">RettingAvForretningsdataForretning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -683,15 +657,15 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA376.htm">Forretning</a><br />
+						<a href="EA365.htm">EndreForretningsdataForretning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> rettesAv<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> retterOpp<br />
+						<strong>Name:</strong> ForretningId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -747,16 +721,16 @@
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA21.htm">UUID</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="EA419.htm">MatrikkelenhetForretning</a></td>
 					<td width="10%" class="TableRow" valign="top">Class</td>
-					<td width="10%" class="TableRow" valign="top">Strong</td>
+					<td width="10%" class="TableRow" valign="top">Generalization</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA419.htm">MatrikkelenhetForretning</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA1/EA21.htm">UUID</a></td>
 					<td width="10%" class="TableRow" valign="top">Class</td>
-					<td width="10%" class="TableRow" valign="top">Generalization</td>
+					<td width="10%" class="TableRow" valign="top">Strong</td>
 					<td width="10%" class="TableRow" valign="top">From</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>

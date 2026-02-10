@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/20/2020 12:59:28 PM</td>
+			<td class="ObjectDetailsValue">20.02.2020 12:59:28</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{8F1CF53C-9DF4-4967-9B29-ED1D0FD981A2}"></a>arealendring
+					arealendring
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{101B40CC-FA33-4e33-9AEF-FCB4B42526F8}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -232,7 +206,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +223,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{82BD59C5-D3B9-47b1-8EA0-19B13F1C3C58}"></a>lopenr
+					lopenr
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -259,7 +233,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,17 +250,17 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{655E529F-4FDC-4bc8-AF43-379D432645DD}"></a>matrikkelenhetId
+					matrikkelenhetId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
 				</td>
 				<td width="25%" class="TableRow">
-					<a href="../EA16/EA848.htm">MatrikkelenhetId</a>
+					<a href="../EA16/EA851.htm">MatrikkelenhetId</a>
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -303,7 +277,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{754CEC35-4DD7-4847-BCD7-70D917F82F41}"></a>omnummerertFra
+					omnummerertFra
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -313,7 +287,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -330,7 +304,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{AB1CEE46-8316-4ac4-A24C-A28C500DA0A8}"></a>omnummerertTil
+					omnummerertTil
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -340,7 +314,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -357,7 +331,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{45AE636D-40A8-4cab-8527-CF8274C110CD}"></a>volumendring
+					volumendring
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -367,7 +341,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
@@ -384,7 +358,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA866.htm">«enum» RolleIForretningKode</a><br />
+						<a href="../EA16/EA869.htm">«enum» RolleIForretningKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -418,7 +392,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA848.htm">MatrikkelenhetId</a><br />
+						<a href="../EA16/EA851.htm">MatrikkelenhetId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -449,7 +423,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> ArealIForretning<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -457,14 +431,15 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1255" /></button>Details:
 							<div id="detailsDIVLink1255" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Sett med ArealIForretning. Inneholder id&#39;er for Matrikkelenheter som inngår i forretningen, med tilhørende arealendring som følge av denne forretningen og flagg som angir om matrikkelenhet bare var berørt av, og ikke direkte involvert i forretningen som avgiver eller mottaker.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA1/EA21.htm">UUID</a><br />
+						<a href="EA419.htm">MatrikkelenhetForretning</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -487,7 +462,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA419.htm">MatrikkelenhetForretning</a><br />
+						<a href="../EA1/EA21.htm">UUID</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -495,7 +470,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> ArealIForretning<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -503,8 +478,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1257" /></button>Details:
 							<div id="detailsDIVLink1257" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Sett med ArealIForretning. Inneholder id&#39;er for Matrikkelenheter som inngår i forretningen, med tilhørende arealendring som følge av denne forretningen og flagg som angir om matrikkelenhet bare var berørt av, og ikke direkte involvert i forretningen som avgiver eller mottaker.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>

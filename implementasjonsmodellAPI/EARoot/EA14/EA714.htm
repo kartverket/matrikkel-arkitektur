@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -137,31 +111,31 @@
 					</td>
 					<td class="contentcell"><div class="PageBody">
 	<div class="diagram_image"> 
-<img src="EA715.png" usemap="#EA715" width="1334" height="717" border="0" />
+<img src="EA715.png" usemap="#EA715" border="0" />
 
 <MAP NAME="EA715">
-<area shape="rect" coords="549,281,699,323" href="../EA1/EA21.htm" target="_self">
-<area shape="rect" coords="15,659,252,701" href="EA727.htm" target="_self">
-<area shape="rect" coords="666,654,948,698" href="EA736.htm" target="_self">
-<area shape="rect" coords="1005,645,1319,693" href="EA719.htm" target="_self">
-<area shape="rect" coords="339,659,591,702" href="EA733.htm" target="_self">
-<area shape="rect" coords="285,23,432,65" href="EA718.htm" target="_self">
-<area shape="rect" coords="68,18,242,104" href="../EA16/EA846.htm" target="_self">
-<area shape="rect" coords="465,92,786,167" href="EA717.htm" target="_self">
-<area shape="rect" coords="92,210,422,350" href="EA726.htm" target="_self">
-<area shape="rect" coords="846,225,1190,338" href="EA722.htm" target="_self">
-<area shape="rect" coords="938,15,1082,101" href="../EA5/EA206.htm" target="_self">
+<area shape="rect" coords="374,187,474,215" href="../EA1/EA21.htm" target="_self">
+<area shape="rect" coords="18,439,176,467" href="EA727.htm" target="_self">
+<area shape="rect" coords="452,436,640,465" href="EA736.htm" target="_self">
+<area shape="rect" coords="678,430,887,462" href="EA719.htm" target="_self">
+<area shape="rect" coords="234,439,402,468" href="EA733.htm" target="_self">
+<area shape="rect" coords="198,15,296,43" href="EA718.htm" target="_self">
+<area shape="rect" coords="53,12,169,48" href="../EA16/EA849.htm" target="_self">
+<area shape="rect" coords="318,61,532,111" href="EA717.htm" target="_self">
+<area shape="rect" coords="69,140,289,225" href="EA726.htm" target="_self">
+<area shape="rect" coords="572,150,801,225" href="EA722.htm" target="_self">
+<area shape="rect" coords="633,10,729,42" href="../EA5/EA206.htm" target="_self">
 </MAP>
  </div>
 	<div class="ObjectTitle">Implementasjonsmodell - Kulturminne : Class diagram</div>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:13 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:13</td>
 		</tr>
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">5/19/2020 9:48:00 AM</td>
+			<td width="85%" class="ObjectDetailsValue">19.05.2020 09:48:00</td>
 		</tr>
 		<tr style="padding-top: 10px;">
 			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>

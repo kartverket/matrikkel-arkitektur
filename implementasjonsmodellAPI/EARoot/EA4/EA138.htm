@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">3/8/2019 3:00:41 PM</td>
+			<td class="ObjectDetailsValue">08.03.2019 15:00:41</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -194,7 +168,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{57A2BDAD-466E-466b-A35C-BAA7525800BD}"></a>adgangSlettetDato
+					adgangSlettetDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -204,7 +178,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -221,7 +195,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{AFB639A2-ACE1-467a-A758-511E30E3F722}"></a>adresse
+					adresse
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -231,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -248,34 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{62D9A6DD-2E81-4b89-8C25-68B5ECCF8820}"></a>baatBruker
-				</td>
-				<td width="25%" class="TableRow">
-					Private 
-				</td>
-				<td width="25%" class="TableRow">
-					Boolean
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Om bruker er en bruker opprettet i BAAT.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{447DD531-A496-4436-B00E-287EE4644EFB}"></a>brukernavn
+					brukernavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -285,7 +232,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -302,7 +249,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{96225AD3-E3D3-42dc-A336-440506C32A23}"></a>brukStoreKnapper
+					brukStoreKnapper
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -312,7 +259,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -329,7 +276,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{EA3D3814-EA5F-4e6c-9DD1-FE4AB56C8A5A}"></a>endrePassordVedInnlogging
+					baatBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -339,7 +286,34 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Om bruker er en bruker opprettet i BAAT.&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					endrePassordVedInnlogging
+				</td>
+				<td width="25%" class="TableRow">
+					Private 
+				</td>
+				<td width="25%" class="TableRow">
+					Boolean
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -356,7 +330,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{1E21B19A-BBD9-4e45-9503-10B1A7B64156}"></a>epost
+					epost
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -366,7 +340,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -383,7 +357,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{AE3A1DF6-8B8F-4184-8ABF-1091AB202C3E}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -393,7 +367,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -410,7 +384,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{C994CF29-4DA0-42c6-9DED-298468F24B64}"></a>merknad
+					merknad
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -420,7 +394,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -437,7 +411,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{A1658EDF-F3AC-4f32-9C57-1C15CB6CECE5}"></a>navn
+					navn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -447,7 +421,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -464,7 +438,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E1892DDC-A5D4-4611-BC27-29F23367ACEF}"></a>ndBruker
+					ndBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -474,14 +448,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E3856123-5DF6-4771-B1B4-2E3DFC9A4F57}"></a>opprettetDato
+					opprettetDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -491,7 +465,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -508,7 +482,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{0509C8BE-6BD4-4268-A365-5EC6E436C18C}"></a>orgNummer
+					orgNummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -518,14 +492,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{4636A11E-EE26-4fb0-AA23-148860189532}"></a>pekeRadius
+					pekeRadius
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -535,7 +509,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -552,7 +526,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3408EFF9-0D38-49b1-A433-ED7DF2340BB4}"></a>postadresse
+					postadresse
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -562,7 +536,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -579,7 +553,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{CA6E2F98-EE9D-40fd-9702-D5ACF2C65757}"></a>programvareBruker
+					programvareBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -589,7 +563,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -606,7 +580,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7398BE61-DFC3-40f2-A3D8-CA6C29F294BA}"></a>sistOppdatertDato
+					sistOppdatertDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -616,7 +590,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -633,7 +607,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{72176DB6-B339-48ba-A71F-1AF013906585}"></a>snappetoleranse
+					snappetoleranse
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -643,7 +617,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -660,7 +634,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{47DE3013-C1E1-45a7-B5FF-7FD9D03B16B9}"></a>standardMalestokk
+					standardMalestokk
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -670,7 +644,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -687,7 +661,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{804DDC00-0351-424a-9EB4-54F06C69DADC}"></a>standardStiForBakgrunnskart
+					standardStiForBakgrunnskart
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -697,7 +671,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -714,7 +688,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{4B71E4C3-9546-449c-BA76-AAB2DFE1DB6D}"></a>telefonnummer
+					telefonnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -724,7 +698,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -767,7 +741,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink412" /></button>Details:
 							<div id="detailsDIVLink412" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som slettet denne brukerens adgang til matrikkelen.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som sist oppdaterte denne brukeren.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -775,7 +749,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
+						<a href="EA162.htm">DataForWMS</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -783,7 +757,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> DataForWMS<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -791,14 +765,15 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink413" /></button>Details:
 							<div id="detailsDIVLink413" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Eventuelle WMS-bakgrunnskart for brukeren, refererer DataForWMS.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
+						<a href="../EA12/EA688.htm">Kommune</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -806,7 +781,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> KommuneId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -814,7 +789,32 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink414" /></button>Details:
 							<div id="detailsDIVLink414" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Startkommune for brukeren. Brukes også til å ta vare på den kommunen brukeren jobber med nå.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA145.htm">«enum» BrukergruppeKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BrukergruppeKodeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink415" /></button>Details:
+							<div id="detailsDIVLink415" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Hvilken brukergruppe brukeren tilhører.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -835,33 +835,9 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink415" /></button>Details:
-							<div id="detailsDIVLink415" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som opprettet denne brukeren.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA183.htm">«enum» Sprakform</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> SprakformId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink416" /></button>Details:
 							<div id="detailsDIVLink416" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Språkform for skjermbilder&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som slettet denne brukerens adgang til matrikkelen.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -869,8 +845,8 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA139.htm">BrukerAktiveringsdata</a><br />
-						Class «KunLogiskSett» 
+						<a href="EA153.htm">BrukerId</a><br />
+						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -892,7 +868,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA153.htm">BrukerId</a><br />
+						<a href="EA138.htm">Bruker</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -900,7 +876,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> BrukerId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -908,7 +884,8 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink418" /></button>Details:
 							<div id="detailsDIVLink418" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som opprettet denne brukeren.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -938,7 +915,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA688.htm">Kommune</a><br />
+						<a href="EA138.htm">Bruker</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -946,7 +923,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -954,8 +931,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink420" /></button>Details:
 							<div id="detailsDIVLink420" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Startkommune for brukeren. Brukes også til å ta vare på den kommunen brukeren jobber med nå.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -985,7 +961,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
+						<a href="EA153.htm">BrukerId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1008,7 +984,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA145.htm">«enum» BrukergruppeKode</a><br />
+						<a href="EA183.htm">«enum» Sprakform</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1016,7 +992,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukergruppeKodeId<br />
+						<strong>Name:</strong> SprakformId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1024,7 +1000,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink423" /></button>Details:
 							<div id="detailsDIVLink423" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Hvilken brukergruppe brukeren tilhører.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Språkform for skjermbilder&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1040,7 +1016,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukerId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1048,16 +1024,15 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink424" /></button>Details:
 							<div id="detailsDIVLink424" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som sist oppdaterte denne brukeren.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA153.htm">BrukerId</a><br />
-						Class &nbsp;
+						<a href="EA139.htm">BrukerAktiveringsdata</a><br />
+						Class «KunLogiskSett» 
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> &nbsp;<br />
@@ -1079,7 +1054,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA162.htm">DataForWMS</a><br />
+						<a href="EA138.htm">Bruker</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1087,7 +1062,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> DataForWMS<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1095,8 +1070,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink426" /></button>Details:
 							<div id="detailsDIVLink426" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Eventuelle WMS-bakgrunnskart for brukeren, refererer DataForWMS.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -1110,6 +1084,77 @@
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
 					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA138.htm">Bruker</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BrukerId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink427" /></button>Details:
+							<div id="detailsDIVLink427" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som sist oppdaterte denne brukeren.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA173.htm">KursForBruker</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BrukerId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink428" /></button>Details:
+							<div id="detailsDIVLink428" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til Bruker som er knyttet til Kurs via kursdeltakelse.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA150.htm">BrukerHistorikkListe</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BrukerId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink429" /></button>Details:
+							<div id="detailsDIVLink429" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
@@ -1127,88 +1172,17 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink427" /></button>Details:
-							<div id="detailsDIVLink427" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som opprettet denne brukeren.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukerId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink428" /></button>Details:
-							<div id="detailsDIVLink428" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som slettet denne brukerens adgang til matrikkelen.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA172.htm">Kurs</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukerId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink429" /></button>Details:
-							<div id="detailsDIVLink429" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Kursansvarlig&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA159.htm">BrukerRettighetListe</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukerId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink430" /></button>Details:
 							<div id="detailsDIVLink430" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som sist oppdaterte denne brukeren.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
+						<a href="../EA12/EA690.htm">KommuneId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1231,53 +1205,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA690.htm">KommuneId</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink432" /></button>Details:
-							<div id="detailsDIVLink432" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink433" /></button>Details:
-							<div id="detailsDIVLink433" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
+						<a href="EA148.htm">BrukerHistorikk</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1291,8 +1219,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink434" /></button>Details:
-							<div id="detailsDIVLink434" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink432" /></button>Details:
+							<div id="detailsDIVLink432" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Id til administratorbrukeren som opprettet denne brukeren.&lt;br/&gt;</div>
 
 							</div>
@@ -1301,7 +1229,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA173.htm">KursForBruker</a><br />
+						<a href="EA172.htm">Kurs</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1315,33 +1243,9 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink435" /></button>Details:
-							<div id="detailsDIVLink435" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Bruker som er knyttet til Kurs via kursdeltakelse.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA173.htm">KursForBruker</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukerId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink436" /></button>Details:
-							<div id="detailsDIVLink436" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Bruker som har registrert kursdeltakelsen.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink433" /></button>Details:
+							<div id="detailsDIVLink433" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Kursansvarlig&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1363,8 +1267,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink437" /></button>Details:
-							<div id="detailsDIVLink437" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink434" /></button>Details:
+							<div id="detailsDIVLink434" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -1372,7 +1276,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA148.htm">BrukerHistorikk</a><br />
+						<a href="EA138.htm">Bruker</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1386,9 +1290,57 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink438" /></button>Details:
-							<div id="detailsDIVLink438" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som sist oppdaterte denne brukeren.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink435" /></button>Details:
+							<div id="detailsDIVLink435" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som slettet denne brukerens adgang til matrikkelen.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA15/EA742.htm">Jobb</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BrukerId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink436" /></button>Details:
+							<div id="detailsDIVLink436" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til bruker som har bestilt rapportjobben.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA138.htm">Bruker</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> BrukerId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink437" /></button>Details:
+							<div id="detailsDIVLink437" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til administratorbrukeren som opprettet denne brukeren.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1410,8 +1362,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink439" /></button>Details:
-							<div id="detailsDIVLink439" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink438" /></button>Details:
+							<div id="detailsDIVLink438" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -1419,7 +1371,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA150.htm">BrukerHistorikkListe</a><br />
+						<a href="EA173.htm">KursForBruker</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1428,6 +1380,30 @@
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> BrukerId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink439" /></button>Details:
+							<div id="detailsDIVLink439" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til Bruker som har registrert kursdeltakelsen.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA138.htm">Bruker</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1466,7 +1442,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA15/EA742.htm">Jobb</a><br />
+						<a href="EA138.htm">Bruker</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1474,7 +1450,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukerId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1482,8 +1458,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink442" /></button>Details:
 							<div id="detailsDIVLink442" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til bruker som har bestilt rapportjobben.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -1513,7 +1488,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA138.htm">Bruker</a><br />
+						<a href="EA159.htm">BrukerRettighetListe</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1529,8 +1504,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink444" /></button>Details:
 							<div id="detailsDIVLink444" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til administratorbrukeren som sist oppdaterte denne brukeren.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
