@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/25/2013 12:07:39 PM</td>
+			<td class="ObjectDetailsValue">25.06.2013 12:07:39</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -193,7 +167,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{8E8C56C3-1BC0-413d-8451-3167E471AD61}"></a>alternativtAreal
+					alternativtAreal
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -203,7 +177,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -220,7 +194,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7568A5C4-25DD-4b31-87FD-26CF544C100A}"></a>alternativtAreal2
+					alternativtAreal2
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -230,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -247,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{85998D30-602F-4c9b-BD9D-97703706D898}"></a>antallBoenheter
+					antallBoenheter
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -257,7 +231,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -274,7 +248,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{FACD871B-4704-426e-9B36-5F56700B9215}"></a>bruksarealTilAnnet
+					bruksarealTilAnnet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -284,7 +258,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -301,7 +275,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7019997C-8006-4b8b-A44D-47DE2424BAC5}"></a>bruksarealTilBolig
+					bruksarealTilBolig
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -311,7 +285,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -328,7 +302,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7541E02C-CCC1-439a-BB9E-A74338DEAF76}"></a>bruksarealTotalt
+					bruksarealTotalt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -338,7 +312,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -355,7 +329,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{9931AD18-909E-4009-8A5E-56A8737694E6}"></a>bruttoarealTilAnnet
+					bruttoarealTilAnnet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -365,7 +339,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -382,7 +356,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{074F4624-79D9-4330-8088-868B64655D10}"></a>bruttoarealTilBolig
+					bruttoarealTilBolig
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -392,7 +366,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -409,7 +383,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{C42FE2DC-83CF-46f0-8236-85F64A6FBF1E}"></a>bruttoarealTotalt
+					bruttoarealTotalt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -419,7 +393,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -454,7 +428,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> Etasjedata<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -462,7 +436,8 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1013" /></button>Details:
 							<div id="detailsDIVLink1013" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Sum av informasjon på byggets etasjer. Sumfelt kan være gitt selv om ingen etasjer finnes.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -477,7 +452,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Etasjedata<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -485,8 +460,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1014" /></button>Details:
 							<div id="detailsDIVLink1014" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Sum av informasjon på byggets etasjer. Sumfelt kan være gitt selv om ingen etasjer finnes.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>

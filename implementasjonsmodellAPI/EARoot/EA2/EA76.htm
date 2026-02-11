@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:05 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:05</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/26/2013 9:48:45 AM</td>
+			<td class="ObjectDetailsValue">26.06.2013 09:48:45</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -172,7 +146,7 @@
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA17/EA894.htm">Implementasjonsmodell - Person</a></td>
+			<td class="ObjectDetailsValue"><a href="EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA17/EA897.htm">Implementasjonsmodell - Person</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">Postnummerområder kommer fra Posten Norge. Et postnummerområde kan gå over flere kommuner.&lt;br/&gt;Postnummerområder er 4-sifret, med ledende nuller.&lt;br/&gt;&lt;br/&gt;Kretstypekode for postnummerområde er &quot;P&quot;.&lt;br/&gt;</div>
@@ -216,30 +190,6 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA917.htm">MottakerAdresse</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> PostnummeromradeId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink185" /></button>Details:
-							<div id="detailsDIVLink185" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til mottakeradressens Postnummeromrade.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
 						<a href="../EA12/EA690.htm">KommuneId</a><br />
 						Class &nbsp;
 					</td>
@@ -254,9 +204,33 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink185" /></button>Details:
+							<div id="detailsDIVLink185" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA17/EA920.htm">MottakerAdresse</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> PostnummeromradeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink186" /></button>Details:
 							<div id="detailsDIVLink186" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Id til mottakeradressens Postnummeromrade.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>

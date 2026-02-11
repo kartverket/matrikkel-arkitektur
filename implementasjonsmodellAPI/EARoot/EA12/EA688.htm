@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:07 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:07</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/21/2013 8:54:58 AM</td>
+			<td class="ObjectDetailsValue">21.06.2013 08:54:58</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -172,7 +146,7 @@
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../EA2/EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA4/EA130.htm">Implementasjonsmodell - Bruker</a>, <a href="../EA5/EA186.htm">Implementasjonsmodell - Bygg</a>, <a href="EA680.htm">Implementasjonsmodell - Kommune</a>, <a href="../EA16/EA754.htm">Implementasjonsmodell - Matrikkelenhet</a>, <a href="../EA3/EA95.htm">Implementasjonsmodell - Aktivitetsliste</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a>, <a href="../EA7/EA336.htm">Implementasjonsmodell - Forretning</a>, <a href="../EA18/EA934.htm">Implementasjonsmodell - SEFRAK</a></td>
+			<td class="ObjectDetailsValue"><a href="../EA2/EA22.htm">Implementasjonsmodell - Adresse</a>, <a href="../EA4/EA130.htm">Implementasjonsmodell - Bruker</a>, <a href="../EA5/EA186.htm">Implementasjonsmodell - Bygg</a>, <a href="EA680.htm">Implementasjonsmodell - Kommune</a>, <a href="../EA16/EA754.htm">Implementasjonsmodell - Matrikkelenhet</a>, <a href="../EA3/EA95.htm">Implementasjonsmodell - Aktivitetsliste</a>, <a href="../EA6/EA261.htm">Implementasjonsmodell - Endringslogg</a>, <a href="../EA7/EA336.htm">Implementasjonsmodell - Forretning</a>, <a href="../EA18/EA937.htm">Implementasjonsmodell - SEFRAK</a></td>
 		</tr>
 	</table>
 	<div class="ObjectDetailsNotes">En norsk kommune. Alle matrikkelenheter ligger innenfor èn og bare en bestemt kommune.&lt;br/&gt;&lt;br/&gt;Kommunaldepartementet forvalter Kommuneregisteret, og endringer legges manuelt inn i Matrikkelen.&lt;br/&gt;</div>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{45BC26B4-B0B6-4fb8-93A3-7F16AF59EA77}"></a>brukteGardsnummer
+					brukteGardsnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{62CD1E4A-603D-40de-8728-80EC1BB717F7}"></a>eksklusivBruker
+					eksklusivBruker
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -232,7 +206,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +223,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{B4F4A240-1C9D-4bc0-848D-6DA422CF2656}"></a>gyldigTilDato
+					gyldigTilDato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -259,7 +233,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +250,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{1FBCBB61-7C10-4ec4-A972-F767CC3BFD18}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -286,7 +260,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -303,7 +277,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{CD9EEC7C-FBF2-432b-8659-24704D9B3E11}"></a>kommunenavn
+					kommunenavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -313,7 +287,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -330,7 +304,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{43315EFD-E371-4984-83DB-A780856F0715}"></a>kommunenummer
+					kommunenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -340,7 +314,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -357,7 +331,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{4CFCDBEF-EA57-42c8-9400-F0F7677899AE}"></a>konverteringStatus
+					konverteringStatus
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -367,7 +341,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -384,7 +358,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E4D03564-757B-4770-922D-21477121B57E}"></a>last
+					last
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -394,7 +368,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -411,7 +385,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{00EB31DE-8A15-432b-91F0-37CB736DE7C3}"></a>nedsattKonsesjonsgrense
+					nedsattKonsesjonsgrense
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -421,7 +395,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -438,7 +412,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{7799AE18-428F-4236-A6AB-A194D27D5219}"></a>senterpunkt
+					senterpunkt
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -448,7 +422,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -475,7 +449,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA917.htm">MottakerAdresse</a><br />
+						<a href="EA688.htm">Kommune</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -483,7 +457,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> KommuneId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -491,14 +465,15 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2561" /></button>Details:
 							<div id="detailsDIVLink2561" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Et sett med KommuneId for kommunens nabokommuner. Også kommuner som deler kun ett grensepunkt, skal være naboer.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA690.htm">KommuneId</a><br />
+						<a href="../EA17/EA920.htm">MottakerAdresse</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -514,32 +489,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2562" /></button>Details:
 							<div id="detailsDIVLink2562" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Et sett med KommuneId for kommunens nabokommuner. Også kommuner som deler kun ett grensepunkt, skal være naboer. &lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA688.htm">Kommune</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2563" /></button>Details:
-							<div id="detailsDIVLink2563" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Et sett med KommuneId for kommunens nabokommuner. Også kommuner som deler kun ett grensepunkt, skal være naboer.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -560,8 +510,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2564" /></button>Details:
-							<div id="detailsDIVLink2564" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2563" /></button>Details:
+							<div id="detailsDIVLink2563" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -569,7 +519,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA917.htm">MottakerAdresse</a><br />
+						<a href="../EA17/EA912.htm">JuridiskPerson</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -577,15 +527,15 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> MottakerAdresse<br />
+						<strong>Name:</strong> JuridiskPersonId<br />
 						&nbsp;	
 					</td>
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2565" /></button>Details:
-							<div id="detailsDIVLink2565" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Postadressen til kommunen.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2564" /></button>Details:
+							<div id="detailsDIVLink2564" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id for juridisk person som er den som skal komme som standardrekvirent tinglysing i Melding til tinglysing.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -593,7 +543,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA910.htm">JuridiskPersonId</a><br />
+						<a href="../EA8/EA552.htm">Position</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -607,8 +557,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2566" /></button>Details:
-							<div id="detailsDIVLink2566" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2565" /></button>Details:
+							<div id="detailsDIVLink2565" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -616,7 +566,31 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA552.htm">Position</a><br />
+						<a href="../EA4/EA183.htm">«enum» Sprakform</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> SprakformId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2566" /></button>Details:
+							<div id="detailsDIVLink2566" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Standard språkform for kommunen. Skal benyttes som standard for rapporter, med mindre det overstyres for den enkelte rapport. En bruker kan ha egen innstilling for språkform som overstyres kommunens innstilling når det gjelder språkform i brukergrensesnittet til klienten.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA690.htm">KommuneId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -639,7 +613,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA8/EA554.htm">Representasjonspunkt</a><br />
+						<a href="EA683.htm">Fylke</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -647,7 +621,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> FylkeId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -655,7 +629,8 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2568" /></button>Details:
 							<div id="detailsDIVLink2568" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Id til fylket kommunen hører til.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -686,77 +661,6 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA690.htm">KommuneId</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2570" /></button>Details:
-							<div id="detailsDIVLink2570" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA4/EA183.htm">«enum» Sprakform</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> SprakformId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2571" /></button>Details:
-							<div id="detailsDIVLink2571" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Standard språkform for kommunen. Skal benyttes som standard for rapporter, med mindre det overstyres for den enkelte rapport. En bruker kan ha egen innstilling for språkform som overstyres kommunens innstilling når det gjelder språkform i brukergrensesnittet til klienten.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA683.htm">Fylke</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> FylkeId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2572" /></button>Details:
-							<div id="detailsDIVLink2572" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til fylket kommunen hører til.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
 						<a href="EA688.htm">Kommune</a><br />
 						Class &nbsp;
 					</td>
@@ -771,9 +675,80 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2570" /></button>Details:
+							<div id="detailsDIVLink2570" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Hvis kommunen er sammenslått, ligger peker til ny kommune her. Hvis ny kommune er gitt, må gyldigTilDato også være gitt.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA690.htm">KommuneId</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2571" /></button>Details:
+							<div id="detailsDIVLink2571" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Et sett med KommuneId for kommunens nabokommuner. Også kommuner som deler kun ett grensepunkt, skal være naboer. &lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA8/EA554.htm">Representasjonspunkt</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2572" /></button>Details:
+							<div id="detailsDIVLink2572" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA17/EA920.htm">MottakerAdresse</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> MottakerAdresse<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2573" /></button>Details:
 							<div id="detailsDIVLink2573" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Hvis kommunen er sammenslått, ligger peker til ny kommune her. Hvis ny kommune er gitt, må gyldigTilDato også være gitt.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Postadressen til kommunen.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -804,7 +779,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA17/EA909.htm">JuridiskPerson</a><br />
+						<a href="../EA17/EA913.htm">JuridiskPersonId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -812,7 +787,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> JuridiskPersonId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -820,8 +795,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2575" /></button>Details:
 							<div id="detailsDIVLink2575" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id for juridisk person som er den som skal komme som standardrekvirent tinglysing i Melding til tinglysing.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -835,76 +809,6 @@
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
 					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA1/EA21.htm">UUID</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2576" /></button>Details:
-							<div id="detailsDIVLink2576" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2577" /></button>Details:
-							<div id="detailsDIVLink2577" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA799.htm">Eierforhold</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2578" /></button>Details:
-							<div id="detailsDIVLink2578" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Kommune som matrikkelenhet hører til.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
@@ -922,8 +826,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2579" /></button>Details:
-							<div id="detailsDIVLink2579" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2576" /></button>Details:
+							<div id="detailsDIVLink2576" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Et sett med KommuneId for kommunens nabokommuner. Også kommuner som deler kun ett grensepunkt, skal være naboer.&lt;br/&gt;</div>
 
 							</div>
@@ -946,102 +850,9 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2580" /></button>Details:
-							<div id="detailsDIVLink2580" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA18/EA939.htm">SefrakInfo</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2581" /></button>Details:
-							<div id="detailsDIVLink2581" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til sefrakInfos registreringskommune. SefrakInfo m&#229; ha knytning til en registreringskommune.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA25.htm">Adresse</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2582" /></button>Details:
-							<div id="detailsDIVLink2582" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA3/EA111.htm">Melding</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2583" /></button>Details:
-							<div id="detailsDIVLink2583" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA18/EA939.htm">SefrakInfo</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2584" /></button>Details:
-							<div id="detailsDIVLink2584" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til sefrakInfos kommune. SefrakInfo m&#229; ha knytning til en kommune.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2577" /></button>Details:
+							<div id="detailsDIVLink2577" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Kommuner som objektet ikke lengre tilhører etter denne endring.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1063,8 +874,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2585" /></button>Details:
-							<div id="detailsDIVLink2585" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2578" /></button>Details:
+							<div id="detailsDIVLink2578" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">KommuneId for vegadressen etter fullføring av ommatrikuleringen.&lt;br/&gt;</div>
 
 							</div>
@@ -1073,7 +884,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA4/EA169.htm">Kommuneliste</a><br />
+						<a href="../EA18/EA942.htm">SefrakInfo</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1082,6 +893,171 @@
 					</td>
 					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> KommuneId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2579" /></button>Details:
+							<div id="detailsDIVLink2579" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til sefrakInfos gjeldende kommune. SefrakInfo m&#229; ha knytning til en kommune.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA16/EA861.htm">Matrikkelnummer</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> KommuneId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2580" /></button>Details:
+							<div id="detailsDIVLink2580" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til Kommune som matrikkelnr inngår i.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA309.htm">KommuneEndring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> KommuneId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2581" /></button>Details:
+							<div id="detailsDIVLink2581" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA6/EA283.htm">Endring</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> KommuneId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2582" /></button>Details:
+							<div id="detailsDIVLink2582" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA5/EA200.htm">Bygg</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2583" /></button>Details:
+							<div id="detailsDIVLink2583" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA4/EA138.htm">Bruker</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> KommuneId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2584" /></button>Details:
+							<div id="detailsDIVLink2584" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Startkommune for brukeren. Brukes også til å ta vare på den kommunen brukeren jobber med nå.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA2/EA85.htm">Veg</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> KommuneId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2585" /></button>Details:
+							<div id="detailsDIVLink2585" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til vegens Kommune. Vegen må ha knytning til en kommune.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA1/EA21.htm">UUID</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1096,7 +1072,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA4/EA168.htm">KommuneForvaltningsomrade</a><br />
+						<a href="../EA3/EA111.htm">Melding</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1119,7 +1095,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA200.htm">Bygg</a><br />
+						<a href="../EA2/EA56.htm">Krets</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1135,7 +1111,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2588" /></button>Details:
 							<div id="detailsDIVLink2588" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til kommunen som bygningen ligger i. Bygningen må ha kommune.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">De kommuner som kretsen er knyttet til.&lt;br/&gt;&lt;br/&gt;Kretser av subklasse KretsMedEnKommune har kun en kommune.&lt;br/&gt;&lt;br/&gt;Kretser av subklasse KretsMedFlereKommuner har ingen, en eller flere kommuner.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1143,7 +1119,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA200.htm">Bygg</a><br />
+						<a href="../EA3/EA104.htm">Byggesakmelding</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1166,7 +1142,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA685.htm">FylkeId</a><br />
+						<a href="../EA4/EA168.htm">KommuneForvaltningsomrade</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1174,7 +1150,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> KommuneId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1189,7 +1165,30 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA4/EA138.htm">Bruker</a><br />
+						<a href="../EA2/EA25.htm">Adresse</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2591" /></button>Details:
+							<div id="detailsDIVLink2591" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA5/EA200.htm">Bygg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1203,9 +1202,9 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2591" /></button>Details:
-							<div id="detailsDIVLink2591" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Startkommune for brukeren. Brukes også til å ta vare på den kommunen brukeren jobber med nå.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2592" /></button>Details:
+							<div id="detailsDIVLink2592" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til kommunen som bygningen ligger i. Bygningen må ha kommune.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1213,30 +1212,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA3/EA98.htm">AvtaleStedbundenRettighetMelding</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2592" /></button>Details:
-							<div id="detailsDIVLink2592" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA283.htm">Endring</a><br />
+						<a href="EA683.htm">Fylke</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1252,7 +1228,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2593" /></button>Details:
 							<div id="detailsDIVLink2593" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Kommuner som objektet ikke lengre tilhører etter denne endring.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Id-er for kommunene innenfor dette fylket.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1260,7 +1236,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA56.htm">Krets</a><br />
+						<a href="../EA16/EA802.htm">Eierforhold</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1276,7 +1252,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2594" /></button>Details:
 							<div id="detailsDIVLink2594" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">De kommuner som kretsen er knyttet til.&lt;br/&gt;&lt;br/&gt;Kretser av subklasse KretsMedEnKommune har kun en kommune.&lt;br/&gt;&lt;br/&gt;Kretser av subklasse KretsMedFlereKommuner har ingen, en eller flere kommuner.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Id til Kommune som matrikkelenhet h&#248;rer til.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1284,7 +1260,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA858.htm">Matrikkelnummer</a><br />
+						<a href="../EA4/EA169.htm">Kommuneliste</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1300,30 +1276,6 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2595" /></button>Details:
 							<div id="detailsDIVLink2595" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til Kommune som matrikkelnr inngår i.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA3/EA104.htm">Byggesakmelding</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2596" /></button>Details:
-							<div id="detailsDIVLink2596" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
@@ -1331,7 +1283,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA2/EA85.htm">Veg</a><br />
+						<a href="../EA18/EA942.htm">SefrakInfo</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1345,9 +1297,9 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2597" /></button>Details:
-							<div id="detailsDIVLink2597" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id til vegens Kommune. Vegen må ha knytning til en kommune.&lt;br/&gt;</div>
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2596" /></button>Details:
+							<div id="detailsDIVLink2596" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Id til sefrakInfos registreringskommune. SefrakInfo m&#229; ha knytning til en registreringskommune. dette er opprinnelig kommune som sefrakinfo ble registrert i, og kan derfor v&#230;re en utg&#229;tt kommune.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -1369,8 +1321,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2598" /></button>Details:
-							<div id="detailsDIVLink2598" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2597" /></button>Details:
+							<div id="detailsDIVLink2597" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Hvis kommunen er sammenslått, ligger peker til ny kommune her. Hvis ny kommune er gitt, må gyldigTilDato også være gitt.&lt;br/&gt;</div>
 
 							</div>
@@ -1379,7 +1331,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA309.htm">KommuneEndring</a><br />
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1387,7 +1339,30 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2598" /></button>Details:
+							<div id="detailsDIVLink2598" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA3/EA98.htm">AvtaleStedbundenRettighetMelding</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1402,7 +1377,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA683.htm">Fylke</a><br />
+						<a href="EA685.htm">FylkeId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -1410,7 +1385,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KommuneId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -1418,8 +1393,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2600" /></button>Details:
 							<div id="detailsDIVLink2600" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Id-er for kommunene innenfor dette fylket.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>

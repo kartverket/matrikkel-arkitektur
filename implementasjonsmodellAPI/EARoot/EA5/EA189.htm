@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">9/30/2020 8:52:04 AM</td>
+			<td width="85%" class="ObjectDetailsValue">30.09.2020 08:52:04</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">9/30/2020 9:04:22 AM</td>
+			<td class="ObjectDetailsValue">30.09.2020 09:04:22</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -194,7 +168,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{5F647395-AAFB-422f-94AD-0FA2714EFAB4}"></a>IkkeOppgitt
+					IkkeOppgitt
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -204,14 +178,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D8A57154-D5C1-4407-9BED-96878C4F0296}"></a>VedtakEtterPBL
+					VedtakEtterPBL
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -221,7 +195,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -238,7 +212,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{4411B05B-5170-4cfb-A8AE-B5431C481D27}"></a>Kvalitetsheving
+					Kvalitetsheving
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -248,7 +222,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -265,7 +239,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3DF057A4-B505-4624-B26A-001BEA6828CF}"></a>Feilretting
+					Feilretting
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -275,7 +249,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -292,7 +266,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{6A37C1AD-38F1-47d3-BBBC-A99966587668}"></a>MeldingFraRettighetshaver
+					MeldingFraRettighetshaver
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -302,7 +276,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -319,7 +293,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{FC42750E-83EA-4a12-B14B-2F3CD919C23C}"></a>MassivRegistrering
+					MassivRegistrering
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -329,7 +303,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -346,7 +320,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{CB4CC616-C176-42fb-8666-52E6E3F47696}"></a>FortsettelseForingRA
+					FortsettelseForingRA
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -356,7 +330,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -373,7 +347,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{534A7653-5DA4-445a-9CF6-BA79DED77F33}"></a>FortsettelseForingIG
+					FortsettelseForingIG
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -383,7 +357,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -400,7 +374,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{CE6B0BF5-1BC2-42e0-BBBA-112D9BC15447}"></a>ByggIBruk
+					ByggIBruk
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -410,7 +384,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -427,7 +401,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{6BBA69B9-2B2E-4f68-AE4E-114EC9390274}"></a>VedtakEtterAnnetLovverk
+					VedtakEtterAnnetLovverk
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -437,7 +411,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

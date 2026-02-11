@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:06 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/20/2020 10:46:57 AM</td>
+			<td class="ObjectDetailsValue">20.02.2020 10:46:57</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -194,7 +168,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{42756AD3-B286-4fbf-94D5-505808F4B110}"></a>koordinatsystemKodeId
+					koordinatsystemKodeId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -204,7 +178,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -221,7 +195,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{B6D61F77-F62A-413e-A874-9E5B0DEF1422}"></a>kvalitet[0..1]
+					kvalitet[0..1]
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -231,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -248,7 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{20C952FB-6659-4e66-B89B-D2406ADDA459}"></a>originalKoordinatsystemKodeId
+					originalKoordinatsystemKodeId
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -258,7 +232,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -275,7 +249,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{260A982C-F87E-415b-A759-59E02756D7BB}"></a>position
+					position
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -285,7 +259,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -302,7 +276,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D263748E-620F-430d-897A-61E884677B9E}"></a>stedfestingVerifisert
+					stedfestingVerifisert
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -312,7 +286,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -339,7 +313,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA535.htm">«enum» KoordinatkvalitetKode</a><br />
+						<a href="EA551.htm">Posisjonskvalitet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -347,7 +321,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KoordinatkvalitetKodeId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -355,8 +329,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1772" /></button>Details:
 							<div id="detailsDIVLink1772" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Beskrev kvalitet for representasjonspunkt på bygning og adresse i gammelt register, GAB. Denne er kun for å ta vare på disse dataene fra GAB. Når stedfestingVerifisert er satt ok/ja, skal koordinatkvalitet fjernes fra representasjonspunktet.&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -386,6 +359,30 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
+						<a href="EA535.htm">«enum» KoordinatkvalitetKode</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> KoordinatkvalitetKodeId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1774" /></button>Details:
+							<div id="detailsDIVLink1774" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Beskrev kvalitet for representasjonspunkt på bygning og adresse i gammelt register, GAB. Denne er kun for å ta vare på disse dataene fra GAB. Når stedfestingVerifisert er satt ok/ja, skal koordinatkvalitet fjernes fra representasjonspunktet.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
 						<a href="EA538.htm">«enum» KoordinatsystemKode</a><br />
 						Class &nbsp;
 					</td>
@@ -400,33 +397,10 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1774" /></button>Details:
-							<div id="detailsDIVLink1774" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Koordinatsystem som posisjonen er oppgitt i.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA551.htm">Posisjonskvalitet</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1775" /></button>Details:
 							<div id="detailsDIVLink1775" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Koordinatsystem som posisjonen er oppgitt i.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -440,6 +414,30 @@
 					<td width="40%" class="TableHeading">Element</td>
 					<td width="30%" class="TableHeading">Source Role</td>
 					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA16/EA878.htm">Teig</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> Representasjonspunkt<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1776" /></button>Details:
+							<div id="detailsDIVLink1776" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Punkt som representerer teigen. Punktet må ligge innenfor teigens avgrensing. Representasjonspunktet til en teig er vanligvis plassert i tyngdepunktet til flata.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
@@ -457,8 +455,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1776" /></button>Details:
-							<div id="detailsDIVLink1776" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1777" /></button>Details:
+							<div id="detailsDIVLink1777" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Representasjonspunkt for adressen.&lt;br/&gt;Angir normalt atkomsten til en bygning, bolig eller andre objekter og steder.&lt;br/&gt;&lt;br/&gt;Dersom en adresse kun gjelder en bygning med en adresse, plasseres punktet innenfor bygingens omriss like ved inngang /atkomst.. &lt;br/&gt;Det samme gjelder dersom det er knyttet flere adresser til flere innganger/atkomster til en bygning. Adressepunktene plasseres like ved de respektive innganger/atkomster innenfor bygningens omriss. For bygg med altangang eller svalgang med atkomst til den enkelte bolig via utvendig atkomsttrapp, plasseres adressepunktet i trapp nærmest terrengnivå&lt;br/&gt;&lt;br/&gt;Punkt registreres også uten at en har bygningens omriss, -men da settes ikke kvalitetsmerket for at den er verifisert mot omrisset.&lt;br/&gt;&lt;br/&gt;For ubebygde eiendommer verifiseres det at punktet er innenfor teigen og ved atkomst.&lt;br/&gt;</div>
 
 							</div>
@@ -467,31 +465,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA763.htm">Anleggsprojeksjonsflate</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Representasjonspunkt<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1777" /></button>Details:
-							<div id="detailsDIVLink1777" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Punkt som representerer anleggsprojeksjonsflata. Ligger innenfor flata.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA12/EA688.htm">Kommune</a><br />
+						<a href="../EA16/EA766.htm">Anleggsprojeksjonsflate</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -514,29 +488,6 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA763.htm">Anleggsprojeksjonsflate</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1779" /></button>Details:
-							<div id="detailsDIVLink1779" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
 						<a href="../EA5/EA200.htm">Bygg</a><br />
 						Class &nbsp;
 					</td>
@@ -551,8 +502,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1780" /></button>Details:
-							<div id="detailsDIVLink1780" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1779" /></button>Details:
+							<div id="detailsDIVLink1779" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Representasjonspunkt for bygget. &lt;br/&gt;&lt;br/&gt;Skal plasseres innenfor &lt;br/&gt;bygingens omriss.&lt;br/&gt;&lt;br/&gt;Punkt registreres også uten at en har omrisset, men da settes ikke kvalitetsmerket for at den er verifisert mot bygningens omriss.&lt;br/&gt;</div>
 
 							</div>
@@ -561,7 +512,30 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA875.htm">Teig</a><br />
+						<a href="../EA12/EA688.htm">Kommune</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1780" /></button>Details:
+							<div id="detailsDIVLink1780" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA16/EA766.htm">Anleggsprojeksjonsflate</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -577,7 +551,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink1781" /></button>Details:
 							<div id="detailsDIVLink1781" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Punkt som representerer teigen. Punktet må ligge innenfor teigens avgrensing. Representasjonspunktet til en teig er vanligvis plassert i tyngdepunktet til flata.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Punkt som representerer anleggsprojeksjonsflata. Ligger innenfor flata.&lt;br/&gt;</div>
 
 							</div>
 						</div>

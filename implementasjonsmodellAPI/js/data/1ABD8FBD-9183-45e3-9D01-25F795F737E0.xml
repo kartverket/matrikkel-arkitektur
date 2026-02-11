@@ -1,5 +1,5 @@
-tocTab[tocTab.length] = new Array("0.1.18:1", "", "Implementasjonsmodell - SEFRAK", "EARoot/EA1/EA18/EA936.htm", "175.png", "15", "0", "", "Logical diagram0","{4919AFDC-DB95-4766-AC95-EAAAC41A4177}");
-tocTab[tocTab.length] = new Array("0.1.18:2", "", "SefrakInfoIdList", "EARoot/EA1/EA18/EA939.htm", "5.png", "E1017", "0", "", "Class0","{789BFA55-77FE-468f-83C5-628435685624}");
-tocTab[tocTab.length] = new Array("0.1.18:3", "", "«DomainBubble» SefrakBubble", "EARoot/EA1/EA18/EA940.htm", "5.png", "E403", "0", "", "Class0","{EA6AC3DB-8968-4979-83D6-04C791EE3A75}");
-tocTab[tocTab.length] = new Array("0.1.18:4", "", "SefrakInfo", "EARoot/EA1/EA18/EA941.htm", "5.png", "E402", "0", "", "Class0","{7F4B4DB0-CF27-455d-92A3-FD7BE2BD83EE}");
-tocTab[tocTab.length] = new Array("0.1.18:5", "", "SefrakInfoId", "EARoot/EA1/EA18/EA942.htm", "5.png", "E407", "0", "", "Class0","{53B41DEB-4E30-4513-982B-0ED917118584}");
+tocTab[tocTab.length] = new Array("0.18:1", "", "Implementasjonsmodell - SEFRAK", "EARoot/EA18/EA937.htm", "175.png", "15", "0", "", "Logical diagram0","{4919AFDC-DB95-4766-AC95-EAAAC41A4177}");
+tocTab[tocTab.length] = new Array("0.18:2", "", "SefrakInfoIdList", "EARoot/EA18/EA940.htm", "5.png", "E1017", "0", "", "Class0","{789BFA55-77FE-468f-83C5-628435685624}");
+tocTab[tocTab.length] = new Array("0.18:3", "", "«DomainBubble» SefrakBubble", "EARoot/EA18/EA941.htm", "5.png", "E403", "0", "", "Class0","{EA6AC3DB-8968-4979-83D6-04C791EE3A75}");
+tocTab[tocTab.length] = new Array("0.18:4", "", "SefrakInfo", "EARoot/EA18/EA942.htm", "5.png", "E402", "0", "", "Class0","{7F4B4DB0-CF27-455d-92A3-FD7BE2BD83EE}");
+tocTab[tocTab.length] = new Array("0.18:5", "", "SefrakInfoId", "EARoot/EA18/EA943.htm", "5.png", "E407", "0", "", "Class0","{53B41DEB-4E30-4513-982B-0ED917118584}");

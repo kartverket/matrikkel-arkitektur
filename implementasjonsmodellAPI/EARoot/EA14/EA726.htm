@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:11 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:11</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/20/2017 1:04:48 PM</td>
+			<td class="ObjectDetailsValue">20.02.2017 13:04:48</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -195,7 +169,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{13159A50-2640-44fa-BDB7-2A48D0FBEB7D}"></a>id
+					id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -205,7 +179,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +196,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{30C87B39-B674-44e2-865A-1C90C1F84C4C}"></a>lokalitetsnummer
+					lokalitetsnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -232,7 +206,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +223,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{35E14CFB-B56A-4ad7-BAB3-077FD88CAE75}"></a>matrikkelforingsdato
+					matrikkelforingsdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -259,7 +233,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +250,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3481D28A-5F21-4969-935E-D407BC8A58C7}"></a>sistOppdatertDato
+					sistOppdatertDato
 				</td>
 				<td width="25%" class="TableRow">
 					private 
@@ -286,7 +260,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -313,7 +287,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA736.htm">«enum» VernetypeKode</a><br />
+						<a href="EA727.htm">«enum» KulturminneArtKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -321,7 +295,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> VernetypeKodeId<br />
+						<strong>Name:</strong> KulturminneArtKodeId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -329,8 +303,31 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2796" /></button>Details:
 							<div id="detailsDIVLink2796" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Kode for vernestatus. Angir hvilken type vern minnet eventuelt har.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Viser hvilken type kulturminne det dreier seg om&lt;br/&gt;</div>
 
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA722.htm">FredetBygning</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> FredetBygning<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2797" /></button>Details:
+							<div id="detailsDIVLink2797" class="DetailsDiv" >
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -351,8 +348,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2797" /></button>Details:
-							<div id="detailsDIVLink2797" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2798" /></button>Details:
+							<div id="detailsDIVLink2798" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Hovedkategori et kulturminne tilhører.&lt;br/&gt;</div>
 
 							</div>
@@ -362,29 +359,6 @@
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
 						<a href="EA728.htm">KulturminneArtKodeId</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2798" /></button>Details:
-							<div id="detailsDIVLink2798" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA5/EA200.htm">Bygg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -431,7 +405,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA731.htm">KulturminneId</a><br />
+						<a href="../EA16/EA851.htm">MatrikkelenhetId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -477,7 +451,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA722.htm">FredetBygning</a><br />
+						<a href="EA736.htm">«enum» VernetypeKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -485,7 +459,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> FredetBygning<br />
+						<strong>Name:</strong> VernetypeKodeId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -493,14 +467,15 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2803" /></button>Details:
 							<div id="detailsDIVLink2803" class="DetailsDiv" >
-							&nbsp;
+							<div class="ObjectDetailsNotes">Kode for vernestatus. Angir hvilken type vern minnet eventuelt har.&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA848.htm">MatrikkelenhetId</a><br />
+						<a href="EA731.htm">KulturminneId</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -523,7 +498,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA727.htm">«enum» KulturminneArtKode</a><br />
+						<a href="../EA5/EA200.htm">Bygg</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -531,7 +506,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KulturminneArtKodeId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -539,8 +514,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2805" /></button>Details:
 							<div id="detailsDIVLink2805" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Viser hvilken type kulturminne det dreier seg om&lt;br/&gt;</div>
-
+							&nbsp;
 							</div>
 						</div>
 					</td>
@@ -557,7 +531,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA1/EA21.htm">UUID</a><br />
+						<a href="../EA6/EA314.htm">KulturminneEndring</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -565,7 +539,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> KulturminneId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -580,7 +554,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
+						<a href="../EA1/EA21.htm">UUID</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -603,15 +577,15 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA6/EA314.htm">KulturminneEndring</a><br />
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> MatrikkelenhetId<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> KulturminneId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -626,11 +600,11 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> MatrikkelenhetId<br />
+						<strong>Name:</strong> &nbsp;<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">

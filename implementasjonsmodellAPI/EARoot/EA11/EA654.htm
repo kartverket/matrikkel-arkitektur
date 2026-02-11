@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -119,11 +93,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:09 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:09</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2015 1:21:52 PM</td>
+			<td class="ObjectDetailsValue">18.06.2015 13:21:52</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -194,7 +168,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{96A06C28-36FC-4126-AA3E-3F0A28AEF1C9}"></a>kartblader
+					kartblader
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -204,7 +178,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
+				<td class="TableRowBottomDashed"  colspan="3">										
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -231,7 +205,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA614.htm">«enum» BrukAvGrunnKode</a><br />
+						<a href="EA635.htm">Kommentar</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -239,7 +213,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> BrukAvGrunnKodeId<br />
+						<strong>Name:</strong> Kommentar<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -247,7 +221,31 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2454" /></button>Details:
 							<div id="detailsDIVLink2454" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Matrikkelenhetens bruk av grunn, blir ikke vedlikeholdt i matrikkelen.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Ulike typer kommentarer som er registrert på matrikkelenheten.&#160;&#160;Mange av disse vil være konvertert fra GAB.&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> MatrikkelenhetId<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2455" /></button>Details:
+							<div id="detailsDIVLink2455" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Set med MatrikkelenhetId for undereiendommer i eierenhet. Kan være tom.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -269,8 +267,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2455" /></button>Details:
-							<div id="detailsDIVLink2455" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2456" /></button>Details:
+							<div id="detailsDIVLink2456" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Set med referanse til ulike kommunale arkiver. Kan være tom.&lt;br/&gt;</div>
 
 							</div>
@@ -279,7 +277,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
+						<a href="EA614.htm">«enum» BrukAvGrunnKode</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -287,31 +285,7 @@
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> MatrikkelenhetId<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2456" /></button>Details:
-							<div id="detailsDIVLink2456" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Set med MatrikkelenhetId for undereiendommer i eierenhet. Kan være tom.&lt;br/&gt;</div>
-
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA635.htm">Kommentar</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> Kommentar<br />
+						<strong>Name:</strong> BrukAvGrunnKodeId<br />
 						&nbsp;	
 					</td>
 				</tr>
@@ -319,7 +293,7 @@
 					<td class="TableRowBottomDashed"  colspan="3">
 						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink2457" /></button>Details:
 							<div id="detailsDIVLink2457" class="DetailsDiv" >
-							<div class="ObjectDetailsNotes">Ulike typer kommentarer som er registrert på matrikkelenheten.&#160;&#160;Mange av disse vil være konvertert fra GAB.&lt;br/&gt;</div>
+							<div class="ObjectDetailsNotes">Matrikkelenhetens bruk av grunn, blir ikke vedlikeholdt i matrikkelen.&lt;br/&gt;</div>
 
 							</div>
 						</div>
@@ -337,7 +311,7 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="../EA16/EA846.htm">Matrikkelenhet</a><br />
+						<a href="../EA16/EA849.htm">Matrikkelenhet</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">

@@ -55,32 +55,6 @@
             }
 
         }
-		
-		document.addEventListener('DOMContentLoaded', () => {
-			const img = document.querySelector('.diagram_image img');
-			const mapAreas = document.querySelectorAll('area');
-
-			if (img && mapAreas.length > 0) {
-				//Get original and rendered image dimensions
-				const originalWidth = img.naturalWidth;
-				const originalHeight = img.naturalHeight;
-				const renderedWidth = img.clientWidth || originalWidth; 
-				const renderedHeight = img.clientHeight || originalHeight; 
-				
-				//Calculate scaling factors
-				const scaleX = renderedWidth / originalWidth;
-				const scaleY = renderedHeight / originalHeight;
-
-				//Adjust map area coordinates
-				mapAreas.forEach((area) => {
-				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
-				  const scaledCoords = originalCoords.map((coord, index) =>
-					index % 2 === 0 ? coord * scaleX : coord * scaleY
-				  );
-				  area.setAttribute('coords', scaledCoords.join(','));
-				});
-			}
-		});
 </script>
 <style>
 
@@ -95,7 +69,7 @@
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="./EA18/EA936.htm">sefrak</a></p>
+			<p><a href="EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="./EA18/EA939.htm">sefrak</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,11 +84,11 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA18/EA934.htm">Implementasjonsmodell - SEFRAK</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA938.htm">SefrakBubble</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA939.htm">SefrakInfo</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA940.htm">SefrakInfoId</a></li>
-<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA937.htm">SefrakInfoIdList</a></li>
+<li><img src="../images/175.png" alt="Diagram"/> <a href="./EA18/EA937.htm">Implementasjonsmodell - SEFRAK</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA941.htm">SefrakBubble</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA942.htm">SefrakInfo</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA943.htm">SefrakInfoId</a></li>
+<li><img src="../images/5.png" alt="Class"/> <a href="./EA18/EA940.htm">SefrakInfoIdList</a></li>
 </ul>
 
 					</td>
@@ -124,11 +98,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">6/18/2013 10:17:10 AM</td>
+			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:10</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">6/18/2013 10:17:11 AM</td>
+			<td class="ObjectDetailsValue">18.06.2013 10:17:11</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
