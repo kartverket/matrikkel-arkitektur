@@ -69,7 +69,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.25.6</a> / <a href="EA132.htm">bruker</a> / <a href="EA180.htm">Rolle</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA132.htm">bruker</a> / <a href="EA180.htm">Rolle</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -97,7 +97,7 @@
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">08.10.2018 23:55:41</td>
+			<td class="ObjectDetailsValue">23.02.2026 13:45:16</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -149,7 +149,7 @@
 			<td class="ObjectDetailsValue"><a href="EA130.htm">Implementasjonsmodell - Bruker</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Denne klassen inneholder definisjoner for alle roller som begrenser aksess til data i Matrikkelen.&lt;br/&gt;&lt;br/&gt;Ved endringer i roller må i tillegg følgende oppdateres:&lt;br/&gt;- patch-matrusers.sql: Patch-fil for weblogic sikkerhetsbase&lt;br/&gt;- weblogic-security-role-assignment.xml&lt;br/&gt;- ejb-method-permissions.ent (dersom rolle skal kunne opprette id&#39;er - se SequenceBlockAllocatorService)&lt;br/&gt;&lt;br/&gt;NB NB: Den nye rollen må også være i bruk i en ejb ved * @ejb.roles-allowed roleames=&quot;ny rolle&quot;, ellers får man deploymentfeil!&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Denne klassen inneholder definisjoner for alle roller som begrenser aksess til data i Matrikkelen.&lt;br/&gt;&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -979,6 +979,33 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
+					berettiget_interesse_rolle
+				</td>
+				<td width="25%" class="TableRow">
+					Public 
+				</td>
+				<td width="25%" class="TableRow">
+					String
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Berettiget interesse&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
 					pantebok_utskrift_rolle
 				</td>
 				<td width="25%" class="TableRow">
@@ -998,6 +1025,33 @@
 		</td>
 		<td>
 			Pantebokutskrift&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					berettiget_interesse_med_fnr_rolle
+				</td>
+				<td width="25%" class="TableRow">
+					Public 
+				</td>
+				<td width="25%" class="TableRow">
+					String
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">										
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Berettiget interesse med f&#248;dselsnummer&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -1030,8 +1084,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink659" /></button>Details:
-							<div id="detailsDIVLink659" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink661" /></button>Details:
+							<div id="detailsDIVLink661" class="DetailsDiv" >
 							<div class="ObjectDetailsNotes">Alle AksessRettigheter tilknyttet denne rollen.&lt;br/&gt;</div>
 
 							</div>
@@ -1064,8 +1118,8 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink660" /></button>Details:
-							<div id="detailsDIVLink660" class="DetailsDiv" >
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink662" /></button>Details:
+							<div id="detailsDIVLink662" class="DetailsDiv" >
 							&nbsp;
 							</div>
 						</div>
