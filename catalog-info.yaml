@@ -2,8 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: matrikkel-arkitektur
+  tags:
+  - "public"
 spec:
   type: documentation
   owner: heimdall
   lifecycle: production
-  system: matrikkel
+  system: m22
