@@ -35,7 +35,7 @@ jobs:
           exit 1
 
       - name: Checkout source repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: ${{ env.SOURCE_REPO }}
 
@@ -47,7 +47,7 @@ jobs:
           identity: ${{ env.SOURCE_REPO }}
 
       - name: Checkout target repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.ORGANIZATION }}/${{ env.TARGET_REPO }}
           token: ${{ steps.octo-sts.outputs.token }}
