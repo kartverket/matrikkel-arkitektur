@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>bygning::Bruksenhet</title>
+<title>Bruksenhet</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -64,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> bygning::Bruksenhet </h1>
+			<h1> Bruksenhet </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA188.htm">bygning</a> / <a href="EA193.htm">Bruksenhet</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA188.htm">bygning</a> / <a href="EA193.htm">Bruksenhet</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">26.09.2018 01:03:27</td>
+			<td class="ObjectDetailsValue">26/09/2018 01:03:27</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -169,7 +195,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					antallBad
+					<a name="{C4AB86DD-CB84-406e-B610-410A97D0C8FA}"></a>antallBad
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -179,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -196,7 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					antallRom
+					<a name="{826D75D7-16B2-4cf8-BFE4-503133F1BF44}"></a>antallRom
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -206,7 +232,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -223,7 +249,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					antallWC
+					<a name="{78A1609A-179F-46fd-86F8-B9333C1871A9}"></a>antallWC
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -233,7 +259,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -250,7 +276,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksAreal
+					<a name="{C581134A-D937-4f28-ADE0-71196E95D3D9}"></a>bruksAreal
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -260,7 +286,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -277,7 +303,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					etasjenummer
+					<a name="{9FD363DC-8DAD-4ece-A0FB-21F835CC64CE}"></a>etasjenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -287,7 +313,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -304,7 +330,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					id
+					<a name="{3BBC4D34-2283-443c-AEAD-A67EED7B1DA3}"></a>id
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -314,7 +340,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -331,7 +357,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kostraLeieareal
+					<a name="{69F3289B-53EA-48b3-AFBB-676494D01864}"></a>kostraLeieareal
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -341,7 +367,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -358,7 +384,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					lopenummer
+					<a name="{C7270B49-B86D-463f-B91F-35F57DD933D7}"></a>lopenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -368,7 +394,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -385,7 +411,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					skalUtga
+					<a name="{881485C4-D8DD-422f-82FE-D08A2A2FA47B}"></a>skalUtga
 				</td>
 				<td width="25%" class="TableRow">
 					public 
@@ -395,7 +421,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

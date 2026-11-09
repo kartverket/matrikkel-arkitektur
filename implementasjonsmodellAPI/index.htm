@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</title>
+<title>Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</title>
 <link href="css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 const guid_look = new Map([['1E961091-F369-4B17-9F34-EB976C671BC3', 'EA1.htm'],
@@ -970,23 +970,33 @@ const guid_look = new Map([['1E961091-F369-4B17-9F34-EB976C671BC3', 'EA1.htm'],
 			}
 		}
 
+		function getAnchor() {
+			var currentUrl = document.URL,
+			urlParts   = currentUrl.split('#');
+			return (urlParts.length > 1) ? urlParts[1] : null;
+		}
+
 		function initPage()
-        {
+		{
 			const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const guidlink = urlParams.get('guid');
+			const urlParams = new URLSearchParams(queryString);
+			const guidlink = urlParams.get('guid');
 
-            if (guidlink != null)
-            {
-                var link = guidlink.toUpperCase();
-                var pageredir = guid_look.get(link);
+			if (guidlink != null)
+			{
+				var link = guidlink.toUpperCase();
+				var page = guid_look.get(link);
 
-                if (pageredir != null)
+				if (page != null)
 				{
-                    window.location.replace("EARoot/" + pageredir);
-                    return;
-                }
-            }
+					var pageredir = page;
+					const anchor = getAnchor();
+					if (anchor != null)
+						pageredir += "#" + anchor;
+					window.location.replace("EARoot/" + pageredir);
+					return;
+				}
+			}
 
 			var divs = document.getElementsByClassName("ObjectDetailsNotes");
 			for (var j = 0; j < divs.length; j++)
@@ -1001,12 +1011,38 @@ const guid_look = new Map([['1E961091-F369-4B17-9F34-EB976C671BC3', 'EA1.htm'],
 				divs[j].innerHTML = tmpStr;
 			}
 
-            if (document.getElementById('TableGroup') != null)
-            {
-                toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
-            }
+			if (document.getElementById('TableGroup') != null)
+			{
+				toggleItem(document.getElementById('TableGroup').getElementsByTagName('li')[0].id.replace("Title", ""));
+			}
 
-        }
+		}
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+			
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+				
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -1016,7 +1052,7 @@ const guid_look = new Map([['1E961091-F369-4B17-9F34-EB976C671BC3', 'EA1.htm'],
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0 </h1>
+			<h1> Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2 </h1>
 			<img class="header_image" src="images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
@@ -1056,7 +1092,7 @@ const guid_look = new Map([['1E961091-F369-4B17-9F34-EB976C671BC3', 'EA1.htm'],
 </ul>
 
 					</td>
-					<td class="contentcell">	
+					<td class="contentcell">
 						<div class="welcome_message">
 						<h2>Welcome to your model</h2>
 						<p>To get started navigate through the model via the index on the left</p> 

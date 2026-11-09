@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA103.htm">ByggesakEtasjedata</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA103.htm">ByggesakEtasjedata</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">19.02.2020 21:57:12</td>
+			<td width="85%" class="ObjectDetailsValue">19/02/2020 21:57:12</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">19.02.2020 23:23:05</td>
+			<td class="ObjectDetailsValue">19/02/2020 23:23:05</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -166,7 +192,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					antallBoenheter
+					<a name="{EFA451EB-37ED-44c4-A338-54AE9070D17E}"></a>antallBoenheter
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -176,14 +202,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksarealTilAnnet
+					<a name="{099FA0C6-FAE4-4412-8C1F-19E04220E3BA}"></a>bruksarealTilAnnet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -193,14 +219,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksarealTilBolig
+					<a name="{35DE9A30-F104-4b62-8741-BD3F8E4FFB74}"></a>bruksarealTilBolig
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -210,14 +236,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruksarealTotalt
+					<a name="{38BD871B-8BB6-4ac5-9F49-66AB18018E0B}"></a>bruksarealTotalt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -227,14 +253,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruttoarealTilAnnet
+					<a name="{6AD8D5C6-6FB9-4acb-8533-05805BC7B6C4}"></a>bruttoarealTilAnnet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -244,14 +270,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruttoarealTilBolig
+					<a name="{291C5E6A-90D4-4482-9F49-83747BC8FA8E}"></a>bruttoarealTilBolig
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -261,14 +287,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bruttoarealTotalt
+					<a name="{52600073-1D4D-4962-BF14-F052906D31BA}"></a>bruttoarealTotalt
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -278,14 +304,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					etasjenummer
+					<a name="{5F553F75-3CDA-4d17-A418-5F850F7FE1BC}"></a>etasjenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -295,7 +321,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						

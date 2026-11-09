@@ -648,10 +648,21 @@ body{
   margin-left: auto;
   margin-right: auto;
   height: 100%;
-
 }
+
+IMG {
+    max-width: 100%;
+    height: auto;
+}
+
+.diagram_image img { 
+    	max-width: none;
+	height: auto;
+	overflow: auto;
+}
+
 .diagram_image {
-    max-width: 990px;
+	max-width: 990px;
 	overflow: auto;
 	height: auto;
 	max-height: 800px;
@@ -686,4 +697,3 @@ div{
 }
 
 #EMBEDDED_IMAGES#
-

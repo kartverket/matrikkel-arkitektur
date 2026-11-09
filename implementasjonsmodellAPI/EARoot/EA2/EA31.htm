@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA24.htm">adresse</a> / <a href="EA31.htm">AdressetilleggsnavnKildeKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA24.htm">adresse</a> / <a href="EA31.htm">AdressetilleggsnavnKildeKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:05</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:05</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">09.10.2020 10:01:23</td>
+			<td class="ObjectDetailsValue">09/10/2020 10:01:23</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					AnmodetAvHjemmelshaver
+					<a name="{A4A34103-3913-4986-A30C-9F3413EB7AC5}"></a>AnmodetAvHjemmelshaver
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -195,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Tom
+					<a name="{886D6FBC-D1C0-4ce1-8281-4652AB67609A}"></a>Tom
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -205,14 +231,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					KrevdAvEier
+					<a name="{56260AD4-0620-4dbb-971A-0CBCAFA9471C}"></a>KrevdAvEier
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -222,7 +248,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -239,7 +265,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Matrikkeladressenavn
+					<a name="{697E9AE1-95A7-4c99-B7D7-1447705F9C9A}"></a>Matrikkeladressenavn
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -249,7 +275,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -266,7 +292,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					TildeltAvKommune
+					<a name="{433DB8C4-1B39-4b54-8224-2E8250EAD749}"></a>TildeltAvKommune
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -276,7 +302,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

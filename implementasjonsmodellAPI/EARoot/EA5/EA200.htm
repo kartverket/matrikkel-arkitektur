@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>bygning::Bygg</title>
+<title>Bygg</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -64,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> bygning::Bygg </h1>
+			<h1> Bygg </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA188.htm">bygning</a> / <a href="EA200.htm">Bygg</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA188.htm">bygning</a> / <a href="EA200.htm">Bygg</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">15.06.2015 12:26:36</td>
+			<td class="ObjectDetailsValue">15/06/2015 12:26:36</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -169,7 +195,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					bebygdAreal
+					<a name="{49B2514D-F55A-4314-AC18-0792EF861FD6}"></a>bebygdAreal
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -179,7 +205,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -196,7 +222,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					bygningsnummer
+					<a name="{A96BD176-31C1-4d4b-800D-EA81D7F19FDE}"></a>bygningsnummer
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -206,7 +232,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -223,7 +249,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					harHeis
+					<a name="{0FF45FE9-DFA4-4fc7-BA8B-9043610834E8}"></a>harHeis
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -233,7 +259,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -250,7 +276,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					harKulturminne
+					<a name="{11550AE2-AA6B-498b-AEBD-99C6BB76F6C0}"></a>harKulturminne
 				</td>
 				<td width="25%" class="TableRow">
 					public 
@@ -260,7 +286,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -277,7 +303,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					harSefrakminne
+					<a name="{6DF87317-2358-4491-9792-FD7796CD47BF}"></a>harSefrakminne
 				</td>
 				<td width="25%" class="TableRow">
 					public 
@@ -287,7 +313,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -304,7 +330,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					id
+					<a name="{62C8ECA4-1BC3-41c4-AE3E-F73DDDE5CAC4}"></a>id
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -314,7 +340,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -331,7 +357,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					lopenummer
+					<a name="{2A49F37B-CF6D-4c22-B840-07C7FD7EAFEE}"></a>lopenummer
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -341,7 +367,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -358,7 +384,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					utenBebygdAreal
+					<a name="{A1AB46C9-1760-492e-9996-1E89180A4CC3}"></a>utenBebygdAreal
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -368,7 +394,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

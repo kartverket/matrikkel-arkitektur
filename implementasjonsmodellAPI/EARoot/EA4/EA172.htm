@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA132.htm">bruker</a> / <a href="EA172.htm">Kurs</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA132.htm">bruker</a> / <a href="EA172.htm">Kurs</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:06</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:06</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">04.07.2013 13:31:26</td>
+			<td class="ObjectDetailsValue">04/07/2013 13:31:26</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -167,7 +193,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					id
+					<a name="{AAF15CC3-F929-4ebc-AAEA-B72EBD7E1AD0}"></a>id
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -177,7 +203,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -194,7 +220,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kursdato
+					<a name="{C446D786-300C-442b-9F0A-C05DE74515B6}"></a>kursdato
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -204,7 +230,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -221,7 +247,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kursmerknad
+					<a name="{F53D9008-DA79-4e3a-B39F-D9885F426308}"></a>kursmerknad
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -231,7 +257,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -248,7 +274,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kursnavn
+					<a name="{F639245D-D57C-4a83-AED5-48EF2C743CC3}"></a>kursnavn
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -258,7 +284,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -275,7 +301,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kurssted
+					<a name="{536CC848-A904-474d-A84B-78069F252E3F}"></a>kurssted
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -285,7 +311,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -302,7 +328,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					kursvarighet
+					<a name="{4996860D-2A34-42f3-91BB-1E80A633AC37}"></a>kursvarighet
 				</td>
 				<td width="25%" class="TableRow">
 					Private 
@@ -312,7 +338,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
