@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA716.htm">kulturminne</a> / <a href="EA714.htm">Implementasjonsmodell - Kulturminne</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA716.htm">kulturminne</a> / <a href="EA714.htm">Implementasjonsmodell - Kulturminne</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -111,31 +137,31 @@
 					</td>
 					<td class="contentcell"><div class="PageBody">
 	<div class="diagram_image"> 
-<img src="EA715.png" usemap="#EA715" border="0" />
+<img src="EA715.png" usemap="#EA715" width="1334" height="717" border="0" />
 
 <MAP NAME="EA715">
-<area shape="rect" coords="366,187,466,215" href="../EA1/EA21.htm" target="_self">
-<area shape="rect" coords="10,439,168,467" href="EA727.htm" target="_self">
-<area shape="rect" coords="444,436,632,465" href="EA736.htm" target="_self">
-<area shape="rect" coords="670,430,879,462" href="EA719.htm" target="_self">
-<area shape="rect" coords="226,439,394,468" href="EA733.htm" target="_self">
-<area shape="rect" coords="190,15,288,43" href="EA718.htm" target="_self">
-<area shape="rect" coords="45,12,161,48" href="../EA16/EA849.htm" target="_self">
-<area shape="rect" coords="310,61,524,111" href="EA717.htm" target="_self">
-<area shape="rect" coords="61,140,281,225" href="EA726.htm" target="_self">
-<area shape="rect" coords="564,150,793,225" href="EA722.htm" target="_self">
-<area shape="rect" coords="625,10,721,42" href="../EA5/EA206.htm" target="_self">
+<area shape="rect" coords="549,281,699,323" href="../EA1/EA21.htm" target="_self">
+<area shape="rect" coords="15,659,252,701" href="EA727.htm" target="_self">
+<area shape="rect" coords="666,654,948,698" href="EA736.htm" target="_self">
+<area shape="rect" coords="1005,645,1319,693" href="EA719.htm" target="_self">
+<area shape="rect" coords="339,659,591,702" href="EA733.htm" target="_self">
+<area shape="rect" coords="285,23,432,65" href="EA718.htm" target="_self">
+<area shape="rect" coords="68,18,242,72" href="../EA16/EA849.htm" target="_self">
+<area shape="rect" coords="465,92,786,167" href="EA717.htm" target="_self">
+<area shape="rect" coords="92,210,422,338" href="EA726.htm" target="_self">
+<area shape="rect" coords="846,225,1190,338" href="EA722.htm" target="_self">
+<area shape="rect" coords="938,15,1082,63" href="../EA5/EA206.htm" target="_self">
 </MAP>
  </div>
 	<div class="ObjectTitle">Implementasjonsmodell - Kulturminne : Class diagram</div>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:13</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:13</td>
 		</tr>
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">19.05.2020 09:48:00</td>
+			<td width="85%" class="ObjectDetailsValue">19/05/2020 09:48:00</td>
 		</tr>
 		<tr style="padding-top: 10px;">
 			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>

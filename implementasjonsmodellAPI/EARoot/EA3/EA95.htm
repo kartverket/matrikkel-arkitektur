@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA95.htm">Implementasjonsmodell - Aktivitetsliste</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA97.htm">aktivitetsliste</a> / <a href="EA95.htm">Implementasjonsmodell - Aktivitetsliste</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -122,47 +148,47 @@
 					</td>
 					<td class="contentcell"><div class="PageBody">
 	<div class="diagram_image"> 
-<img src="EA96.png" usemap="#EA96" border="0" />
+<img src="EA96.png" usemap="#EA96" width="2564" height="1233" border="0" />
 
 <MAP NAME="EA96">
-<area shape="rect" coords="557,208,794,374" href="EA98.htm" target="_self">
-<area shape="rect" coords="321,329,501,478" href="EA128.htm" target="_self">
-<area shape="rect" coords="1200,509,1346,537" href="../EA5/EA234.htm" target="_self">
-<area shape="rect" coords="1433,440,1590,468" href="../EA5/EA228.htm" target="_self">
-<area shape="rect" coords="1514,375,1677,404" href="../EA5/EA255.htm" target="_self">
-<area shape="rect" coords="1518,291,1699,319" href="../EA5/EA258.htm" target="_self">
-<area shape="rect" coords="1511,217,1695,245" href="../EA5/EA249.htm" target="_self">
-<area shape="rect" coords="1503,155,1653,189" href="../EA5/EA223.htm" target="_self">
-<area shape="rect" coords="1458,74,1597,109" href="../EA5/EA190.htm" target="_self">
-<area shape="rect" coords="1076,397,1176,426" href="../EA17/EA922.htm" target="_self">
-<area shape="rect" coords="157,178,421,278" href="EA106.htm" target="_self">
-<area shape="rect" coords="1294,43,1420,74" href="EA105.htm" target="_self">
-<area shape="rect" coords="1056,257,1194,345" href="EA102.htm" target="_self">
-<area shape="rect" coords="901,448,1056,588" href="EA103.htm" target="_self">
-<area shape="rect" coords="1202,594,1348,812" href="EA101.htm" target="_self">
-<area shape="rect" coords="1062,79,1189,149" href="EA104.htm" target="_self">
-<area shape="rect" coords="1011,12,1226,43" href="EA100.htm" target="_self">
-<area shape="rect" coords="596,104,746,135" href="../EA12/EA688.htm" target="_self">
-<area shape="rect" coords="10,11,228,125" href="EA111.htm" target="_self">
-<area shape="rect" coords="14,543,232,631" href="EA125.htm" target="_self">
-<area shape="rect" coords="29,719,218,750" href="../EA7/EA511.htm" target="_self">
-<area shape="rect" coords="38,410,206,459" href="EA108.htm" target="_self">
-<area shape="rect" coords="304,575,500,624" href="EA123.htm" target="_self">
-<area shape="rect" coords="573,453,769,484" href="../EA16/EA849.htm" target="_self">
-<area shape="rect" coords="303,702,439,733" href="EA120.htm" target="_self">
-<area shape="rect" coords="596,57,746,88" href="EA114.htm" target="_self">
-<area shape="rect" coords="596,10,746,41" href="EA117.htm" target="_self">
+<area shape="rect" coords="836,312,1191,561" href="EA98.htm" target="_self">
+<area shape="rect" coords="482,494,752,717" href="EA128.htm" target="_self">
+<area shape="rect" coords="1800,764,2019,806" href="../EA5/EA234.htm" target="_self">
+<area shape="rect" coords="2150,660,2385,702" href="../EA5/EA228.htm" target="_self">
+<area shape="rect" coords="2271,563,2516,606" href="../EA5/EA255.htm" target="_self">
+<area shape="rect" coords="2277,437,2549,479" href="../EA5/EA258.htm" target="_self">
+<area shape="rect" coords="2267,326,2543,368" href="../EA5/EA249.htm" target="_self">
+<area shape="rect" coords="2255,233,2480,284" href="../EA5/EA223.htm" target="_self">
+<area shape="rect" coords="2187,111,2396,164" href="../EA5/EA190.htm" target="_self">
+<area shape="rect" coords="1614,596,1764,639" href="../EA17/EA922.htm" target="_self">
+<area shape="rect" coords="236,267,632,417" href="EA106.htm" target="_self">
+<area shape="rect" coords="1941,65,2130,111" href="EA105.htm" target="_self">
+<area shape="rect" coords="1584,386,1791,518" href="EA102.htm" target="_self">
+<area shape="rect" coords="1352,672,1584,882" href="EA103.htm" target="_self">
+<area shape="rect" coords="1803,891,2022,1218" href="EA101.htm" target="_self">
+<area shape="rect" coords="1593,119,1784,224" href="EA104.htm" target="_self">
+<area shape="rect" coords="1517,18,1839,65" href="EA100.htm" target="_self">
+<area shape="rect" coords="894,156,1119,203" href="../EA12/EA688.htm" target="_self">
+<area shape="rect" coords="15,17,342,188" href="EA111.htm" target="_self">
+<area shape="rect" coords="21,815,348,947" href="EA125.htm" target="_self">
+<area shape="rect" coords="44,1079,327,1125" href="../EA7/EA511.htm" target="_self">
+<area shape="rect" coords="57,615,309,689" href="EA108.htm" target="_self">
+<area shape="rect" coords="456,863,750,936" href="EA123.htm" target="_self">
+<area shape="rect" coords="860,680,1154,726" href="../EA16/EA849.htm" target="_self">
+<area shape="rect" coords="455,1053,659,1100" href="EA120.htm" target="_self">
+<area shape="rect" coords="894,86,1119,132" href="EA114.htm" target="_self">
+<area shape="rect" coords="894,15,1119,62" href="EA117.htm" target="_self">
 </MAP>
  </div>
 	<div class="ObjectTitle">Implementasjonsmodell - Aktivitetsliste : Class diagram</div>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:13</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:13</td>
 		</tr>
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
-			<td width="85%" class="ObjectDetailsValue">18.03.2021 11:48:26</td>
+			<td width="85%" class="ObjectDetailsValue">18/03/2021 11:48:26</td>
 		</tr>
 		<tr style="padding-top: 10px;">
 			<td width="15%" class="ObjectDetailsTopic"><button onclick="switchProjectProperties()"><img src="../../images/plus03.gif" align="absmiddle" id="proj" /></button>Project:</td>

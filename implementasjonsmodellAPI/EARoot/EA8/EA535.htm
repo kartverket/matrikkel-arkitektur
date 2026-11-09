@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA518.htm">geometri</a> / <a href="EA535.htm">KoordinatkvalitetKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA518.htm">geometri</a> / <a href="EA535.htm">KoordinatkvalitetKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:07</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:07</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">16.10.2020 13:58:01</td>
+			<td class="ObjectDetailsValue">16/10/2020 13:58:01</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof
+					<a name="{DC3B698C-A81F-40a4-A9C4-9628A4FDA854}"></a>DigFraFlybOrtof
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,7 +204,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -195,7 +221,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_1000
+					<a name="{00ACAB92-A357-4bad-A27F-D39EED2BEBDA}"></a>DigFraFlybOrtof1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -205,7 +231,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -222,7 +248,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_10000
+					<a name="{9DF4160B-CF6C-4102-B23C-27112B1493C0}"></a>DigFraFlybOrtof1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -232,7 +258,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -249,7 +275,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_100000
+					<a name="{AC1A0BCB-AB16-48b1-ACB3-A08FC2DE11B4}"></a>DigFraFlybOrtof1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -259,7 +285,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -276,7 +302,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_2000
+					<a name="{9663B1C9-21DC-4b23-8DC4-9B8AA8E27103}"></a>DigFraFlybOrtof1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -286,7 +312,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -303,7 +329,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_20000
+					<a name="{9A6B5074-8A56-4d96-9362-DD089FA7B54B}"></a>DigFraFlybOrtof1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -313,7 +339,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -330,7 +356,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_250
+					<a name="{38C30170-923C-4103-8E4C-FA3C87A61539}"></a>DigFraFlybOrtof1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -340,7 +366,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -357,7 +383,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_500
+					<a name="{B4F6ED48-3DEF-41ad-92D7-4626245F2E48}"></a>DigFraFlybOrtof1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -367,7 +393,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -384,7 +410,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_5000
+					<a name="{CAFACC1B-93C6-426a-9A67-7B4F3F62E50A}"></a>DigFraFlybOrtof1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -394,7 +420,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -411,7 +437,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof1_50000
+					<a name="{6DE8388E-BC48-4505-91B0-058A96A65A08}"></a>DigFraFlybOrtof1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -421,7 +447,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -438,7 +464,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigFraFlybOrtof<1_100000
+					<a name="{B1812F31-A120-4ba3-8392-F45455D0023B}"></a>DigFraFlybOrtof<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -448,7 +474,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -465,7 +491,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart
+					<a name="{31422A19-1C62-4e22-BD13-6AA91D80DFE9}"></a>DigitFraStrekKart
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -475,7 +501,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -492,7 +518,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_1000
+					<a name="{17CE93EC-038F-4186-BAE8-C1C52381A116}"></a>DigitFraStrekKart1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -502,7 +528,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -519,7 +545,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_10000
+					<a name="{DBEA856A-2A0F-4efb-AC73-A425A3A97142}"></a>DigitFraStrekKart1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -529,7 +555,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -546,7 +572,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_100000
+					<a name="{170F6E31-370B-49fc-9AC8-D3AEA566A6BC}"></a>DigitFraStrekKart1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -556,7 +582,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -573,7 +599,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_2000
+					<a name="{7AA8222C-2D4B-4494-A471-85C8757DBA90}"></a>DigitFraStrekKart1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -583,7 +609,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -600,7 +626,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_20000
+					<a name="{5DBC318B-75EB-4558-9A7C-15A76434B48D}"></a>DigitFraStrekKart1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -610,7 +636,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -627,7 +653,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_250
+					<a name="{1883E170-B862-405c-AC73-326E41776D7A}"></a>DigitFraStrekKart1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -637,7 +663,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -654,7 +680,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_500
+					<a name="{8B63855F-524F-4675-9933-9AD50BE7D198}"></a>DigitFraStrekKart1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -664,7 +690,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -681,7 +707,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_5000
+					<a name="{293AB21E-F760-4ede-BC83-65CF5C8AA4B8}"></a>DigitFraStrekKart1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -691,7 +717,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -708,7 +734,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart1_50000
+					<a name="{4B41F393-4775-491c-947E-A2B48CCC678E}"></a>DigitFraStrekKart1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -718,7 +744,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -735,7 +761,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					DigitFraStrekKart<1_100000
+					<a name="{797F3DD1-7AF0-4b2d-AAFE-3FA8483C695B}"></a>DigitFraStrekKart<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -745,7 +771,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -762,7 +788,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm
+					<a name="{A5D66570-B8B6-424f-B5FE-0443C6D231BF}"></a>FrihTegn_InnlSkjerm
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -772,7 +798,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -789,7 +815,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_1000
+					<a name="{DEFFC686-763A-48d3-B89E-BD913381F085}"></a>FrihTegn_InnlSkjerm1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -799,7 +825,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -816,7 +842,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_10000
+					<a name="{FB34D9D9-7CCE-4fd1-BC02-4BA1C9DCDBBC}"></a>FrihTegn_InnlSkjerm1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -826,7 +852,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -843,7 +869,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_100000
+					<a name="{42EC8AE8-AE28-4165-B2C0-A2BF3E87F697}"></a>FrihTegn_InnlSkjerm1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -853,7 +879,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -870,7 +896,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_2000
+					<a name="{835004D5-2A27-4ff1-BD88-63EF1415B4E4}"></a>FrihTegn_InnlSkjerm1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -880,7 +906,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -897,7 +923,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_20000
+					<a name="{6B59C5C7-E612-4d4c-9880-FFBA32515CFD}"></a>FrihTegn_InnlSkjerm1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -907,7 +933,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -924,7 +950,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_250
+					<a name="{90CCDCAE-E30D-4b8d-AFCA-6D8DC315A210}"></a>FrihTegn_InnlSkjerm1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -934,7 +960,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -951,7 +977,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_500
+					<a name="{B53B1B4D-B60D-4d7b-8CF1-5B453ECEAC33}"></a>FrihTegn_InnlSkjerm1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -961,7 +987,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -978,7 +1004,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_5000
+					<a name="{25B7C6DB-C735-4884-813E-BBB8C23D48A7}"></a>FrihTegn_InnlSkjerm1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -988,7 +1014,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1005,7 +1031,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlSkjerm1_50000
+					<a name="{E0CA2A17-E2D2-47de-9382-60430196995D}"></a>FrihTegn_InnlSkjerm1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1015,7 +1041,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1032,7 +1058,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					FrihTegn_InnlFraSkjerm<1_100000
+					<a name="{F81EDB1C-B19D-4c53-BDF7-55ABA9F06E64}"></a>FrihTegn_InnlFraSkjerm<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1042,7 +1068,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1059,7 +1085,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData
+					<a name="{62210845-487B-4920-B5D4-D56526926468}"></a>GenBeregnetData
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1069,7 +1095,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1086,7 +1112,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_1000
+					<a name="{E88ACAFC-E750-4577-AC9F-91EDB44BDB71}"></a>GenBeregnetData1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1096,7 +1122,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1113,7 +1139,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_10000
+					<a name="{BF8A7916-837D-4f12-A8A9-F974FCAB0942}"></a>GenBeregnetData1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1123,7 +1149,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1140,7 +1166,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_100000
+					<a name="{26673044-0AAA-41a0-BB1D-027CE68FE1A8}"></a>GenBeregnetData1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1150,7 +1176,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1167,7 +1193,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_2000
+					<a name="{EBEDBDD2-8BA4-4ff3-BBAB-BFE398426371}"></a>GenBeregnetData1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1177,7 +1203,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1194,7 +1220,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_20000
+					<a name="{25C5425E-815C-46aa-80F8-9A8E68163B95}"></a>GenBeregnetData1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1204,7 +1230,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1221,7 +1247,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_250
+					<a name="{5197CD77-D8BB-4a65-85E8-CA9CC8A90D44}"></a>GenBeregnetData1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1231,7 +1257,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1248,7 +1274,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_500
+					<a name="{0B700240-FB67-49af-BD8B-161DE4513F76}"></a>GenBeregnetData1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1258,7 +1284,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1275,7 +1301,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_5000
+					<a name="{8CEF4803-E174-4530-8623-C232F47FEFFF}"></a>GenBeregnetData1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1285,7 +1311,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1302,7 +1328,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData1_50000
+					<a name="{603C0D78-7686-407f-9C05-6BF3DCC7A96B}"></a>GenBeregnetData1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1312,7 +1338,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1329,7 +1355,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GenBeregnetData<1_100000
+					<a name="{0FAB2754-7D9C-4333-BCD6-1809095277E6}"></a>GenBeregnetData<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1339,7 +1365,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1356,7 +1382,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt
+					<a name="{E8DDBE2D-53D8-4a6d-98C6-75B09EBC80C2}"></a>GPS_malt
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1366,7 +1392,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1383,7 +1409,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_1000
+					<a name="{06349FBC-558E-4bce-A577-B2AE1366D4E3}"></a>GPS_malt1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1393,7 +1419,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1410,7 +1436,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_10000
+					<a name="{0471930D-00C6-42cc-9A58-D5BB890B763C}"></a>GPS_malt1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1420,7 +1446,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1437,7 +1463,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_100000
+					<a name="{62752382-2DB6-41f0-AE4B-A45617445A84}"></a>GPS_malt1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1447,7 +1473,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1464,7 +1490,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_2000
+					<a name="{593C22E2-8892-4ae0-B256-C55DC579BA59}"></a>GPS_malt1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1474,7 +1500,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1491,7 +1517,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_20000
+					<a name="{7C07AF38-C533-44af-AEB3-3CA437AB8BE1}"></a>GPS_malt1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1501,7 +1527,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1518,7 +1544,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_250
+					<a name="{5C51F371-2EE3-45c3-8E45-BD510E5EDA39}"></a>GPS_malt1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1528,7 +1554,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1545,7 +1571,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_500
+					<a name="{D0CCB0A1-9E57-4877-BFE4-06E53BB5CA39}"></a>GPS_malt1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1555,7 +1581,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1572,7 +1598,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_5000
+					<a name="{F026B1A2-4DF2-43f5-87FA-241EE2D33F53}"></a>GPS_malt1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1582,7 +1608,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1599,7 +1625,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt1_50000
+					<a name="{AFCC66CD-A488-4bc9-94B6-A4FC90EBF9FC}"></a>GPS_malt1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1609,7 +1635,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1626,7 +1652,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr
+					<a name="{007E3080-DC31-4cf1-A0C3-3930EC6CE0F9}"></a>MaltIStereoInstr
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1636,7 +1662,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1653,7 +1679,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_1000
+					<a name="{32C7B6B7-3CAA-4e0d-9300-0F3C49C5C8D0}"></a>MaltIStereoInstr1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1663,7 +1689,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1680,7 +1706,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_10000
+					<a name="{5D10A7AC-BA42-443d-B50C-062DED4BAC77}"></a>MaltIStereoInstr1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1690,7 +1716,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1707,7 +1733,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_100000
+					<a name="{383E7F49-3E13-44c2-A88B-F98156EDFB50}"></a>MaltIStereoInstr1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1717,7 +1743,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1734,7 +1760,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_2000
+					<a name="{3981099D-70B1-4e6b-A71B-8B5066DA81C3}"></a>MaltIStereoInstr1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1744,7 +1770,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1761,7 +1787,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_20000
+					<a name="{1D5C62E7-7A08-4b52-849A-4E5C67BC6F67}"></a>MaltIStereoInstr1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1771,7 +1797,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1788,7 +1814,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_250
+					<a name="{C6992A68-0B85-408d-A139-06EE7BD71615}"></a>MaltIStereoInstr1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1798,7 +1824,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1815,7 +1841,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_500
+					<a name="{132AFCC4-C2A7-4a1e-9405-C46B06671034}"></a>MaltIStereoInstr1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1825,7 +1851,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1842,7 +1868,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_5000
+					<a name="{4F30C763-43CF-4597-A206-B6B62E7DCB3E}"></a>MaltIStereoInstr1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1852,7 +1878,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1869,7 +1895,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr1_50000
+					<a name="{5146D14B-C764-4f11-8941-5B5313DFBE51}"></a>MaltIStereoInstr1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1879,7 +1905,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1896,7 +1922,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					MaltIStereoInstr<1_100000
+					<a name="{C247CC17-DC18-409d-A947-4AA579A3C3C2}"></a>MaltIStereoInstr<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1906,7 +1932,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1923,7 +1949,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart
+					<a name="{BE2EF4CB-E2FD-405e-8632-A9861A7F3CEB}"></a>ScannetFraKart
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1933,7 +1959,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1950,7 +1976,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_1000
+					<a name="{DC31C749-7293-40e5-8DF5-237C21877307}"></a>ScannetFraKart1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1960,7 +1986,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1977,7 +2003,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_10000
+					<a name="{23F819FB-6AD7-4916-8021-D13EA2D436DB}"></a>ScannetFraKart1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1987,7 +2013,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2004,7 +2030,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_100000
+					<a name="{5403D82B-BC48-43d8-B837-C24D7C3CB154}"></a>ScannetFraKart1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2014,7 +2040,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2031,7 +2057,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_2000
+					<a name="{C79E9EAC-53D4-40c1-82A5-5EAACAD8B92A}"></a>ScannetFraKart1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2041,7 +2067,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2058,7 +2084,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_20000
+					<a name="{0BA7DAA2-75A1-44d4-BDF4-7C3F4E58EC0D}"></a>ScannetFraKart1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2068,7 +2094,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2085,7 +2111,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_250
+					<a name="{5F006BFD-CDB9-434d-8260-D2C5B2181F22}"></a>ScannetFraKart1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2095,7 +2121,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2112,7 +2138,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_500
+					<a name="{82074D8E-EA9C-4dc7-874E-1B584410076E}"></a>ScannetFraKart1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2122,7 +2148,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2139,7 +2165,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_50000
+					<a name="{D0D1A73D-C675-46d0-83E4-689A1B92B152}"></a>ScannetFraKart1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2149,7 +2175,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2166,7 +2192,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart<1_100000
+					<a name="{15520F60-D5DD-474f-A7A7-2F74BA5953D6}"></a>ScannetFraKart<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2176,7 +2202,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2193,7 +2219,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					ScannetFraKart1_5000
+					<a name="{1C16E407-0CB2-4108-925B-4C35682BB4F4}"></a>ScannetFraKart1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2203,7 +2229,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2220,7 +2246,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder
+					<a name="{CB6D914F-7FD7-4e36-99B8-8D5CB8EFF8FF}"></a>SpesielleMetoder
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2230,7 +2256,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2247,7 +2273,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_1000
+					<a name="{8295FDCE-114E-418e-8A3E-D1F6945B6057}"></a>SpesielleMetoder1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2257,7 +2283,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2274,7 +2300,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_10000
+					<a name="{087B434B-E409-4caa-BCAA-456FC0648192}"></a>SpesielleMetoder1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2284,7 +2310,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2301,7 +2327,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_100000
+					<a name="{C3080501-BFFF-464d-8A6C-16538D0997E0}"></a>SpesielleMetoder1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2311,7 +2337,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2328,7 +2354,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_2000
+					<a name="{257D0295-C7D8-426c-B346-652CAB26609C}"></a>SpesielleMetoder1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2338,7 +2364,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2355,7 +2381,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_20000
+					<a name="{FB72AAC9-C4DF-498e-9798-072CED69FF92}"></a>SpesielleMetoder1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2365,7 +2391,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2382,7 +2408,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_250
+					<a name="{53674EBE-64F0-4b06-A719-31B251B29B5C}"></a>SpesielleMetoder1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2392,7 +2418,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2409,7 +2435,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_500
+					<a name="{10AA0846-FB73-4871-9920-3433A65A055F}"></a>SpesielleMetoder1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2419,7 +2445,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2436,7 +2462,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_5000
+					<a name="{7D4039D2-47DE-41cf-AA5D-D073D4EFD653}"></a>SpesielleMetoder1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2446,7 +2472,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2463,7 +2489,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder1_50000
+					<a name="{8BFC8163-72C8-4630-B211-0841F21E5156}"></a>SpesielleMetoder1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2473,7 +2499,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2490,7 +2516,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					SpesielleMetoder<1_100000
+					<a name="{4F0BD154-5CF5-4977-8641-42DBE41F61E7}"></a>SpesielleMetoder<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2500,7 +2526,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2517,7 +2543,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt
+					<a name="{95616A25-4AB3-4152-92BC-A11CBB536D64}"></a>Terrengmalt
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2527,7 +2553,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2544,7 +2570,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_1000
+					<a name="{E0AE602C-7E96-455b-944B-910FED3107BF}"></a>Terrengmalt1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2554,7 +2580,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2571,7 +2597,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_10000
+					<a name="{372F5D15-A37F-4986-86FD-BAFCE9987251}"></a>Terrengmalt1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2581,7 +2607,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2598,7 +2624,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_100000
+					<a name="{C64C9523-4377-4f89-A4C2-4818DAD05930}"></a>Terrengmalt1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2608,7 +2634,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2625,7 +2651,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_2000
+					<a name="{C6D6D72B-4D54-4519-9C4C-576ED3432291}"></a>Terrengmalt1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2635,7 +2661,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2652,7 +2678,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_20000
+					<a name="{6CE68B41-1710-4ee9-AEFC-B30B8DF9966E}"></a>Terrengmalt1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2662,7 +2688,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2679,7 +2705,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_250
+					<a name="{68EB62E1-4A95-42e0-9498-A09B558E24E4}"></a>Terrengmalt1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2689,7 +2715,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2706,7 +2732,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_500
+					<a name="{8BF4F57D-B9C0-4437-BE33-D96085ED3FE9}"></a>Terrengmalt1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2716,7 +2742,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2733,7 +2759,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_5000
+					<a name="{B115D423-ECA3-4f88-83D2-74EFE57BE6E5}"></a>Terrengmalt1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2743,7 +2769,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2760,7 +2786,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt1_50000
+					<a name="{763BCD13-1925-4dee-B208-55E33A1CFBC9}"></a>Terrengmalt1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2770,7 +2796,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2787,7 +2813,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Terrengmalt<1_100000
+					<a name="{5672E030-344A-42cb-AAF1-3F86D9CF6D08}"></a>Terrengmalt<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2797,7 +2823,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2814,7 +2840,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt
+					<a name="{CC93C4BB-253E-4e79-9985-03EBF2043DA9}"></a>UOppgitt
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2824,7 +2850,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2841,7 +2867,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_1000
+					<a name="{CB881FF1-982B-4e99-BBA2-88597F843E88}"></a>UOppgitt1_1000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2851,7 +2877,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2868,7 +2894,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_10000
+					<a name="{FD14E90D-2177-4d04-AE4E-E0759B12862D}"></a>UOppgitt1_10000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2878,7 +2904,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2895,7 +2921,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_100000
+					<a name="{7ACD2AC1-DAB9-414f-B1F0-F74EF08C6C26}"></a>UOppgitt1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2905,7 +2931,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2922,7 +2948,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_2000
+					<a name="{BBE04809-3626-48dd-92C9-8B49B52B474D}"></a>UOppgitt1_2000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2932,7 +2958,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2949,7 +2975,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_20000
+					<a name="{4D4D6429-D7EC-4ff4-9415-E9FBDC2966F6}"></a>UOppgitt1_20000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2959,7 +2985,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -2976,7 +3002,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_250
+					<a name="{99303D30-F8AB-4448-86F4-988DB7B732F2}"></a>UOppgitt1_250
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -2986,7 +3012,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -3003,7 +3029,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_500
+					<a name="{BC351FB3-E15A-4540-8677-091643384D4B}"></a>UOppgitt1_500
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3013,7 +3039,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -3030,7 +3056,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_5000
+					<a name="{A9B9467D-7F99-463c-8A2A-50EAD02A2A6B}"></a>UOppgitt1_5000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3040,7 +3066,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -3057,7 +3083,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt1_50000
+					<a name="{A97D2EEB-740B-4d88-9C50-C3EC0A678C83}"></a>UOppgitt1_50000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3067,7 +3093,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -3084,7 +3110,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					UOppgitt<1_100000
+					<a name="{163C1484-9BFA-4106-BBAA-4B1A3D6C18D2}"></a>UOppgitt<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3094,7 +3120,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -3111,7 +3137,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					GPS_malt<1_100000
+					<a name="{7206A865-7399-4dad-8229-4E00A6B1AF47}"></a>GPS_malt<1_100000
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -3121,7 +3147,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>

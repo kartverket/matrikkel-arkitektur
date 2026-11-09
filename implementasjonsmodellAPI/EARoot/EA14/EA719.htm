@@ -55,6 +55,32 @@
             }
 
         }
+		
+		document.addEventListener('DOMContentLoaded', () => {
+			const img = document.querySelector('.diagram_image img');
+			const mapAreas = document.querySelectorAll('area');
+
+			if (img && mapAreas.length > 0) {
+				//Get original and rendered image dimensions
+				const originalWidth = img.naturalWidth;
+				const originalHeight = img.naturalHeight;
+				const renderedWidth = img.clientWidth || originalWidth; 
+				const renderedHeight = img.clientHeight || originalHeight; 
+				
+				//Calculate scaling factors
+				const scaleX = renderedWidth / originalWidth;
+				const scaleY = renderedHeight / originalHeight;
+
+				//Adjust map area coordinates
+				mapAreas.forEach((area) => {
+				  const originalCoords = area.getAttribute('coords').split(',').map(Number);
+				  const scaledCoords = originalCoords.map((coord, index) =>
+					index % 2 === 0 ? coord * scaleX : coord * scaleY
+				  );
+				  area.setAttribute('coords', scaledCoords.join(','));
+				});
+			}
+		});
 </script>
 <style>
 
@@ -69,7 +95,7 @@
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.26.0</a> / <a href="EA716.htm">kulturminne</a> / <a href="EA719.htm">EnkeltminneArtKode</a></p>
+			<p><a href="../EA1.htm">Implementasjonsmodell - MatrikkelAPI_v1 for systemVersion 4.27.2</a> / <a href="EA716.htm">kulturminne</a> / <a href="EA719.htm">EnkeltminneArtKode</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -93,11 +119,11 @@
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">18.06.2013 10:17:11</td>
+			<td width="85%" class="ObjectDetailsValue">18/06/2013 10:17:11</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">19.06.2015 08:25:40</td>
+			<td class="ObjectDetailsValue">19/06/2015 08:25:40</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,7 +194,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					Annen bygningsart
+					<a name="{026CE4E0-879F-4b57-B69C-DDE674982483}"></a>Annen bygningsart
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -178,14 +204,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Apotek
+					<a name="{9CFA2AF6-F424-4832-A3C3-C2D86D1DFBD3}"></a>Apotek
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -195,14 +221,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Arbeiderbolig
+					<a name="{60907361-8B5F-4e3e-BBD8-0809C9630E42}"></a>Arbeiderbolig
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -212,14 +238,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Atelier
+					<a name="{10CA2B61-2B63-4fec-B113-8329900CB577}"></a>Atelier
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -229,14 +255,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Badstu-bad-badehus
+					<a name="{312EDDB2-20DA-4a77-B76F-E7424361D14C}"></a>Badstu-bad-badehus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -246,14 +272,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bakeri
+					<a name="{469D5DF9-1D24-46be-9979-588CFF80FA4E}"></a>Bakeri
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -263,14 +289,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bank-børs
+					<a name="{389926C3-6718-45e6-B584-AAD0B7AE3095}"></a>Bank-børs
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -280,14 +306,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bensinstasjonsbygning
+					<a name="{7E6A9092-BBB0-466a-9617-865BCF65A00B}"></a>Bensinstasjonsbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -297,14 +323,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bibliotekbygning
+					<a name="{BEF3A99E-E2A8-41c9-98B4-7C888BFE778A}"></a>Bibliotekbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -314,14 +340,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bistasjon
+					<a name="{3851DB9C-08D8-45ee-9E1D-70C1F0A504C5}"></a>Bistasjon
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -331,14 +357,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bolig
+					<a name="{710FFD1A-80CF-4c48-938B-E3AE12B37D22}"></a>Bolig
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -348,14 +374,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Borg-slott
+					<a name="{5E336FAE-E9CF-482f-81D7-29241D4BBF68}"></a>Borg-slott
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -365,14 +391,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Brakke
+					<a name="{BEF15E3D-BE8D-424e-B759-D344DF5CE295}"></a>Brakke
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -382,14 +408,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Brannstasjon
+					<a name="{449EDAE1-042F-48e9-93C8-E3C5498E5C42}"></a>Brannstasjon
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -399,14 +425,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Brønnhus
+					<a name="{C9429883-680C-4551-8D33-85E7DE314890}"></a>Brønnhus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -416,14 +442,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bur-stabbur-loft
+					<a name="{35DAD059-8C21-4174-B487-0E008CD17DDF}"></a>Bur-stabbur-loft
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -433,14 +459,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Bygård
+					<a name="{3A7FEAB0-A3C2-408f-9F9D-9C6715A86163}"></a>Bygård
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -450,14 +476,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Driftsbygning
+					<a name="{65890307-9952-4fc2-A4B7-F1C076818FD7}"></a>Driftsbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -467,14 +493,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Drivhus
+					<a name="{8319108A-4A39-4516-91CF-D82FA4575A69}"></a>Drivhus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -484,14 +510,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Dukkestue-lekestue
+					<a name="{28554209-AEAC-42d6-8128-F7E5863C1D58}"></a>Dukkestue-lekestue
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -501,14 +527,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Eldhus-bryggerhus
+					<a name="{80FAA869-D8FE-4aa8-8A94-8F2AB810C3C0}"></a>Eldhus-bryggerhus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -518,14 +544,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Fengsel-celler
+					<a name="{E3C11460-865B-4805-9DFE-FB77ADAE6120}"></a>Fengsel-celler
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -535,14 +561,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Fjøs-stall
+					<a name="{C91F0A67-1FB9-4b0e-9BDB-ADC4D22229D6}"></a>Fjøs-stall
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -552,14 +578,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Forretningsbygg
+					<a name="{720C649F-E23F-46d1-B6ED-205D4DF28840}"></a>Forretningsbygg
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -569,14 +595,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Forsamlingslokale
+					<a name="{15C59536-3242-412e-A1ED-EC40A6092F9C}"></a>Forsamlingslokale
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -586,14 +612,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Fyr
+					<a name="{D2C3A3B5-8EB8-4f7d-96D3-E833485B6E6A}"></a>Fyr
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -603,14 +629,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Gamme
+					<a name="{AA00B633-6B76-43d8-96DE-F3E50B79CCCF}"></a>Gamme
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -620,14 +646,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Garasje
+					<a name="{83A34EE4-7CBB-40cb-896B-008EA1DC9930}"></a>Garasje
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -637,14 +663,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Godsbygning
+					<a name="{F6F1C56A-6F21-4a40-8739-5D8CC3C0ED1E}"></a>Godsbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -654,14 +680,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hangar
+					<a name="{5F64DFF3-CF59-4bb9-93DA-6FFB29185CBF}"></a>Hangar
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -671,14 +697,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hospiotal-sykehjem
+					<a name="{A31EA1F0-5D9D-4104-B110-DF6603F1A82C}"></a>Hospiotal-sykehjem
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -688,14 +714,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hovedbygning
+					<a name="{3C31796A-282B-419f-828D-FFCCE618CD67}"></a>Hovedbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -705,14 +731,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hovedstasjon
+					<a name="{722E036A-2371-410a-B303-AF22561FE9E2}"></a>Hovedstasjon
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -722,14 +748,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hytte-annet
+					<a name="{0265D852-2E0C-44b7-9EB4-F890671BC683}"></a>Hytte-annet
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -739,14 +765,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hytte-fritid
+					<a name="{4E23030E-B18E-408c-9FE0-9223F7D7AC22}"></a>Hytte-fritid
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -756,14 +782,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Hønsehus-fuglehus
+					<a name="{D577B04B-A935-416d-9334-7DC2490FC11C}"></a>Hønsehus-fuglehus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -773,14 +799,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Internat-forlegning
+					<a name="{D2688B77-CB0F-4b8a-B56B-473451BD2619}"></a>Internat-forlegning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -790,14 +816,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kantine-kjøkken
+					<a name="{D0D167DA-4339-4b7a-9E9A-7D9FD30D54A3}"></a>Kantine-kjøkken
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -807,14 +833,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kapell
+					<a name="{BD7032CD-4FDD-475c-8173-E440CA9156B7}"></a>Kapell
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -824,14 +850,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kirke
+					<a name="{D7A36EEE-73BC-48fb-9AE7-62826620AC14}"></a>Kirke
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -841,14 +867,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kjeller-jordkjeller
+					<a name="{7E6E525C-AA53-46a3-9612-EDC318AC5318}"></a>Kjeller-jordkjeller
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -858,14 +884,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kjone
+					<a name="{3E34E2FB-7959-41c2-99E4-9D69E28C1008}"></a>Kjone
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -875,7 +901,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -892,7 +918,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kloster
+					<a name="{FDE0DE65-0C04-48c5-BA75-CB845F3DCCA9}"></a>Kloster
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -902,14 +928,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kontor
+					<a name="{1A574701-E5C0-4c96-A5C2-43DCF9B2679A}"></a>Kontor
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -919,14 +945,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kraftstasjon
+					<a name="{ACDD4082-EC21-4a14-9C95-C6FD85794677}"></a>Kraftstasjon
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -936,14 +962,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Kvernhus-mølle
+					<a name="{33F17A8E-0432-4dac-A7B8-D846C6A8AF0E}"></a>Kvernhus-mølle
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -953,14 +979,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Lagerbygning
+					<a name="{8569AE9D-1CD1-4603-9FA6-CBE62670D62B}"></a>Lagerbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -970,14 +996,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Leskur
+					<a name="{F6733A17-E529-4020-B1CC-68B03B21986C}"></a>Leskur
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -987,14 +1013,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Lysthus-paviljong
+					<a name="{F2AA4B7F-C2D9-43e4-940C-06C95AE23785}"></a>Lysthus-paviljong
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1004,14 +1030,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Låve
+					<a name="{6F89B148-87CE-4868-B260-1D3FE4E0676C}"></a>Låve
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1021,14 +1047,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Maskinhus
+					<a name="{30B5759F-655E-4c7e-A9EB-CC5EAAE27C57}"></a>Maskinhus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1038,14 +1064,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Masstue
+					<a name="{2295BA2A-BF4E-4084-8401-0FEBB28A51BB}"></a>Masstue
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1055,14 +1081,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Museum-galleri
+					<a name="{CE042A12-5EA8-4f0e-8215-5F7AE3DB4CD2}"></a>Museum-galleri
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1072,14 +1098,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Naust-båthus
+					<a name="{30DEE218-2EC1-4b49-9DE3-EAF5E81671A1}"></a>Naust-båthus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1089,14 +1115,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Overnattingssted
+					<a name="{3F2D7EFE-9F87-4f57-8511-CA545470E7E7}"></a>Overnattingssted
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1106,14 +1132,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Politistasjon
+					<a name="{DB0301FD-7791-438d-A4C0-626D30AB39F7}"></a>Politistasjon
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1123,14 +1149,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Produksjonslokale
+					<a name="{411D66D2-095A-4e06-BA38-B1330D626C23}"></a>Produksjonslokale
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1140,14 +1166,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Restaurant-kafe
+					<a name="{AC7D82D4-F162-4606-B408-2A408F40FBF1}"></a>Restaurant-kafe
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1157,14 +1183,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Rorbu
+					<a name="{7134A74E-A880-44f0-9389-C0B4434530ED}"></a>Rorbu
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1174,14 +1200,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Ruin
+					<a name="{D8025C1D-2F3B-4ed5-89B8-FD3E473B7B15}"></a>Ruin
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1191,7 +1217,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1208,7 +1234,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Røykstue
+					<a name="{C694D172-847F-413d-A7EA-E2F3824A2E90}"></a>Røykstue
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1218,14 +1244,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Rådhus
+					<a name="{B303A044-EFBC-4a82-876D-7CE34993F554}"></a>Rådhus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1235,14 +1261,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Sel
+					<a name="{6E67C259-FC1E-4026-865B-5589BCF1085D}"></a>Sel
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1252,7 +1278,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
@@ -1269,7 +1295,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Selskapslokale
+					<a name="{C56CE653-2FDC-4da8-AE1C-CD2C4086D1D2}"></a>Selskapslokale
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1279,14 +1305,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Sengebu
+					<a name="{3F1F032F-EE7A-4d94-AA69-10530CA81F19}"></a>Sengebu
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1296,14 +1322,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Sidefløy
+					<a name="{CEBAEC98-3424-4021-8AA2-29948FEECE3F}"></a>Sidefløy
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1313,14 +1339,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Sjøhus
+					<a name="{4477FCB8-BE44-4169-8580-2F2F7AF94EB7}"></a>Sjøhus
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1330,14 +1356,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Skole
+					<a name="{B8451248-5A01-43bc-9F8A-21A1114096D2}"></a>Skole
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1347,14 +1373,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Smie
+					<a name="{F2EF4A9B-0362-461b-A2F2-12033ABCB70A}"></a>Smie
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1364,14 +1390,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Stasjonsbygning
+					<a name="{C483032B-B981-4a1d-BEEA-E0F4B4D31663}"></a>Stasjonsbygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1381,14 +1407,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Stavkirke
+					<a name="{61E0FEA4-A9BC-4ce1-B354-231FB533F198}"></a>Stavkirke
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1398,14 +1424,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Støpul
+					<a name="{8788149D-028A-4b07-8724-9FA7FCBBCE37}"></a>Støpul
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1415,14 +1441,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Teater-kino
+					<a name="{C84B6B0D-B6C4-4924-9E7F-8EAF506F1BD2}"></a>Teater-kino
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1432,14 +1458,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Teknisk bygning
+					<a name="{DD8A5565-3A9A-4276-A29D-569A7571CAB0}"></a>Teknisk bygning
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1449,14 +1475,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Telefonkiosk
+					<a name="{1BFB11F1-4FF2-4337-9F98-8DF587F9DD52}"></a>Telefonkiosk
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1466,14 +1492,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Tinghus-rettslokale
+					<a name="{8E81C5AD-316A-4f2f-B067-728BA872E73E}"></a>Tinghus-rettslokale
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1483,14 +1509,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Tolllbod
+					<a name="{4086C1AF-F2C9-4556-A749-606A21181841}"></a>Tolllbod
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1500,14 +1526,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Treningslokale
+					<a name="{CCCA8FAC-074D-4d25-85CC-A7AABCBCDB93}"></a>Treningslokale
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1517,14 +1543,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Tåkeklokke
+					<a name="{ED5F8058-2CA9-4f90-8E62-B2D645A599FA}"></a>Tåkeklokke
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1534,14 +1560,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Tårn
+					<a name="{F51165F6-50B9-4cfa-9522-1B9AE3D29BFA}"></a>Tårn
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1551,14 +1577,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Ukjent
+					<a name="{10083667-AB1F-4dd2-943A-A7F300B5881C}"></a>Ukjent
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1568,14 +1594,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Utedo
+					<a name="{E1A5FB1D-210E-48b8-BABA-9727D197E830}"></a>Utedo
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1585,14 +1611,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Uthus-skjul
+					<a name="{97A56AD8-D928-48de-B3B2-0C8925AC957C}"></a>Uthus-skjul
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1602,14 +1628,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Utkikkspost
+					<a name="{9F6DD898-637F-4abf-894E-DB85688B6F01}"></a>Utkikkspost
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1619,14 +1645,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Vaktstue
+					<a name="{4D601B80-912D-44b1-9D26-B4F51B844233}"></a>Vaktstue
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1636,14 +1662,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Verksted
+					<a name="{3629BCF1-FC64-4806-9D15-5DD049E6B32F}"></a>Verksted
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1653,14 +1679,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Vognhall-lokomotivstall
+					<a name="{36E25354-323D-413b-BB83-50DB8576D6F2}"></a>Vognhall-lokomotivstall
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1670,14 +1696,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					Vognskjul
+					<a name="{510B2D34-A5D8-4164-A5BE-A09DED8E60CE}"></a>Vognskjul
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -1687,7 +1713,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">										
+				<td class="TableRowBottomDashed"  colspan="3">
 					
 						&nbsp;
 						
